@@ -242,6 +242,32 @@ article.active {
 .article-title {
   position: relative;
   padding-bottom: 7px;
+  cursor: default;
+}
+
+.article-title.glow-active {
+  animation: glow-fade 5s ease-in-out forwards;
+}
+
+@keyframes glow-fade {
+  0% {
+    text-shadow: none;
+  }
+  30% {
+    text-shadow:
+      0 0 20px hsla(45, 100%, 72%, 0.8),
+      0 0 40px hsla(45, 100%, 72%, 0.6),
+      0 0 60px hsla(45, 100%, 72%, 0.4);
+  }
+  70% {
+    text-shadow:
+      0 0 20px hsla(45, 100%, 72%, 0.8),
+      0 0 40px hsla(45, 100%, 72%, 0.6),
+      0 0 60px hsla(45, 100%, 72%, 0.4);
+  }
+  100% {
+    text-shadow: none;
+  }
 }
 
 .article-title::after {
@@ -334,6 +360,17 @@ main {
 .avatar-box {
   background: var(--bg-gradient-onyx);
   border-radius: 20px;
+  transition: filter 0.3s ease;
+}
+
+.avatar-box:hover {
+  filter: hue-rotate(0deg);
+  animation: rainbow-rotate 2s linear infinite;
+}
+
+@keyframes rainbow-rotate {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
 }
 
 .info-content .name {
@@ -342,6 +379,24 @@ main {
   font-weight: var(--fw-500);
   letter-spacing: -0.25px;
   margin-bottom: 10px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.info-content .name:hover {
+  background: linear-gradient(90deg,
+    #ff0000, #ff7f00, #ffff00, #00ff00,
+    #0000ff, #4b0082, #9400d3, #ff0000);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-slide 3s linear infinite;
+}
+
+@keyframes rainbow-slide {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }
 
 .info-content .title {
