@@ -99,7 +99,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 }
 
 
-
+// Sidebar Email and Number Copy to Clipboard
 // copy to clipboard function
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(function() {
@@ -116,3 +116,21 @@ function copyToClipboard(text) {
     console.error('Failed to copy text: ', err);
   });
 }
+
+
+
+// Fix Sidebar Social Links Hover Titles Issue
+// Fix ionicon tooltips - remove internal SVG titles to show custom tooltips
+window.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function() {
+    document.querySelectorAll('ion-icon[title]').forEach(function(icon) {
+      const shadowRoot = icon.shadowRoot;
+      if (shadowRoot) {
+        const svgTitle = shadowRoot.querySelector('title');
+        if (svgTitle) {
+          svgTitle.remove();
+        }
+      }
+    });
+  }, 100);
+});
