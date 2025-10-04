@@ -54,6 +54,10 @@ portfolio/
 - **LinkedIn**: [tanmay-bhuskute](https://linkedin.com/in/tanmay-bhuskute)
 - **GitHub**: [Tanmayb05](https://github.com/Tanmayb05)
 
+## Credits
+
+Template design based on [codewithsadee's portfolio](https://github.com/codewithsadee/portfolio)
+
 ## License
 
 This project is open source and available for personal and educational use.
