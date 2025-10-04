@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vCard - Personal Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Tanmay Bhuskute" width="80">
+        </figure>
+        <div class="info-content">
+          <h1 class="name" title="Tanmay Bhuskute">Tanmay Bhuskute</h1>
+          <p class="title">Software Developer</p>
+        </div>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+      </div>
+
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Gmail</p>
+              <a href="mailto:tanmay.v.bhuskute@gmail.com" class="contact-link">tanmay.v.bhuskute</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+17328583027" class="contact-link">+1 (732) 858-3027</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+              <time datetime="2000-01-29">January 29, 2000</time>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>Cincinnati, Ohio, USA</address>
+            </div>
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://linkedin.com/in/tanmay-bhuskute" class="social-link" target="_blank">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://github.com/Tanmayb05" class="social-link" target="_blank">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            👋 Hi, I'm Tanmay Bhuskute, a passionate Software Developer and AI/ML Engineer 
+            currently pursuing my Master's in Computer Science at University of Cincinnati. 
+            With a strong foundation in computer science fundamentals and hands-on experience in AI, 
+            distributed systems, and cloud-native development, 
+            I focus on building scalable engineering solutions and intelligent applications.
+          </p>
+
+          <p>
+            I enjoy tackling complex engineering problems, whether it is optimizing pipelines 
+            to handle millions of users, deploying Kubernetes-based systems on the cloud, or 
+            designing retrieval-augmented AI systems for real-world use cases.
+          </p>
+
+          <p>
+            When I am not deep into code, you will probably find me brainstorming the next big idea, 
+            learning new frameworks, or mentoring peers in their tech journey.
+          </p>
+        </section>
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+          <h3 class="h3 service-title">What i'm doing</h3>
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="software development icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Software Development</h4>
+                <p class="service-item-text">
+                  Building scalable and reliable applications using modern frameworks and cloud-native technologies.
+                </p>
+              </div>
+            </li>
+
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="web mobile development icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web & Mobile Development</h4>
+                <p class="service-item-text">
+                  Designing and developing high-performance web and mobile apps with React, Node.js, and cloud backends for iOS and Android.
+                </p>
+              </div>
+            </li>
+
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-aiml.svg" alt="AI ML icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">AI & Machine Learning</h4>
+                <p class="service-item-text">
+                  Designing intelligent systems powered by LLMs, retrieval-augmented generation, and predictive analytics.
+                </p>
+              </div>
+            </li>
+
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-devops.svg" alt="cloud devops icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Cloud & DevOps</h4>
+                <p class="service-item-text">
+                  Deploying and managing applications using Kubernetes, Docker, and AWS/GCP for reliability and scale.
+                </p>
+              </div>
+            </li>
+
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-badminton.svg" alt="badminton icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Badminton</h4>
+                <p class="service-item-text">
+                  Staying active and competitive through badminton matches that fuel focus and discipline.
+                </p>
+              </div>
+            </li>
+
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-vibe.svg" alt="vibe coding icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Vibe Coding</h4>
+                <p class="service-item-text">
+                  Coding sessions with music and flow, blending creativity with problem-solving.
+                </p>
+              </div>
+            </li>
+
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-fifa.svg" alt="FIFA icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">FIFA</h4>
+                <p class="service-item-text">Sharpening strategy and reflexes through intense FIFA matches for fun and focus.</p>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+              <time datetime="2021-06-14">14 June, 2021</time>
+
+              <div data-modal-text>
+                <p>
+                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+        <!--
+          - clients
+        -->
+
+        <section class="clients">
+
+        </section>
+
+      </article>
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Education</h3>
+          </div>
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">University of Cincinnati</h4>
+              <span>2024 — 2026</span>
+              <p class="timeline-text">
+                Coursework: Advanced Algorithms, Artificial Intelligence, Deep Learning, Intelligent Data Analysis, 
+                Database Theory, Distributed Operating System
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">University of Pune</h4>
+              <span>2018 — 2022</span>
+              <p class="timeline-text">
+                Coursework: Data Mining, Data Analytics, Machine Learning, 
+                Object-Oriented Programming
+              </p>
+            </li>
+
+          </ol>
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Experience</h3>
+          </div>
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Software Developer Engineer - Siemens Industry Software</h4>
+              <span>Jul 2022 — Jun 2024</span>
+              <p class="timeline-text">
+                Tech Stacks: AWS, Python, Boto3, REST APIs, Hashicorp Vault, 
+                Ansible, GitLab CI/CD, Shell, Kubernetes, ArgoCD
+                <br>- Automated TCX cloud infrastructure patching and deployment across 44+ production AWS environments using Python, Boto3, Ansible Tower, and GitLab CI/CD pipelines, integrating Siemens DSS Vault APIs for secure artifact management and creating reusable packages deployed via JFrog repository.
+                <br>- Architected and implemented Blue-Green deployment strategy for zero-downtime TCX upgrades, achieving 50% downtime reduction through automated Ansible workflows while resolving critical challenges including RDS reconfiguration, SOLR index optimization, and Siemens Deploy Center integration across versions 7.x through 9.x.
+                <br>- Led containerization migration initiative from process-based to containerized TCX architecture using Kubernetes, ArgoCD, Helm Charts, and HashiCorp Vault, improving scalability and operational efficiency while gaining deep expertise in container orchestration, EFS configurations, and cloud-native infrastructure patterns.
+                <br>- Mentored cross-functional team of 5 engineers while coordinating with Operations and Development teams to debug production issues, develop comprehensive training materials, standardize development processes, and document technical workflows in Polarion—reducing onboarding time and ensuring successful production deployments.
+                <br>- Demonstrated full-stack DevOps expertise spanning Python/Ruby automation, AWS services (EC2, RDS, EFS), infrastructure-as-code (Ansible), container orchestration (Kubernetes), and Linux administration on RedHat systems, while working in Agile sprints and delivering end-to-end solutions from development through production deployment.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Software Developer Intern - Siemens Industry Software</h4>
+              <span>Mar 2022 - Jun 2022</span>
+              <p class="timeline-text">
+                Tech Stacks: AWS, Terraform, Ansible, Terratest, Go
+                <br>- Automated provisioning of AWS resources with Terraform, reducing deployment time by 30%
+                <br>- Developed Go + Terratest framework, catching 95% of misconfigurations pre-production
+                <br>- Optimized DevOps workflows with Ansible, reducing environment setup time from hours to minutes
+                <br>- Enhanced infrastructure validation with Terragrunt ensuring 100% successful Terraform runs
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Software Developer Intern - Government of Maharashtra, Water Resource Department</h4>
+              <span>Sep 2021 — Dec 2021</span>
+              <p class="timeline-text">
+                Tech Stacks: React.js, MySQL, Full-Stack Development, UI/UX Design, Process Automation
+                  <br>- Developed a full-stack inward/outward register app with React and MySQL
+                  <br>- Digitized record management, improving efficiency by 40%
+                  <br>- Deployed system improving transparency and accuracy of records
+              </p>
+            </li>
+
+          </ol>
+        </section>
+
+        <section class="skill">
+          <h3 class="h3 skills-title">My skills</h3>
+          <div class="skills-grid">
+
+                <!-- Programming Languages -->
+                <div class="skill-category">
+                  <div class="category-header">
+                    <div class="category-icon">💻</div>
+                    <h4 class="category-title">Programming Languages</h4>
+                  </div>
+                  <div class="skills-tags">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">SQL (Postgres)</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">Go</span>
+                    <span class="skill-tag">Rust</span>
+                  </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="skill-category">
+                  <div class="category-header">
+                    <div class="category-icon">⚡</div>
+                    <h4 class="category-title">Frameworks</h4>
+                  </div>
+                  <div class="skills-tags">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">JUnit</span>
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">Streamlit</span>
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">BERT</span>
+                  </div>
+                </div>
+
+                <!-- Developer Tools -->
+                <div class="skill-category">
+                  <div class="category-header">
+                    <div class="category-icon">🛠️</div>
+                    <h4 class="category-title">Developer Tools</h4>
+                  </div>
+                  <div class="skills-tags">
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">Google Cloud Platform</span>
+                    <span class="skill-tag">SonarQube</span>
+                    <span class="skill-tag">Postman</span>
+                    <span class="skill-tag">JFrog</span>
+                    <span class="skill-tag">Polarion</span>
+                    <span class="skill-tag">Jenkins</span>
+                    <span class="skill-tag">ArgoCD</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Unix</span>
+                    <span class="skill-tag">Bash</span>
+                    <span class="skill-tag">TensorFlow</span>
+                  </div>
+                </div>
+
+                <!-- Libraries -->
+                <div class="skill-category">
+                  <div class="category-header">
+                    <div class="category-icon">📚</div>
+                    <h4 class="category-title">Libraries</h4>
+                  </div>
+                  <div class="skills-tags">
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">scikit-learn</span>
+                    <span class="skill-tag">pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">matplotlib</span>
+                    <span class="skill-tag">HuggingFace</span>
+                    <span class="skill-tag">OpenAI</span>
+                    <span class="skill-tag">LangChain</span>
+                    <span class="skill-tag">Pydantic</span>
+                    <span class="skill-tag">spaCy</span>
+                  </div>
+                </div>
+              </div>
+
+        </section>
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <!-- <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Applications</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web development</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web design</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Applications</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web development</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Finance</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Orizon</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Fundo</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Brawlhalla</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
+                </figure>
+
+                <h3 class="project-title">DSM.</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">MetaSpark</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Summary</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Task Manager</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Arrival</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article> -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="project-list">
+
+            <!-- Spendora Project -->
+            <li class="project-item active">
+              <div class="project-content">
+                <div class="project-header">
+                  <h3 class="project-title">Spendora - Conversational AI for Expense Insights</h3>
+                  <span class="project-date">Jun 2025</span>
+                </div>
+                
+                <div class="project-tech">
+                  <span class="tech-tag">HuggingFace</span>
+                  <span class="tech-tag">LangChain</span>
+                  <span class="tech-tag">Mistral</span>
+                  <span class="tech-tag">Gemma</span>
+                </div>
+
+                <ul class="project-details">
+                  <li>Developed LLM-powered finance assistant with LangChain</li>
+                  <li>Implemented RAG with custom toolchains for financial data</li>
+                  <li>Deployed conversational agents with memory and tool use for spending analysis</li>
+                </ul>
+              </div>
+            </li>
+
+            <!-- News Headline Classification -->
+            <li class="project-item active">
+              <div class="project-content">
+                <div class="project-header">
+                  <h3 class="project-title">News Headline Classification</h3>
+                  <span class="project-date">Mar 2025</span>
+                </div>
+                
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">PyTorch</span>
+                  <span class="tech-tag">spaCy</span>
+                </div>
+
+                <ul class="project-details">
+                  <li>Built LSTM-based deep learning model on 400K+ headlines</li>
+                  <li>Achieved 93.28% accuracy outperforming baseline models</li>
+                  <li>Optimized preprocessing and training pipeline improving efficiency by 25%</li>
+                </ul>
+              </div>
+            </li>
+
+            <!-- Media Recommender -->
+            <li class="project-item active">
+              <div class="project-content">
+                <div class="project-header">
+                  <h3 class="project-title">Media Recommender</h3>
+                  <span class="project-date">Mar 2022</span>
+                </div>
+                
+                <div class="project-meta">
+                  <span class="project-publication">Published Paper ID: IJRASET42927</span>
+                </div>
+
+                <div class="project-tech">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Flask</span>
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Spotify API</span>
+                </div>
+
+                <ul class="project-details">
+                  <li>Developed personalized recommendation system for media</li>
+                  <li>Implemented multiple algorithms: content-based, collaborative, K-means, TF-IDF</li>
+                  <li>Delivered relevant recommendations across movies, music, and books</li>
+                </ul>
+              </div>
+            </li>
+
+            <!-- SoundScape -->
+            <li class="project-item active">
+              <div class="project-content">
+                <div class="project-header">
+                  <h3 class="project-title">SoundScape: Android Music App</h3>
+                  <span class="project-date">Dec 2021</span>
+                </div>
+                
+                <div class="project-tech">
+                  <span class="tech-tag">Android SDK</span>
+                  <span class="tech-tag">Java</span>
+                  <span class="tech-tag">REST APIs</span>
+                  <span class="tech-tag">MediaPlayer</span>
+                  <span class="tech-tag">Gradle</span>
+                  <span class="tech-tag">Git</span>
+                </div>
+
+                <ul class="project-details">
+                  <li>Developed end-to-end Android music streaming app</li>
+                  <li>Integrated Musixmatch API with Room caching, reducing API calls by 70%</li>
+                  <li>Implemented microservices for playback, notifications, and file operations</li>
+                </ul>
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198305.51865910418!2d-84.5828458392182!3d39.14170367375266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884051061c16198f%3A0xc665147558661647!2sCincinnati%2C%20OH%2C%20USA!5e0!3m2!1sen!2sde!4v1696422709212!5m2!1sen!2sde"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

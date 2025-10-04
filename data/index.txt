@@ -1,0 +1,222 @@
+<experiences>
+
+**<Experience 1>
+Role:** Software Engineer Associate
+**Company:** Siemens Industry Software
+**Duration:** July 2022 - July 2024
+Skills: AWS, Ansible, GitLab CI/CD, Shell, Kubernetes, ArgoCD
+Location: Pune, MH, India
+
+**Additional Experience and Skills**
+•	**Agile Development:** Worked in sprints and conducted fortnightly iteration reviews.
+•	**Leadership & Mentorship:** Guided junior team members, assigned tasks, and maintained project progress through standardized processes.
+•	**Collaboration & Communication:** Actively engaged with cross-functional teams to resolve blockers and deliver optimized solutions.
+•	**Technical Tools & Technologies:**
+•	**Languages & Frameworks:** Python, Ruby, Boto3, Ansible.
+•	**Cloud & DevOps:** AWS (EC2, RDS, EFS), Ansible Tower, Kubernetes, GitLab CI/CD, Hashicorp Vault.
+•	**Utilities:** Postman, JFrog, SAM User Management, Helm Charts, ArgoCD.
+
+Resume Points:
+• Python (Boto3)-driven automation of AWS infrastructure workflows, reducing manual intervention by 30% by replacing older Ruby scripts for environment provisioning.
+• Made reusable Python packages for patch management that enhanced deployment effectiveness by 40% in a high-pressure Agile development environment.
+• Led Blue-Green deployment strategy deployment with Ansible, minimizing downtime during upgrades by 50% and enabling secure, trustworthy rollbacks.
+• Onboarded and mentored 5 junior engineers by creating detailed documentation and training resources, showcasing strong communication, leadership, and team collaboration.
+• Worked as a Quality Coach and SonarQube Specialist, increasing the code coverage by 200% through test automation and continuous integration with detail-focused and quality-centric thinking.
+• Deployed 44 production upgrades in under 4 months with zero critical downtime, applying strong problem-solving skills for real-time bash debugging, troubleshooting, and hotfix deployment.
+
+**</Experience 1>**
+
+**<Experience 2> 
+Role:** Software Engineer Intern
+**Company:** Siemens Industry Software
+**Duration:** July 2022 - July 2024
+Skills: AWS, Terraform, Ansible, Terratest, Go 
+Location: Pune, MH, India
+
+Key Projects and Contributions:
+- Internship at Siemens Cloud ART Department, March 2022 onwards
+- Mentored by Govindu Sastry, Cloud Architect
+- Tasks included:
+    - Learning AWS basics through Coursera course
+    - Gained proficiency in EC2, VPC, Security Groups, RDS, EFS, ECS, EKS
+    - Implemented Terraform for AWS infrastructure provisioning
+    - Created Terraform script meeting specific requirements, including Security Groups per region
+    - Acquired knowledge of Siemens Teamcenter X Product architecture
+    - Executed Terragrunt tests on Terraform code
+    - Learned importance of test cases in software development
+    - Studied Ansible and utilized ansible-playbook to install required packages on local machine
+    - Ran Terraform code with Terragrunt tests on virtual machine in VirtualBox
+    - Developed skills in cloud architecture, infrastructure as code, and configuration management
+    - Enhanced understanding of DevOps practices and tools
+
+Resume Points:
+• Immersed in an intensive learning experience, significantly enhancing skills in AWS, Terraform, Go, and Ansible.
+• Successfully implemented Terraform scripts to automate the deployment of EC2 instances, reducing manual effort by 30%.
+• Developed a robust testing framework for a complex AWS architecture using Go and Terratest.
+• Immersed in an intensive learning experience, significantly enhancing skills in AWS, Terraform, Go, and Ansible.
+• Successfully implemented Terraform scripts to automate the deployment of EC2 instances, reducing manual effort by 30%.
+• Developed a robust testing framework for a complex AWS architecture using Go and Terratest.
+
+</experience 2>
+
+**<Experience 3>
+Role:** Student Intern
+**Company: Government of Maharashtra**
+**Duration:** September 2021 - December 2021
+Skills/ Tech Stack: Java Springboot
+Location: Pune, MH, India
+
+*Water Resource Department, Government of Maharashtra
+09/21/2021-12/21/2021
+Student Intern
+10 Hrs/Week*
+
+• Developed a full-stack inward/outward register app with React and MySQL, replacing manual processes.
+• Digitized record management, improving office efficiency by 40% and reducing document processing time from days to hours.
+• Deployed system adopted by the department, improving transparency and accuracy of records.
+
+</experience 3>
+
+</experience>
+
+---
+
+<Projects>
+
+<project 1>
+
+1. Media Recommendation System
+
+Tech Stack: HTML/CSS, Javascript, React, Pandas, Scikit-learn 
+
+Date: March 2022
+
+Details:
+• Developed a personalized media recommendation system for movies, music, and books using HTML, CSS, React.
+• Implemented a range of recommendation algorithms: including content-based and collaborative filtering, cosine similarity, Pearson correlation, K-means clustering, and TF-IDF vectorization to deliver highly relevant and personalized recommendations.
+• Paper published at IJRASET publication with paper ID-IJRASET42927.
+</project 1>
+
+<project 2>
+
+1. Spendora - Conversational AI for Expense Insights
+
+Tech Stack: HuggingFace, LangChain, Mistral, Gemma 
+
+Date: June 2025
+
+Details:
+• Developed an LLM-powered personal finance assistant using LangChain to interpret natural language queries and generate personalized expense insights.
+• Integrated retrieval-augmented generation (RAG) and custom toolchains to enable dynamic interaction with structured financial data.Deployed conversational agents with memory, tool use, and context awareness to analyze user transactions, trends, and budgeting patterns.
+
+</project 2>
+
+<project 3>
+
+1. News Headline Classification
+
+Tech Stack: Python, PyTorch, Spacy 
+
+Date: June 2026
+
+Details:
+• Trained and constructed an LSTM-based deep learning model on 400K+ news headlines from the UCI dataset to
+classify articles into 4 categories (Business, Tech, Entertainment, Health
+• Achieved 93.28% test accuracy, outperforming baseline models and having great generalization on actual NLP
+tasks.
+• Streamlined Pytorch-based data preprocessing and model training pipeline to improve model efficiency and reduce
+training time by 25%.
+
+</project 3>
+
+<project 4>
+SoundScape: Android Music App
+Tech Stack: Android SDK, Java, REST APIs, MediaPlayer, Gradle, Git
+Date: Dec 2021
+• Architected and developed end-to-end Android music streaming application with client-side Java implementation, RESTful API
+integration, and local database management serving 100% offline functionality
+• Developed scalable data pipeline integrating Musixmatch REST API for lyrics retrieval with Room database caching layer,
+reducing API calls by 70% and ensuring offline experience
+• Implemented microservices architecture using Android background se
+</project 4>
+
+</project>
+
+<extra curricular>
+
+<extra curricular 1>
+
+Date: April 2021 - May 2021
+
+- Worked as a server in a restaurant in India for 2 months
+
+</extra curricular 1>
+
+<extra curricular 2>
+
+Date: March 2023
+
+- I have earned the SAFe® Practitioner 5.1 certification.
+
+</extra curricular 2>
+
+<extra curricular 3>
+
+Date: May 2022
+
+- Bhuskute, T., Jeve, A., Shah, N., Shah, T., & Patil, B. A. (2022). MediaRec: A Hybrid Media Recommender System. In
+International Journal for Research in Applied Science and Engineering Technology (Vol. 10, Issue 5, pp. 2723–2728).
+International Journal for Research in Applied Science and Engineering Technology (IJRASET).
+https://doi.org/10.22214/ijraset.2022.42927.
+
+</extra curricular 3>
+
+<extra curricular 4>
+
+Date: 2021 Sep - 2021 Dec
+
+- Software Developer Intern/ Water Resource Department, GOM
+• Tasked to make a digital inward register application for the Pune Office.
+• Used Java Swing Framework to build the application along with MYSQL DATABASE.
+• Replaced the physical inward register with the digital software which improved efficiency and productivity of the people in the government offices.
+
+</extra curricular 4>
+
+<extra curricular 5>
+
+Date: 2019 Sep
+
+- Hide-n-CK/Engineering Today 2k19
+• Organizing Committee Member of this Technical event in Engineering Today 2k19, AISSMSCOE consisting 150+ competitors debugging to capture the flag.
+    - Arranged Lunch for the competitors.
+
+</extra curricular 5>
+
+<extra curricular 6>
+
+Date: 2018 SEP
+
+- Quizomania/Engineering Today 2k18
+• Hosted this Technical Event in Engineering Today2k18, AISSMSCOE consisting of 100+ participants to give Quiz. It was a 2 day event.
+
+</extra curricular 6>
+
+<extra curricular 7>
+
+Date: 2019 Aug
+
+- (Kolhapur Floods) Flood Relief Volunteer/National Service Scheme (NSS)
+• Serviced in 4 Days Special Flood Relief Camp in Kolhapur during the 2019 floods.
+• Helped flood victims in a nearby village (Prayag-Chikhali) in a school clean-up.
+
+</extra curricular 7>
+
+<extra curricular 8>
+
+Date: 2023 June - 2023 Feb
+
+- Taught 11th grade and 12th grade maths during my undergrad years. Tutored 5 students.
+
+</extra curricular 8>
+
+</extra curricular>
