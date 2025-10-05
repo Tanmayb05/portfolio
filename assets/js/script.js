@@ -163,6 +163,7 @@ document.querySelectorAll('.article-title').forEach(function(title) {
 
 // Sound state management
 let isMuted = localStorage.getItem('soundMuted') === 'true';
+let audioUnlocked = false;
 
 // Initialize different sounds for different interactions
 const sectionSound = new Audio('./assets/sounds/click_spacey.wav');
@@ -179,6 +180,29 @@ generalSound.volume = 0.3;
 
 const scrollSound = new Audio('./assets/sounds/scroll_mouse_wheel_trimmed.wav');
 scrollSound.volume = 0.2;
+
+// Unlock audio on first user interaction
+function unlockAudio() {
+  if (audioUnlocked) return;
+
+  // Play and immediately pause all sounds to unlock them
+  const sounds = [sectionSound, skillSound, sidebarSound, generalSound, scrollSound];
+  sounds.forEach(function(sound) {
+    sound.play().then(function() {
+      sound.pause();
+      sound.currentTime = 0;
+    }).catch(function() {
+      // Silent fail
+    });
+  });
+
+  audioUnlocked = true;
+}
+
+// Add listeners to unlock audio on first interaction
+document.addEventListener('click', unlockAudio, { once: true });
+document.addEventListener('touchstart', unlockAudio, { once: true });
+document.addEventListener('keydown', unlockAudio, { once: true });
 
 // Function to play sound
 function playSound(audio) {
@@ -349,6 +373,36 @@ document.querySelectorAll('.about-text p').forEach(function(paragraph) {
 
   paragraph.addEventListener('mouseleave', function() {
     soundPlayed = false;
+  });
+});
+
+// Highlight words in experience achievements - trigger on list item hover (Skill Sound - Glass)
+document.querySelectorAll('.timeline-achievements li').forEach(function(listItem) {
+  let soundPlayed = false;
+
+  listItem.addEventListener('mouseenter', function() {
+    if (!soundPlayed && this.querySelector('.highlight-word')) {
+      playSound(skillSound);
+      soundPlayed = true;
+    }
+  });
+
+  listItem.addEventListener('mouseleave', function() {
+    soundPlayed = false;
+  });
+});
+
+// Coursework tag hovers (Skill Sound - Glass)
+document.querySelectorAll('.coursework-tag').forEach(function(tag) {
+  tag.addEventListener('mouseenter', function() {
+    playSound(skillSound);
+  });
+});
+
+// Tech stack tag hovers (Skill Sound - Glass)
+document.querySelectorAll('.tech-stack-tag').forEach(function(tag) {
+  tag.addEventListener('mouseenter', function() {
+    playSound(skillSound);
   });
 });
 

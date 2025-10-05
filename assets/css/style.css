@@ -376,7 +376,7 @@ main {
   transition: filter 0.3s ease;
 }
 
-.avatar-box:hover {
+.sidebar:hover .avatar-box {
   filter: hue-rotate(0deg);
   animation: rainbow-rotate 2s linear infinite;
 }
@@ -396,7 +396,7 @@ main {
   cursor: pointer;
 }
 
-.info-content .name:hover {
+.sidebar:hover .info-content .name {
   background: linear-gradient(90deg,
     #ff0000, #ff7f00, #ffff00, #00ff00,
     #0000ff, #4b0082, #9400d3, #ff0000);
@@ -427,10 +427,10 @@ main {
   top: -15px;
   right: -15px;
   border-radius: 0 15px;
-  font-size: 13px;
+  font-size: 24px;
   color: var(--orange-yellow-crayola);
   background: var(--border-gradient-onyx);
-  padding: 10px;
+  padding: 15px;
   box-shadow: var(--shadow-2);
   transition: var(--transition-1);
   z-index: 1;
@@ -489,6 +489,7 @@ main {
 .contact-info {
   max-width: calc(100% - 46px);
   width: calc(100% - 46px);
+  overflow: visible;
 }
 
 .contact-title {
@@ -503,6 +504,34 @@ main {
   font-size: var(--fs-7);
 }
 
+.contact-link.copyable {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.contact-link.copyable:hover {
+  color: var(--orange-yellow-crayola);
+}
+
+.copy-icon {
+  font-size: 14px;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.contact-link.copyable:hover .copy-icon {
+  opacity: 1;
+  transform: scale(1.1);
+  color: var(--orange-yellow-crayola);
+}
+
 .contact-info address { font-style: normal; }
 
 .social-list {
@@ -512,12 +541,13 @@ main {
   gap: 15px;
   padding-bottom: 4px;
   padding-left: 7px;
+  flex-wrap: wrap;
 }
 
 .social-item .social-link {
   color: var(--light-gray-70);
-  font-size: 18px;
-  padding: 8px;
+  font-size: 22px;
+  padding: 10px;
   border-radius: 8px;
   display: inline-block;
   transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
@@ -607,7 +637,22 @@ main {
   display: inline;
 }
 
+/* About me section: words are already colored */
+.about-text .highlight-word {
+  color: var(--orange-yellow-crayola);
+}
+
+/* About me section: bold and glow on paragraph hover */
 .about-text p:hover .highlight-word {
+  font-weight: var(--fw-600);
+  text-shadow:
+    0 0 15px hsla(45, 100%, 72%, 0.6),
+    0 0 30px hsla(45, 100%, 72%, 0.4),
+    0 0 45px hsla(45, 100%, 72%, 0.2);
+}
+
+/* Experience section: only glow on list item hover */
+.timeline-achievements li:hover .highlight-word {
   font-weight: var(--fw-600);
   color: var(--orange-yellow-crayola);
   text-shadow:
@@ -943,6 +988,71 @@ main {
   color: var(--light-gray);
   font-weight: var(--fw-300);
   line-height: 1.6;
+}
+
+
+/**
+ * #TIMELINE COURSEWORK & TECH STACK CARDS
+ */
+
+.timeline-coursework,
+.timeline-tech-stack {
+  margin-top: 12px;
+}
+
+.coursework-label,
+.tech-stack-label {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.coursework-tags,
+.tech-stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.coursework-tag,
+.tech-stack-tag {
+  background: var(--onyx);
+  color: var(--light-gray);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-400);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--jet);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.coursework-tag:hover,
+.tech-stack-tag:hover {
+  background: var(--jet);
+  color: var(--orange-yellow-crayola);
+  border-color: var(--orange-yellow-crayola);
+  transform: translateY(-2px);
+}
+
+.timeline-achievements {
+  margin-top: 12px;
+  padding-left: 20px;
+}
+
+.timeline-achievements li {
+  color: var(--light-gray);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  margin-bottom: 8px;
+  list-style-type: disc;
+}
+
+.timeline-achievements li:last-child {
+  margin-bottom: 0;
 }
 
 
@@ -1761,12 +1871,14 @@ textarea.form-input::-webkit-resizer { display: none; }
   .info_more-btn {
     top: -30px;
     right: -30px;
-    padding: 10px 15px;
+    padding: 12px 18px;
+    font-size: 28px;
   }
 
   .info_more-btn span {
     display: block;
-    font-size: var(--fs-8);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-500);
   }
 
   .info_more-btn ion-icon { display: none; }
@@ -2279,6 +2391,19 @@ textarea.form-input::-webkit-resizer { display: none; }
     .mute-toggle ion-icon {
       font-size: 30px;
     }
+
+    .social-list {
+      justify-content: center;
+      gap: 18px;
+      padding: 10px 0;
+    }
+
+    .social-item .social-link {
+      font-size: 26px;
+      padding: 12px;
+      background: var(--onyx);
+      border: 1px solid var(--jet);
+    }
   }
 
 
@@ -2349,9 +2474,11 @@ textarea.form-input::-webkit-resizer { display: none; }
   .contacts-list { grid-template-columns: 1fr; }
 
   .contact-info :is(.contact-link) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow: visible;
+  }
+
+  .contact-link.copyable {
+    flex-wrap: wrap;
   }
 
   .contact-info :is(.contact-link, time, address) {

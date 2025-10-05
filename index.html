@@ -63,7 +63,10 @@
             </div>
             <div class="contact-info">
               <p class="contact-title">Gmail</p>
-              <a href="mailto:tanmay.v.bhuskute@gmail.com" class="contact-link" onclick="copyToClipboard('tanmay.v.bhuskute@gmail.com'); return true;">tanmay.v.bhuskute</a>
+              <a href="mailto:tanmay.v.bhuskute@gmail.com" class="contact-link copyable" onclick="copyToClipboard('tanmay.v.bhuskute@gmail.com'); return true;">
+                tanmay.v.bhuskute
+                <ion-icon name="copy-outline" class="copy-icon"></ion-icon>
+              </a>
             </div>
           </li>
 
@@ -73,7 +76,10 @@
             </div>
             <div class="contact-info">
               <p class="contact-title">Phone</p>
-              <a href="tel:+17328583027" class="contact-link" onclick="copyToClipboard('+17328583027'); return true;">+1 (732) 858-3027</a>
+              <a href="tel:+17328583027" class="contact-link copyable" onclick="copyToClipboard('+17328583027'); return true;">
+                +1 (732) 858-3027
+                <ion-icon name="copy-outline" class="copy-icon"></ion-icon>
+              </a>
             </div>
           </li>
 
@@ -115,8 +121,14 @@
           </li>
 
           <li class="social-item">
+            <a href="https://leetcode.com/u/ECNTqKj6zs/" class="social-link" target="_blank" title="Tanmay's LeetCode" aria-label="Tanmay's LeetCode">
+              <ion-icon name="code-slash-outline" title="Tanmay's LeetCode"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
             <a href="https://github.com/Tanmayb05/portfolio/blob/c8122219102376e4890b38271ee0c1d51ae2c079/data/resume.pdf" class="social-link" target="_blank" title="Tanmay's Resume" aria-label="Tanmay's Resume">
-              <ion-icon name="document-text-outline" title="Tanmay's Resume"></ion-icon>
+              <ion-icon name="document-attach-outline" title="Tanmay's Resume"></ion-icon>
             </a>
           </li>
 
@@ -371,19 +383,31 @@
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">University of Cincinnati - MSc in Computer Science</h4>
               <span>2024 — 2026</span>
-              <p class="timeline-text">
-                Coursework: Advanced Algorithms, Artificial Intelligence, Deep Learning, Intelligent Data Analysis, 
-                Database Theory, Distributed Operating System
-              </p>
+              <div class="timeline-coursework">
+                <p class="coursework-label">Coursework:</p>
+                <div class="coursework-tags">
+                  <span class="coursework-tag">Advanced Algorithms</span>
+                  <span class="coursework-tag">Artificial Intelligence</span>
+                  <span class="coursework-tag">Deep Learning</span>
+                  <span class="coursework-tag">Intelligent Data Analysis</span>
+                  <span class="coursework-tag">Database Theory</span>
+                  <span class="coursework-tag">Distributed Operating System</span>
+                </div>
+              </div>
             </li>
 
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">University of Pune - BEng in Computer Engineering</h4>
               <span>2018 — 2022</span>
-              <p class="timeline-text">
-                Coursework: Data Mining, Data Analytics, Machine Learning, 
-                Object-Oriented Programming
-              </p>
+              <div class="timeline-coursework">
+                <p class="coursework-label">Coursework:</p>
+                <div class="coursework-tags">
+                  <span class="coursework-tag">Data Mining</span>
+                  <span class="coursework-tag">Data Analytics</span>
+                  <span class="coursework-tag">Machine Learning</span>
+                  <span class="coursework-tag">Object-Oriented Programming</span>
+                </div>
+              </div>
             </li>
 
           </ol>
@@ -401,38 +425,69 @@
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Software Developer Engineer - Siemens Industry Software</h4>
               <span>Jul 2022 — Jun 2024</span>
-              <p class="timeline-text">
-                Tech Stacks: AWS, Python, Boto3, REST APIs, Hashicorp Vault, 
-                Ansible, GitLab CI/CD, Shell, Kubernetes, ArgoCD
-                <br>- Automated TCX cloud infrastructure patching and deployment across 44+ production AWS environments using Python, Boto3, Ansible Tower, and GitLab CI/CD pipelines, integrating Siemens DSS Vault APIs for secure artifact management and creating reusable packages deployed via JFrog repository.
-                <br>- Architected and implemented Blue-Green deployment strategy for zero-downtime TCX upgrades, achieving 50% downtime reduction through automated Ansible workflows while resolving critical challenges including RDS reconfiguration, SOLR index optimization, and Siemens Deploy Center integration across versions 7.x through 9.x.
-                <br>- Led containerization migration initiative from process-based to containerized TCX architecture using Kubernetes, ArgoCD, Helm Charts, and HashiCorp Vault, improving scalability and operational efficiency while gaining deep expertise in container orchestration, EFS configurations, and cloud-native infrastructure patterns.
-                <br>- Mentored cross-functional team of 5 engineers while coordinating with Operations and Development teams to debug production issues, develop comprehensive training materials, standardize development processes, and document technical workflows in Polarion—reducing onboarding time and ensuring successful production deployments.
-                <br>- Demonstrated full-stack DevOps expertise spanning Python/Ruby automation, AWS services (EC2, RDS, EFS), infrastructure-as-code (Ansible), container orchestration (Kubernetes), and Linux administration on RedHat systems, while working in Agile sprints and delivering end-to-end solutions from development through production deployment.
-              </p>
+              <div class="timeline-tech-stack">
+                <p class="tech-stack-label">Tech Stack:</p>
+                <div class="tech-stack-tags">
+                  <span class="tech-stack-tag">AWS</span>
+                  <span class="tech-stack-tag">Python</span>
+                  <span class="tech-stack-tag">Boto3</span>
+                  <span class="tech-stack-tag">REST APIs</span>
+                  <span class="tech-stack-tag">Hashicorp Vault</span>
+                  <span class="tech-stack-tag">Ansible</span>
+                  <span class="tech-stack-tag">GitLab CI/CD</span>
+                  <span class="tech-stack-tag">Shell</span>
+                  <span class="tech-stack-tag">Kubernetes</span>
+                  <span class="tech-stack-tag">ArgoCD</span>
+                </div>
+              </div>
+              <ul class="timeline-achievements">
+                <li>Automated <span class="highlight-word">TCX</span> <span class="highlight-word">cloud infrastructure patching</span> and <span class="highlight-word">deployment</span> across <span class="highlight-word">44+ production AWS environments</span> using Python, Boto3, Ansible Tower, and GitLab CI/CD pipelines, integrating Siemens DSS Vault APIs for secure artifact management and creating reusable packages deployed via JFrog repository.</li>
+                <li>Architected and implemented <span class="highlight-word">Blue-Green deployment</span> strategy for <span class="highlight-word">zero-downtime</span> <span class="highlight-word">TCX</span> upgrades, achieving <span class="highlight-word">50% downtime reduction</span> through automated Ansible workflows while resolving critical challenges including RDS reconfiguration, SOLR index optimization, and Siemens Deploy Center integration across <span class="highlight-word">TCX versions 7.x through 9.x</span>.</li>
+                <li>Led <span class="highlight-word">containerization migration</span> initiative from process-based to containerized <span class="highlight-word">TCX</span> architecture using Kubernetes, ArgoCD, Helm Charts, and HashiCorp Vault, improving scalability and operational efficiency while gaining deep expertise in <span class="highlight-word">container orchestration</span>, EFS configurations, and cloud-native infrastructure patterns.</li>
+                <li>Mentored cross-functional team of <span class="highlight-word">5 engineers</span> while coordinating with Operations and Development teams to debug production issues, develop comprehensive training materials, standardize development processes, and document technical workflows in Polarion—reducing onboarding time and ensuring successful production deployments.</li>
+                <li>Demonstrated full-stack <span class="highlight-word">DevOps</span> expertise spanning Python/Ruby automation, AWS services (EC2, RDS, EFS), <span class="highlight-word">infrastructure-as-code</span> (Ansible), <span class="highlight-word">container orchestration</span> (Kubernetes), and Linux administration on RedHat systems, while working in <span class="highlight-word">Agile sprints</span> and delivering end-to-end solutions from development through production deployment.</li>
+              </ul>
             </li>
 
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Software Developer Intern - Siemens Industry Software</h4>
               <span>Mar 2022 - Jun 2022</span>
-              <p class="timeline-text">
-                Tech Stacks: AWS, Terraform, Ansible, Terratest, Go
-                <br>- Automated provisioning of AWS resources with Terraform, reducing deployment time by 30%
-                <br>- Developed Go + Terratest framework, catching 95% of misconfigurations pre-production
-                <br>- Optimized DevOps workflows with Ansible, reducing environment setup time from hours to minutes
-                <br>- Enhanced infrastructure validation with Terragrunt ensuring 100% successful Terraform runs
-              </p>
+              <div class="timeline-tech-stack">
+                <p class="tech-stack-label">Tech Stack:</p>
+                <div class="tech-stack-tags">
+                  <span class="tech-stack-tag">AWS</span>
+                  <span class="tech-stack-tag">Terraform</span>
+                  <span class="tech-stack-tag">Ansible</span>
+                  <span class="tech-stack-tag">Terratest</span>
+                  <span class="tech-stack-tag">Go</span>
+                </div>
+              </div>
+              <ul class="timeline-achievements">
+                <li>Automated provisioning of AWS resources with Terraform, reducing deployment time by <span class="highlight-word">30%</span></li>
+                <li>Developed Go + Terratest framework, catching <span class="highlight-word">95% of misconfigurations</span> <span class="highlight-word">pre-production</span></li>
+                <li>Optimized <span class="highlight-word">DevOps workflows</span> with Ansible, reducing <span class="highlight-word">environment setup time</span> from <span class="highlight-word">hours to minutes</span></li>
+                <li>Enhanced <span class="highlight-word">infrastructure validation</span> with <span class="highlight-word">Terragrunt</span> ensuring <span class="highlight-word">100% successful Terraform runs</span></li>
+              </ul>
             </li>
 
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Software Developer Intern - Government of Maharashtra, Water Resource Department</h4>
               <span>Sep 2021 — Dec 2021</span>
-              <p class="timeline-text">
-                Tech Stacks: React.js, MySQL, Full-Stack Development, UI/UX Design, Process Automation
-                  <br>- Developed a full-stack inward/outward register app with React and MySQL
-                  <br>- Digitized record management, improving efficiency by 40%
-                  <br>- Deployed system improving transparency and accuracy of records
-              </p>
+              <div class="timeline-tech-stack">
+                <p class="tech-stack-label">Tech Stack:</p>
+                <div class="tech-stack-tags">
+                  <span class="tech-stack-tag">React.js</span>
+                  <span class="tech-stack-tag">MySQL</span>
+                  <span class="tech-stack-tag">Full-Stack Development</span>
+                  <span class="tech-stack-tag">UI/UX Design</span>
+                  <span class="tech-stack-tag">Process Automation</span>
+                </div>
+              </div>
+              <ul class="timeline-achievements">
+                <li>Developed a full-stack inward/outward register app with React and MySQL</li>
+                <li><span class="highlight-word">Digitized record management</span>, improving efficiency by <span class="highlight-word">40%</span></li>
+                <li>Deployed system improving <span class="highlight-word">transparency</span> and <span class="highlight-word">accuracy of records</span></li>
+              </ul>
             </li>
 
           </ol>
