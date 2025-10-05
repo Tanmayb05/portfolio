@@ -312,6 +312,20 @@ document.querySelectorAll('.service-item').forEach(function(item) {
   });
 });
 
+// Skill category clicks (General Sound)
+document.querySelectorAll('.skill-category').forEach(function(item) {
+  item.addEventListener('click', function() {
+    playSound(generalSound);
+  });
+});
+
+// Skill category hover (General Sound)
+document.querySelectorAll('.skill-category').forEach(function(item) {
+  item.addEventListener('mouseenter', function() {
+    playSound(generalSound);
+  });
+});
+
 // Project items hover (General Sound)
 document.querySelectorAll('.project-item').forEach(function(item) {
   item.addEventListener('mouseenter', function() {
@@ -372,48 +386,7 @@ document.querySelectorAll('.h3').forEach(function(heading) {
   typewriterObserver.observe(heading);
 });
 
-// Typewriter for About section paragraphs (sequential)
-const aboutParagraphs = document.querySelectorAll('.about-text p');
-let aboutTypingStarted = false;
-
-const aboutSectionObserver = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting && !aboutTypingStarted) {
-      aboutTypingStarted = true;
-
-      // Type paragraphs sequentially
-      function typeNextParagraph(index) {
-        if (index < aboutParagraphs.length) {
-          const paragraph = aboutParagraphs[index];
-          const originalText = paragraph.textContent;
-
-          // Make paragraph visible before typing
-          paragraph.classList.add('typing');
-
-          // Mark as typed
-          paragraph.setAttribute('data-typed', 'true');
-
-          // Start typewriter effect with faster speed for paragraphs
-          typeWriter(paragraph, originalText, 1, function() {
-            // After this paragraph is done, type the next one
-            typeNextParagraph(index + 1);
-          });
-        }
-      }
-
-      // Start with the first paragraph
-      typeNextParagraph(0);
-    }
-  });
-}, {
-  threshold: 0.3
-});
-
-// Observe the About section container
-const aboutSection = document.querySelector('.about-text');
-if (aboutSection) {
-  aboutSectionObserver.observe(aboutSection);
-}
+// Typewriter for About section paragraphs (sequential) - REMOVED
 
 // Typewriter for project details
 const projectDetailsObserver = new IntersectionObserver(function(entries) {
@@ -452,25 +425,4 @@ document.querySelectorAll('.project-details').forEach(function(details) {
   projectDetailsObserver.observe(details);
 });
 
-// Typewriter for timeline text (Education coursework & Experience details)
-const timelineTextObserver = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting && !entry.target.hasAttribute('data-typed')) {
-      const timelineText = entry.target;
-      const originalText = timelineText.textContent;
-
-      // Mark as typed
-      timelineText.setAttribute('data-typed', 'true');
-
-      // Start typewriter effect
-      typeWriter(timelineText, originalText, 3);
-    }
-  });
-}, {
-  threshold: 0.3
-});
-
-// Observe timeline text (coursework and experience details)
-document.querySelectorAll('.timeline-text').forEach(function(text) {
-  timelineTextObserver.observe(text);
-});
+// Typewriter for timeline text (Education coursework & Experience details) - REMOVED
