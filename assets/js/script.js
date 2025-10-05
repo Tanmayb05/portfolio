@@ -157,26 +157,164 @@ document.querySelectorAll('.article-title').forEach(function(title) {
 
 
 
-// Add click sound to all clickable elements
-const clickSound = new Audio('./assets/sounds/spacey_ui_click.wav');
-clickSound.volume = 0.3; // Set volume to 30% to avoid being too loud
+// ========================================
+// SOUND SYSTEM
+// ========================================
 
-// Function to play click sound
-function playClickSound() {
-  // Clone the audio to allow overlapping sounds
-  const sound = clickSound.cloneNode();
+// Sound state management
+let isMuted = localStorage.getItem('soundMuted') === 'true';
+
+// Initialize different sounds for different interactions
+const sectionSound = new Audio('./assets/sounds/click_spacey.wav');
+sectionSound.volume = 0.4;
+
+const skillSound = new Audio('./assets/sounds/click_glass.wav');
+skillSound.volume = 0.3;
+
+const sidebarSound = new Audio('./assets/sounds/click_button.wav');
+sidebarSound.volume = 0.35;
+
+const generalSound = new Audio('./assets/sounds/click_normal.wav');
+generalSound.volume = 0.3;
+
+// Function to play sound
+function playSound(audio) {
+  if (isMuted) return;
+
+  const sound = audio.cloneNode();
+  sound.volume = audio.volume;
   sound.play().catch(function(error) {
-    // Ignore errors from autoplay restrictions
     console.log('Audio play prevented:', error);
   });
 }
 
-// Add click sound to all interactive elements
-document.addEventListener('click', function(event) {
-  const target = event.target;
-  const clickableElement = target.closest('button, a, .contact-item, .service-item, .project-item, .navbar-link, .social-link, input[type="submit"]');
+// Mute toggle button functionality
+const muteToggle = document.getElementById('mute-toggle');
+const muteIcon = muteToggle.querySelector('ion-icon');
 
-  if (clickableElement) {
-    playClickSound();
+// Set initial state
+function updateMuteButton() {
+  if (isMuted) {
+    muteToggle.classList.add('muted');
+    muteIcon.setAttribute('name', 'volume-mute-outline');
+  } else {
+    muteToggle.classList.remove('muted');
+    muteIcon.setAttribute('name', 'volume-high-outline');
   }
+}
+
+updateMuteButton();
+
+// Toggle mute on button click
+muteToggle.addEventListener('click', function(event) {
+  event.stopPropagation(); // Prevent triggering general click sound
+  isMuted = !isMuted;
+  localStorage.setItem('soundMuted', isMuted);
+  updateMuteButton();
+
+  // Play sound as feedback when unmuting
+  if (!isMuted) {
+    playSound(sectionSound);
+  }
+});
+
+// ========================================
+// SOUND TRIGGERS
+// ========================================
+
+// Navigation button clicks (Section Sound - Spacey)
+for (let i = 0; i < navigationLinks.length; i++) {
+  navigationLinks[i].addEventListener('click', function() {
+    playSound(sectionSound);
+  });
+}
+
+// Sidebar toggle (Sidebar Sound - Button)
+sidebarBtn.addEventListener('click', function() {
+  playSound(sidebarSound);
+});
+
+// Modal open/close (General Sound)
+for (let i = 0; i < testimonialsItem.length; i++) {
+  testimonialsItem[i].addEventListener('click', function() {
+    playSound(generalSound);
+  });
+}
+
+modalCloseBtn.addEventListener('click', function() {
+  playSound(generalSound);
+});
+
+overlay.addEventListener('click', function() {
+  playSound(generalSound);
+});
+
+// Skill tag hovers (Skill Sound - Glass)
+document.querySelectorAll('.skill-tag').forEach(function(tag) {
+  tag.addEventListener('mouseenter', function() {
+    playSound(skillSound);
+  });
+});
+
+// Tech tag hovers (Skill Sound - Glass)
+document.querySelectorAll('.tech-tag').forEach(function(tag) {
+  tag.addEventListener('mouseenter', function() {
+    playSound(skillSound);
+  });
+});
+
+// Project card clicks (General Sound)
+document.querySelectorAll('.project-item').forEach(function(item) {
+  item.addEventListener('click', function() {
+    playSound(generalSound);
+  });
+});
+
+// Service item clicks (General Sound)
+document.querySelectorAll('.service-item').forEach(function(item) {
+  item.addEventListener('click', function() {
+    playSound(generalSound);
+  });
+});
+
+// Social links (Sidebar Sound - Button)
+document.querySelectorAll('.social-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    playSound(sidebarSound);
+  });
+});
+
+// Contact items (Sidebar Sound - Button)
+document.querySelectorAll('.contact-item a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    playSound(sidebarSound);
+  });
+});
+
+// Contact items hover (Sidebar Sound - Button)
+document.querySelectorAll('.contact-item').forEach(function(item) {
+  item.addEventListener('mouseenter', function() {
+    playSound(sidebarSound);
+  });
+});
+
+// Social links hover (Sidebar Sound - Button)
+document.querySelectorAll('.social-item').forEach(function(item) {
+  item.addEventListener('mouseenter', function() {
+    playSound(sidebarSound);
+  });
+});
+
+// Service items hover (General Sound)
+document.querySelectorAll('.service-item').forEach(function(item) {
+  item.addEventListener('mouseenter', function() {
+    playSound(generalSound);
+  });
+});
+
+// Project items hover (General Sound)
+document.querySelectorAll('.project-item').forEach(function(item) {
+  item.addEventListener('mouseenter', function() {
+    playSound(generalSound);
+  });
 });

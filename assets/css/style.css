@@ -548,15 +548,19 @@ main {
 
 .navbar-link {
   color: var(--light-gray);
-  font-size: var(--fs-8);
-  padding: 20px 7px;
+  font-size: 16px;
+  padding: 20px 12px;
   transition: color var(--transition-1);
+  font-weight: var(--fw-500);
 }
 
 .navbar-link:hover,
 .navbar-link:focus { color: var(--light-gray-70); }
 
-.navbar-link.active { color: var(--orange-yellow-crayola); }
+.navbar-link.active {
+  color: var(--orange-yellow-crayola);
+  font-weight: var(--fw-600);
+}
 
 
 
@@ -1742,7 +1746,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .navbar-list { gap: 20px; }
 
-  .navbar-link { --fs-8: 14px; }
+  .navbar-link {
+    font-size: 17px;
+    padding: 22px 15px;
+  }
 
 
 
@@ -1941,7 +1948,10 @@ textarea.form-input::-webkit-resizer { display: none; }
    * NAVBAR
    */
 
-  .navbar-link { --fs-8: 15px; }
+  .navbar-link {
+    font-size: 18px;
+    padding: 24px 18px;
+  }
 
 
 
@@ -2150,6 +2160,54 @@ textarea.form-input::-webkit-resizer { display: none; }
   body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
 
   body::-webkit-scrollbar-button { height: 60px; }
+
+
+
+  /**
+   * MUTE TOGGLE BUTTON
+   */
+
+  .mute-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: var(--border-gradient-onyx);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-2);
+  }
+
+  .mute-toggle::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-gradient-jet);
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .mute-toggle ion-icon {
+    font-size: 28px;
+    color: var(--orange-yellow-crayola);
+    --ionicon-stroke-width: 45px;
+  }
+
+  .mute-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px hsla(45, 100%, 72%, 0.2);
+  }
+
+  .mute-toggle.muted ion-icon {
+    color: var(--light-gray-70);
+  }
 
 
 
