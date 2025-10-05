@@ -220,23 +220,29 @@ function playSound(audio) {
 
 // Mute toggle button functionality
 const muteToggle = document.getElementById('mute-toggle');
+const muteToggleMobile = document.getElementById('mute-toggle-mobile');
 const muteIcon = muteToggle.querySelector('ion-icon');
+const muteIconMobile = muteToggleMobile.querySelector('ion-icon');
 
 // Set initial state
 function updateMuteButton() {
   if (isMuted) {
     muteToggle.classList.add('muted');
+    muteToggleMobile.classList.add('muted');
     muteIcon.setAttribute('name', 'volume-mute-outline');
+    muteIconMobile.setAttribute('name', 'volume-mute-outline');
   } else {
     muteToggle.classList.remove('muted');
+    muteToggleMobile.classList.remove('muted');
     muteIcon.setAttribute('name', 'volume-high-outline');
+    muteIconMobile.setAttribute('name', 'volume-high-outline');
   }
 }
 
 updateMuteButton();
 
-// Toggle mute on button click
-muteToggle.addEventListener('click', function(event) {
+// Toggle mute function
+function toggleMute(event) {
   event.stopPropagation(); // Prevent triggering general click sound
   isMuted = !isMuted;
   localStorage.setItem('soundMuted', isMuted);
@@ -246,7 +252,11 @@ muteToggle.addEventListener('click', function(event) {
   if (!isMuted) {
     playSound(sectionSound);
   }
-});
+}
+
+// Add event listeners to both buttons
+muteToggle.addEventListener('click', toggleMute);
+muteToggleMobile.addEventListener('click', toggleMute);
 
 // ========================================
 // SOUND TRIGGERS
@@ -528,6 +538,9 @@ const scrollThreshold = isMobile ? 800 : 150; // Minimum scroll distance (pixels
 const scrollThrottle = isMobile ? 500 : 200; // Minimum time between scroll sounds in milliseconds
 
 window.addEventListener('scroll', function() {
+  // Skip scroll sound entirely on mobile devices
+  if (isMobile) return;
+
   const now = Date.now();
   const currentScrollPosition = window.scrollY;
   const scrollDelta = Math.abs(currentScrollPosition - lastScrollPosition);
@@ -538,12 +551,7 @@ window.addEventListener('scroll', function() {
 
   // Only play sound if accumulated scroll distance exceeds threshold AND enough time has passed
   if (scrollAccumulator >= scrollThreshold && now - lastScrollTime > scrollThrottle) {
-    // Use different sound for mobile vs desktop
-    if (isMobile) {
-      playSound(mobileScrollSound);
-    } else {
-      playSound(scrollSound);
-    }
+    playSound(scrollSound);
     scrollAccumulator = 0; // Reset accumulator
     lastScrollTime = now;
   }
@@ -552,5 +560,5 @@ window.addEventListener('scroll', function() {
   clearTimeout(window.scrollResetTimeout);
   window.scrollResetTimeout = setTimeout(function() {
     scrollAccumulator = 0;
-  }, isMobile ? 500 : 300); // Longer timeout for mobile
+  }, 300);
 }, { passive: true });
