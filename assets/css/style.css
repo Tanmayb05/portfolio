@@ -360,7 +360,30 @@ main {
   transition: var(--transition-2);
 }
 
-.sidebar.active { max-height: 405px; }
+.sidebar.active {
+  max-height: 85vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar for sidebar on mobile */
+.sidebar.active::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar.active::-webkit-scrollbar-track {
+  background: var(--onyx);
+  border-radius: 3px;
+}
+
+.sidebar.active::-webkit-scrollbar-thumb {
+  background: var(--orange-yellow-crayola);
+  border-radius: 3px;
+}
+
+.sidebar.active::-webkit-scrollbar-thumb:hover {
+  background: var(--vegas-gold);
+}
 
 .sidebar-info {
   position: relative;

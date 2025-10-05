@@ -515,7 +515,12 @@ document.querySelectorAll('.project-details').forEach(function(details) {
 let lastScrollPosition = 0;
 let scrollAccumulator = 0;
 let lastScrollTime = 0;
-const scrollThreshold = 150; // Minimum scroll distance (pixels) to trigger sound
+
+// Detect if device is mobile
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+
+// Adjust threshold based on device (4x higher for mobile)
+const scrollThreshold = isMobile ? 600 : 150; // Minimum scroll distance (pixels) to trigger sound
 const scrollThrottle = 200; // Minimum time between scroll sounds in milliseconds
 
 window.addEventListener('scroll', function() {
