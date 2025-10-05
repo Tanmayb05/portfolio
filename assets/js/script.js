@@ -177,6 +177,9 @@ sidebarSound.volume = 0.35;
 const generalSound = new Audio('./assets/sounds/click_normal.wav');
 generalSound.volume = 0.3;
 
+const scrollSound = new Audio('./assets/sounds/scroll_mouse_wheel_trimmed.wav');
+scrollSound.volume = 0.2;
+
 // Function to play sound
 function playSound(audio) {
   if (isMuted) return;
@@ -333,6 +336,22 @@ document.querySelectorAll('.project-item').forEach(function(item) {
   });
 });
 
+// Highlight words hover - trigger on paragraph hover (Skill Sound - Glass)
+document.querySelectorAll('.about-text p').forEach(function(paragraph) {
+  let soundPlayed = false;
+
+  paragraph.addEventListener('mouseenter', function() {
+    if (!soundPlayed && this.querySelector('.highlight-word')) {
+      playSound(skillSound);
+      soundPlayed = true;
+    }
+  });
+
+  paragraph.addEventListener('mouseleave', function() {
+    soundPlayed = false;
+  });
+});
+
 
 
 // ========================================
@@ -426,3 +445,37 @@ document.querySelectorAll('.project-details').forEach(function(details) {
 });
 
 // Typewriter for timeline text (Education coursework & Experience details) - REMOVED
+
+
+// ========================================
+// SCROLL SOUND EFFECT
+// ========================================
+
+let lastScrollPosition = 0;
+let scrollAccumulator = 0;
+let lastScrollTime = 0;
+const scrollThreshold = 150; // Minimum scroll distance (pixels) to trigger sound
+const scrollThrottle = 200; // Minimum time between scroll sounds in milliseconds
+
+window.addEventListener('scroll', function() {
+  const now = Date.now();
+  const currentScrollPosition = window.scrollY;
+  const scrollDelta = Math.abs(currentScrollPosition - lastScrollPosition);
+
+  // Accumulate scroll distance
+  scrollAccumulator += scrollDelta;
+  lastScrollPosition = currentScrollPosition;
+
+  // Only play sound if accumulated scroll distance exceeds threshold AND enough time has passed
+  if (scrollAccumulator >= scrollThreshold && now - lastScrollTime > scrollThrottle) {
+    playSound(scrollSound);
+    scrollAccumulator = 0; // Reset accumulator
+    lastScrollTime = now;
+  }
+
+  // Reset accumulator if user stops scrolling for a moment
+  clearTimeout(window.scrollResetTimeout);
+  window.scrollResetTimeout = setTimeout(function() {
+    scrollAccumulator = 0;
+  }, 300);
+}, { passive: true });

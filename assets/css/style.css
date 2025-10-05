@@ -600,10 +600,26 @@ main {
 
 .about-text p { margin-bottom: 15px; }
 
+/* Highlight words on hover */
+.highlight-word {
+  position: relative;
+  transition: all 0.3s ease;
+  display: inline;
+}
+
+.about-text p:hover .highlight-word {
+  font-weight: var(--fw-600);
+  color: var(--orange-yellow-crayola);
+  text-shadow:
+    0 0 15px hsla(45, 100%, 72%, 0.6),
+    0 0 30px hsla(45, 100%, 72%, 0.4),
+    0 0 45px hsla(45, 100%, 72%, 0.2);
+}
+
 
 
 /**
- * #service 
+ * #service
  */
 
 .service { margin-bottom: 35px; }
