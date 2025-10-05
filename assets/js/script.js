@@ -181,12 +181,15 @@ generalSound.volume = 0.3;
 const scrollSound = new Audio('./assets/sounds/scroll_mouse_wheel_trimmed.wav');
 scrollSound.volume = 0.2;
 
+const mobileScrollSound = new Audio('./assets/sounds/scroll_swipe_iphone.mp3');
+mobileScrollSound.volume = 0.3;
+
 // Unlock audio on first user interaction
 function unlockAudio() {
   if (audioUnlocked) return;
 
   // Play and immediately pause all sounds to unlock them
-  const sounds = [sectionSound, skillSound, sidebarSound, generalSound, scrollSound];
+  const sounds = [sectionSound, skillSound, sidebarSound, generalSound, scrollSound, mobileScrollSound];
   sounds.forEach(function(sound) {
     sound.play().then(function() {
       sound.pause();
@@ -519,9 +522,10 @@ let lastScrollTime = 0;
 // Detect if device is mobile
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
 
-// Adjust threshold based on device (4x higher for mobile)
-const scrollThreshold = isMobile ? 600 : 150; // Minimum scroll distance (pixels) to trigger sound
-const scrollThrottle = 200; // Minimum time between scroll sounds in milliseconds
+// Adjust threshold and throttle based on device
+// Mobile needs much higher threshold to prevent multiple sounds per swipe
+const scrollThreshold = isMobile ? 800 : 150; // Minimum scroll distance (pixels) to trigger sound
+const scrollThrottle = isMobile ? 500 : 200; // Minimum time between scroll sounds in milliseconds
 
 window.addEventListener('scroll', function() {
   const now = Date.now();
@@ -534,7 +538,12 @@ window.addEventListener('scroll', function() {
 
   // Only play sound if accumulated scroll distance exceeds threshold AND enough time has passed
   if (scrollAccumulator >= scrollThreshold && now - lastScrollTime > scrollThrottle) {
-    playSound(scrollSound);
+    // Use different sound for mobile vs desktop
+    if (isMobile) {
+      playSound(mobileScrollSound);
+    } else {
+      playSound(scrollSound);
+    }
     scrollAccumulator = 0; // Reset accumulator
     lastScrollTime = now;
   }
@@ -543,5 +552,5 @@ window.addEventListener('scroll', function() {
   clearTimeout(window.scrollResetTimeout);
   window.scrollResetTimeout = setTimeout(function() {
     scrollAccumulator = 0;
-  }, 300);
+  }, isMobile ? 500 : 300); // Longer timeout for mobile
 }, { passive: true });
