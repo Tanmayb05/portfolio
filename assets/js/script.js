@@ -276,17 +276,17 @@ overlay.addEventListener('click', function() {
   playSound(generalSound);
 });
 
-// Skill tag hovers (Skill Sound - Glass)
+// Skill tag hovers (Sidebar Sound - Button)
 document.querySelectorAll('.skill-tag').forEach(function(tag) {
   tag.addEventListener('mouseenter', function() {
-    playSound(skillSound);
+    playSound(sidebarSound);
   });
 });
 
-// Tech tag hovers (Skill Sound - Glass)
+// Tech tag hovers (Sidebar Sound - Button)
 document.querySelectorAll('.tech-tag').forEach(function(tag) {
   tag.addEventListener('mouseenter', function() {
-    playSound(skillSound);
+    playSound(sidebarSound);
   });
 });
 
@@ -360,6 +360,13 @@ document.querySelectorAll('.project-item').forEach(function(item) {
   });
 });
 
+// Project publication link click (Sidebar Sound - Button)
+document.querySelectorAll('.project-publication-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    playSound(sidebarSound);
+  });
+});
+
 // Highlight words hover - trigger on paragraph hover (Skill Sound - Glass)
 document.querySelectorAll('.about-text p').forEach(function(paragraph) {
   let soundPlayed = false;
@@ -392,17 +399,17 @@ document.querySelectorAll('.timeline-achievements li').forEach(function(listItem
   });
 });
 
-// Coursework tag hovers (Skill Sound - Glass)
+// Coursework tag hovers (Sidebar Sound - Button)
 document.querySelectorAll('.coursework-tag').forEach(function(tag) {
   tag.addEventListener('mouseenter', function() {
-    playSound(skillSound);
+    playSound(sidebarSound);
   });
 });
 
-// Tech stack tag hovers (Skill Sound - Glass)
+// Tech stack tag hovers (Sidebar Sound - Button)
 document.querySelectorAll('.tech-stack-tag').forEach(function(tag) {
   tag.addEventListener('mouseenter', function() {
-    playSound(skillSound);
+    playSound(sidebarSound);
   });
 });
 

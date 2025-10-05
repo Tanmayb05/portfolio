@@ -1449,10 +1449,38 @@ main {
   margin-bottom: 12px;
 }
 
+.project-publication-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.project-publication-link:hover {
+  transform: translateX(3px);
+}
+
 .project-publication {
   color: var(--light-gray-70);
   font-size: var(--fs-7);
   font-style: italic;
+  transition: color 0.3s ease;
+}
+
+.project-publication-link:hover .project-publication {
+  color: var(--orange-yellow-crayola);
+}
+
+.external-link-icon {
+  font-size: 14px;
+  color: var(--light-gray-70);
+  transition: all 0.3s ease;
+}
+
+.project-publication-link:hover .external-link-icon {
+  color: var(--orange-yellow-crayola);
+  transform: translateY(-2px);
 }
 
 .project-tech {
