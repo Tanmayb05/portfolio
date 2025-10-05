@@ -154,3 +154,29 @@ document.querySelectorAll('.article-title').forEach(function(title) {
     }
   });
 });
+
+
+
+// Add click sound to all clickable elements
+const clickSound = new Audio('./assets/sounds/spacey_ui_click.wav');
+clickSound.volume = 0.3; // Set volume to 30% to avoid being too loud
+
+// Function to play click sound
+function playClickSound() {
+  // Clone the audio to allow overlapping sounds
+  const sound = clickSound.cloneNode();
+  sound.play().catch(function(error) {
+    // Ignore errors from autoplay restrictions
+    console.log('Audio play prevented:', error);
+  });
+}
+
+// Add click sound to all interactive elements
+document.addEventListener('click', function(event) {
+  const target = event.target;
+  const clickableElement = target.closest('button, a, .contact-item, .service-item, .project-item, .navbar-link, .social-link, input[type="submit"]');
+
+  if (clickableElement) {
+    playClickSound();
+  }
+});
