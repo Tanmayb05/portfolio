@@ -943,93 +943,6 @@
       </article>
 
 
-      
-
-<!--
-        - #TRAVEL
-      -->
-
-      <article class="travel" data-page="travel">
-
-        <section class="travel-section">
-
-          <div class="travel-intro">
-            <p>
-              Exploring the world, <span class="highlight-word">one city at a time</span>. I love discovering new places, hidden gems, and local favorites wherever I go. Each destination tells a unique story, and I've curated <span class="highlight-word">Google Maps collections</span> to share my adventures.
-            </p>
-            <p>
-              Click on any destination below to explore my personalized collection of recommendations, must-visit spots, and memorable experiences from each city.
-            </p>
-          </div>
-
-          <div class="travel-grid">
-
-            <!-- Chicago -->
-            <a href="https://maps.app.goo.gl/HbE2Jqj5mgMBQ5xq5" target="_blank" class="travel-card" data-location="chicago">
-              <div class="travel-image-container">
-                <img src="./assets/images/travel-chicago.png" alt="Chicago" class="travel-image">
-                <div class="travel-overlay">
-                  <div class="travel-eye-icon">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                </div>
-              </div>
-              <div class="travel-info">
-                <h3 class="travel-location">Chicago</h3>
-              </div>
-            </a>
-
-            <!-- Seattle -->
-            <a href="https://maps.app.goo.gl/B12uWYrcocz9GrEx5" target="_blank" class="travel-card" data-location="seattle">
-              <div class="travel-image-container">
-                <img src="./assets/images/travel-seattle.png" alt="Seattle" class="travel-image">
-                <div class="travel-overlay">
-                  <div class="travel-eye-icon">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                </div>
-              </div>
-              <div class="travel-info">
-                <h3 class="travel-location">Seattle</h3>
-              </div>
-            </a>
-
-            <!-- Los Angeles -->
-            <a href="https://maps.app.goo.gl/kFqqJB8dGLdksGqk6" target="_blank" class="travel-card" data-location="los-angeles">
-              <div class="travel-image-container">
-                <img src="./assets/images/travel-los-angeles.png" alt="Los Angeles" class="travel-image">
-                <div class="travel-overlay">
-                  <div class="travel-eye-icon">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                </div>
-              </div>
-              <div class="travel-info">
-                <h3 class="travel-location">Los Angeles</h3>
-              </div>
-            </a>
-
-            <!-- Arizona -->
-            <a href="https://maps.app.goo.gl/3g4d8m6KZ994jUce9" target="_blank" class="travel-card" data-location="arizona">
-              <div class="travel-image-container">
-                <img src="./assets/images/travel-arizona.png" alt="Arizona" class="travel-image">
-                <div class="travel-overlay">
-                  <div class="travel-eye-icon">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                </div>
-              </div>
-              <div class="travel-info">
-                <h3 class="travel-location">Arizona</h3>
-              </div>
-            </a>
-
-          </div>
-        </section>
-
-      </article>
-
-
       <!--
         - #CONTACT
       -->
@@ -1076,7 +989,59 @@
       </article>
 
 
-      
+      <!--
+        - #TRAVEL
+      -->
+
+      <article class="travel" data-page="travel">
+
+        <section class="travel-section">
+          <div class="travel-grid">
+
+            <!-- Chicago -->
+            <div class="travel-card">
+              <div class="travel-image-container">
+                <img src="https://via.placeholder.com/400x300/1a1a2e/ffffff?text=Chicago" alt="Chicago" class="travel-image">
+              </div>
+              <div class="travel-info">
+                <h3 class="travel-location">Chicago</h3>
+              </div>
+            </div>
+
+            <!-- Seattle -->
+            <div class="travel-card">
+              <div class="travel-image-container">
+                <img src="https://via.placeholder.com/400x300/1a1a2e/ffffff?text=Seattle" alt="Seattle" class="travel-image">
+              </div>
+              <div class="travel-info">
+                <h3 class="travel-location">Seattle</h3>
+              </div>
+            </div>
+
+            <!-- Los Angeles -->
+            <div class="travel-card">
+              <div class="travel-image-container">
+                <img src="https://via.placeholder.com/400x300/1a1a2e/ffffff?text=Los+Angeles" alt="Los Angeles" class="travel-image">
+              </div>
+              <div class="travel-info">
+                <h3 class="travel-location">Los Angeles</h3>
+              </div>
+            </div>
+
+            <!-- Arizona -->
+            <div class="travel-card">
+              <div class="travel-image-container">
+                <img src="https://via.placeholder.com/400x300/1a1a2e/ffffff?text=Arizona" alt="Arizona" class="travel-image">
+              </div>
+              <div class="travel-info">
+                <h3 class="travel-location">Arizona</h3>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </article>
 
     </div>
 

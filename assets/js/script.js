@@ -380,6 +380,20 @@ document.querySelectorAll('.project-publication-link').forEach(function(link) {
   });
 });
 
+// Travel card hovers (General Sound)
+document.querySelectorAll('.travel-card').forEach(function(card) {
+  card.addEventListener('mouseenter', function() {
+    playSound(generalSound);
+  });
+});
+
+// Travel card clicks (Sidebar Sound - Button)
+document.querySelectorAll('.travel-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    playSound(sidebarSound);
+  });
+});
+
 // Highlight words hover - trigger on paragraph hover (Skill Sound - Glass)
 document.querySelectorAll('.about-text p').forEach(function(paragraph) {
   let soundPlayed = false;

@@ -56,7 +56,7 @@ portfolio/
 
 ## Credits
 
-Template design based on [codewithsadee's portfolio](https://github.com/codewithsadee/portfolio)
+Template design based on [codewithsadee's vcard-personal-portfolio](https://github.com/codewithsadee/vcard-personal-portfolio)
 
 ## License
 
