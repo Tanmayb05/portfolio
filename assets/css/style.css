@@ -249,6 +249,19 @@ article.active {
   animation: glow-fade 5s ease-in-out forwards;
 }
 
+/* Typewriter cursor effect */
+.article-title:not([data-typed])::after {
+  content: '|';
+  margin-left: 2px;
+  animation: blink 0.7s infinite;
+  color: var(--orange-yellow-crayola);
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
 @keyframes glow-fade {
   0% {
     text-shadow: none;
@@ -577,6 +590,18 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
+}
+
+/* Hide paragraphs until they're ready to type */
+.about-text p {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.about-text p.typing {
+  opacity: 1;
+  visibility: visible;
 }
 
 .about-text p { margin-bottom: 15px; }
@@ -1346,6 +1371,14 @@ main {
   padding-left: 20px;
   position: relative;
   margin-bottom: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.project-details li.typing {
+  opacity: 1;
+  visibility: visible;
 }
 
 .project-details li::before {
@@ -2169,10 +2202,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .mute-toggle {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
     background: var(--border-gradient-onyx);
     border: none;
     border-radius: 50%;
@@ -2182,31 +2215,59 @@ textarea.form-input::-webkit-resizer { display: none; }
     cursor: pointer;
     z-index: 1000;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: var(--shadow-2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 20px hsla(45, 100%, 72%, 0.3);
   }
 
   .mute-toggle::before {
     content: "";
     position: absolute;
-    inset: 1px;
+    inset: 2px;
     background: var(--bg-gradient-jet);
     border-radius: inherit;
     z-index: -1;
   }
 
   .mute-toggle ion-icon {
-    font-size: 28px;
+    font-size: 36px;
     color: var(--orange-yellow-crayola);
-    --ionicon-stroke-width: 45px;
+    --ionicon-stroke-width: 50px;
   }
 
   .mute-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 30px hsla(45, 100%, 72%, 0.2);
+    transform: scale(1.15);
+    box-shadow: 0 10px 30px hsla(45, 100%, 72%, 0.4);
   }
 
   .mute-toggle.muted ion-icon {
     color: var(--light-gray-70);
+  }
+
+  /* Mobile specific styles */
+  @media (max-width: 768px) {
+    .mute-toggle {
+      width: 65px;
+      height: 65px;
+      bottom: 80px;
+      right: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px hsla(45, 100%, 72%, 0.4);
+    }
+
+    .mute-toggle ion-icon {
+      font-size: 32px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .mute-toggle {
+      width: 60px;
+      height: 60px;
+      bottom: 70px;
+      right: 12px;
+    }
+
+    .mute-toggle ion-icon {
+      font-size: 30px;
+    }
   }
 
 

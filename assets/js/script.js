@@ -318,3 +318,159 @@ document.querySelectorAll('.project-item').forEach(function(item) {
     playSound(generalSound);
   });
 });
+
+
+
+// ========================================
+// TYPEWRITER EFFECT FOR SECTION TITLES
+// ========================================
+
+// Function to create typewriter effect
+function typeWriter(element, text, speed, callback) {
+  let i = 0;
+  element.setAttribute('data-original-text', text);
+  element.textContent = '';
+
+  function type() {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    } else if (callback) {
+      callback();
+    }
+  }
+
+  type();
+}
+
+// Intersection Observer to trigger typewriter when section is visible
+const typewriterObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting && !entry.target.hasAttribute('data-typed')) {
+      const title = entry.target;
+      const originalText = title.textContent;
+
+      // Mark as typed to prevent re-typing
+      title.setAttribute('data-typed', 'true');
+
+      // Start typewriter effect
+      typeWriter(title, originalText, 80);
+    }
+  });
+}, {
+  threshold: 0.5 // Trigger when 50% of the title is visible
+});
+
+// Observe all article titles
+document.querySelectorAll('.article-title').forEach(function(title) {
+  typewriterObserver.observe(title);
+});
+
+// Observe section headings (Education, Experience, etc.)
+document.querySelectorAll('.h3').forEach(function(heading) {
+  typewriterObserver.observe(heading);
+});
+
+// Typewriter for About section paragraphs (sequential)
+const aboutParagraphs = document.querySelectorAll('.about-text p');
+let aboutTypingStarted = false;
+
+const aboutSectionObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting && !aboutTypingStarted) {
+      aboutTypingStarted = true;
+
+      // Type paragraphs sequentially
+      function typeNextParagraph(index) {
+        if (index < aboutParagraphs.length) {
+          const paragraph = aboutParagraphs[index];
+          const originalText = paragraph.textContent;
+
+          // Make paragraph visible before typing
+          paragraph.classList.add('typing');
+
+          // Mark as typed
+          paragraph.setAttribute('data-typed', 'true');
+
+          // Start typewriter effect with faster speed for paragraphs
+          typeWriter(paragraph, originalText, 1, function() {
+            // After this paragraph is done, type the next one
+            typeNextParagraph(index + 1);
+          });
+        }
+      }
+
+      // Start with the first paragraph
+      typeNextParagraph(0);
+    }
+  });
+}, {
+  threshold: 0.3
+});
+
+// Observe the About section container
+const aboutSection = document.querySelector('.about-text');
+if (aboutSection) {
+  aboutSectionObserver.observe(aboutSection);
+}
+
+// Typewriter for project details
+const projectDetailsObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting && !entry.target.hasAttribute('data-typed')) {
+      const projectDetails = entry.target;
+      const listItems = projectDetails.querySelectorAll('li');
+
+      // Mark as typed
+      projectDetails.setAttribute('data-typed', 'true');
+
+      // Type each detail item sequentially
+      function typeNextDetail(index) {
+        if (index < listItems.length) {
+          const item = listItems[index];
+          const originalText = item.textContent;
+
+          // Make item visible before typing
+          item.classList.add('typing');
+
+          typeWriter(item, originalText, 5, function() {
+            typeNextDetail(index + 1);
+          });
+        }
+      }
+
+      typeNextDetail(0);
+    }
+  });
+}, {
+  threshold: 0.3
+});
+
+// Observe project details
+document.querySelectorAll('.project-details').forEach(function(details) {
+  projectDetailsObserver.observe(details);
+});
+
+// Typewriter for timeline text (Education coursework & Experience details)
+const timelineTextObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting && !entry.target.hasAttribute('data-typed')) {
+      const timelineText = entry.target;
+      const originalText = timelineText.textContent;
+
+      // Mark as typed
+      timelineText.setAttribute('data-typed', 'true');
+
+      // Start typewriter effect
+      typeWriter(timelineText, originalText, 3);
+    }
+  });
+}, {
+  threshold: 0.3
+});
+
+// Observe timeline text (coursework and experience details)
+document.querySelectorAll('.timeline-text').forEach(function(text) {
+  timelineTextObserver.observe(text);
+});
