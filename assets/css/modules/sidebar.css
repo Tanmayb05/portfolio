@@ -47,9 +47,92 @@
   transition: filter 0.3s ease;
 }
 
+[data-theme="light"] .avatar-box {
+  background: hsl(0, 0%, 100%);
+}
+
 .sidebar:hover .avatar-box {
   filter: hue-rotate(0deg);
   animation: rainbow-rotate 2s linear infinite;
+}
+
+/* Sidebar Toggles for All Screens */
+.sidebar-toggles {
+  display: flex !important;
+  gap: 12px;
+  margin-top: 16px;
+  opacity: 1 !important;
+  visibility: visible !important;
+  justify-content: center;
+}
+
+.sidebar-toggle-btn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--border-gradient-onyx);
+  border-radius: 12px;
+  transition: var(--transition-1);
+  position: relative;
+}
+
+.sidebar-toggle-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--eerie-black-1);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.sidebar-toggle-btn:hover {
+  background: var(--bg-gradient-yellow-1);
+  transform: scale(1.1);
+}
+
+.sidebar-toggle-btn ion-icon {
+  font-size: 24px;
+  color: var(--orange-yellow-crayola);
+}
+
+.sidebar-toggle-btn .toggle-label {
+  display: none;
+}
+
+/* Theme toggle icons */
+.theme-toggle-mobile .sun-icon {
+  display: none;
+}
+
+.theme-toggle-mobile .moon-icon {
+  display: block;
+}
+
+[data-theme="light"] .theme-toggle-mobile .sun-icon {
+  display: block;
+}
+
+[data-theme="light"] .theme-toggle-mobile .moon-icon {
+  display: none;
+}
+
+/* Mute toggle icons */
+.mute-toggle-mobile .volume-mute {
+  display: none;
+}
+
+.mute-toggle-mobile .volume-high {
+  display: block;
+}
+
+.mute-toggle-mobile.muted .volume-mute {
+  display: block;
+}
+
+.mute-toggle-mobile.muted .volume-high {
+  display: none;
 }
 
 .info-content .name {
@@ -73,6 +156,10 @@
   animation: rainbow-slide 3s linear infinite;
 }
 
+[data-theme="light"] .info-content .name {
+  color: hsl(0, 0%, 0%);
+}
+
 .info-content .title {
   color: var(--white-1);
   background: var(--onyx);
@@ -81,6 +168,11 @@
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
+}
+
+[data-theme="light"] .info-content .title {
+  background: hsl(0, 0%, 100%);
+  color: var(--smoky-black);
 }
 
 .info_more-btn {

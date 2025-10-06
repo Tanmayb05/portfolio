@@ -377,19 +377,36 @@ function playSound(audio) {
 function updateMuteButton() {
   const muteToggle = document.getElementById('mute-toggle');
   const muteToggleMobile = document.getElementById('mute-toggle-mobile');
-  const muteIcon = muteToggle.querySelector('ion-icon');
-  const muteIconMobile = muteToggleMobile.querySelector('ion-icon');
+  const muteToggleSidebar = document.getElementById('mute-toggle-mobile-sidebar');
 
-  if (isMuted) {
-    muteToggle.classList.add('muted');
-    muteToggleMobile.classList.add('muted');
-    muteIcon.setAttribute('name', 'volume-mute-outline');
-    muteIconMobile.setAttribute('name', 'volume-mute-outline');
-  } else {
-    muteToggle.classList.remove('muted');
-    muteToggleMobile.classList.remove('muted');
-    muteIcon.setAttribute('name', 'volume-high-outline');
-    muteIconMobile.setAttribute('name', 'volume-high-outline');
+  if (muteToggle) {
+    const muteIcon = muteToggle.querySelector('ion-icon');
+    if (isMuted) {
+      muteToggle.classList.add('muted');
+      muteIcon.setAttribute('name', 'volume-mute-outline');
+    } else {
+      muteToggle.classList.remove('muted');
+      muteIcon.setAttribute('name', 'volume-high-outline');
+    }
+  }
+
+  if (muteToggleMobile) {
+    const muteIconMobile = muteToggleMobile.querySelector('ion-icon');
+    if (isMuted) {
+      muteToggleMobile.classList.add('muted');
+      muteIconMobile.setAttribute('name', 'volume-mute-outline');
+    } else {
+      muteToggleMobile.classList.remove('muted');
+      muteIconMobile.setAttribute('name', 'volume-high-outline');
+    }
+  }
+
+  if (muteToggleSidebar) {
+    if (isMuted) {
+      muteToggleSidebar.classList.add('muted');
+    } else {
+      muteToggleSidebar.classList.remove('muted');
+    }
   }
 }
 
@@ -409,17 +426,9 @@ function initSoundSystem() {
   document.addEventListener('touchstart', unlockAudio, { once: true });
   document.addEventListener('keydown', unlockAudio, { once: true });
 
-  updateMuteButton();
-
-  const muteToggle = document.getElementById('mute-toggle');
-  const muteToggleMobile = document.getElementById('mute-toggle-mobile');
-
-  if (muteToggle) {
-    muteToggle.addEventListener('click', toggleMute);
-  }
-  if (muteToggleMobile) {
-    muteToggleMobile.addEventListener('click', toggleMute);
-  }
+  // Set sounds to unmuted by default (no toggle button)
+  isMuted = false;
+  localStorage.setItem('soundMuted', false);
 }
 
 function initScrollSound() {
@@ -630,10 +639,56 @@ function initSoundTriggers() {
 }
 
 // ========================================
+// THEME TOGGLE (Dark/Light Mode)
+// ========================================
+
+function initThemeToggle() {
+  const themeToggleBtn = document.querySelector('#theme-toggle');
+  const themeToggleMobileBtn = document.querySelector('#theme-toggle-mobile');
+  const htmlElement = document.documentElement;
+
+  // Get saved theme from localStorage or default to dark
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  htmlElement.setAttribute('data-theme', savedTheme);
+
+  // Create theme toggle sound
+  const themeSound = new Audio('./assets/sounds/click_button.wav');
+  themeSound.volume = 0.35;
+
+  // Toggle theme function
+  function toggleTheme() {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    htmlElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+
+    // Play sound
+    const sound = themeSound.cloneNode();
+    sound.volume = themeSound.volume;
+    sound.play().catch(function(error) {
+      console.log('Audio play prevented:', error);
+    });
+  }
+
+  // Event listeners
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', toggleTheme);
+  }
+
+  if (themeToggleMobileBtn) {
+    themeToggleMobileBtn.addEventListener('click', toggleTheme);
+  }
+}
+
+// ========================================
 // INITIALIZE ALL FEATURES
 // ========================================
 
 function init() {
+  // Theme (must be first to avoid flash)
+  initThemeToggle();
+
   // Core functionality
   initSidebar();
   initTestimonials();

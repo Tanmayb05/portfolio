@@ -49,6 +49,7 @@
 
 /* UI Elements */
 @import url('./modules/mute-toggle.css');
+@import url('./modules/theme-toggle.css');
 
 /* Responsive */
 @import url('./modules/responsive.css');

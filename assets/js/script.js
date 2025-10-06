@@ -14,9 +14,13 @@ import { initTypewriter } from './modules/typewriter.js';
 import { initTravelCards } from './modules/travel.js';
 import { initSoundSystem, initScrollSound } from './modules/sound-system.js';
 import { initSoundTriggers } from './modules/sound-triggers.js';
+import { initThemeToggle } from './modules/theme-toggle.js';
 
 // Initialize all features
 function init() {
+  // Theme (must be first to avoid flash)
+  initThemeToggle();
+
   // Core functionality
   initSidebar();
   initTestimonials();

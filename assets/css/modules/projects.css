@@ -124,6 +124,10 @@
   transition: all 0.2s ease;
 }
 
+[data-theme="light"] .tech-tag {
+  color: hsl(0, 0%, 0%);
+}
+
 .tech-tag:hover {
   background: var(--text-gradient-yellow);
   color: var(--smoky-black);

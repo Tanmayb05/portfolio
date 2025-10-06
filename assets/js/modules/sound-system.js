@@ -58,19 +58,36 @@ function playSound(audio) {
 function updateMuteButton() {
   const muteToggle = document.getElementById('mute-toggle');
   const muteToggleMobile = document.getElementById('mute-toggle-mobile');
-  const muteIcon = muteToggle.querySelector('ion-icon');
-  const muteIconMobile = muteToggleMobile.querySelector('ion-icon');
+  const muteToggleSidebar = document.getElementById('mute-toggle-mobile-sidebar');
 
-  if (isMuted) {
-    muteToggle.classList.add('muted');
-    muteToggleMobile.classList.add('muted');
-    muteIcon.setAttribute('name', 'volume-mute-outline');
-    muteIconMobile.setAttribute('name', 'volume-mute-outline');
-  } else {
-    muteToggle.classList.remove('muted');
-    muteToggleMobile.classList.remove('muted');
-    muteIcon.setAttribute('name', 'volume-high-outline');
-    muteIconMobile.setAttribute('name', 'volume-high-outline');
+  if (muteToggle) {
+    const muteIcon = muteToggle.querySelector('ion-icon');
+    if (isMuted) {
+      muteToggle.classList.add('muted');
+      muteIcon.setAttribute('name', 'volume-mute-outline');
+    } else {
+      muteToggle.classList.remove('muted');
+      muteIcon.setAttribute('name', 'volume-high-outline');
+    }
+  }
+
+  if (muteToggleMobile) {
+    const muteIconMobile = muteToggleMobile.querySelector('ion-icon');
+    if (isMuted) {
+      muteToggleMobile.classList.add('muted');
+      muteIconMobile.setAttribute('name', 'volume-mute-outline');
+    } else {
+      muteToggleMobile.classList.remove('muted');
+      muteIconMobile.setAttribute('name', 'volume-high-outline');
+    }
+  }
+
+  if (muteToggleSidebar) {
+    if (isMuted) {
+      muteToggleSidebar.classList.add('muted');
+    } else {
+      muteToggleSidebar.classList.remove('muted');
+    }
   }
 }
 
@@ -94,20 +111,9 @@ export function initSoundSystem() {
   document.addEventListener('touchstart', unlockAudio, { once: true });
   document.addEventListener('keydown', unlockAudio, { once: true });
 
-  // Set initial state
-  updateMuteButton();
-
-  // Mute toggle button functionality
-  const muteToggle = document.getElementById('mute-toggle');
-  const muteToggleMobile = document.getElementById('mute-toggle-mobile');
-
-  // Add event listeners to both buttons
-  if (muteToggle) {
-    muteToggle.addEventListener('click', toggleMute);
-  }
-  if (muteToggleMobile) {
-    muteToggleMobile.addEventListener('click', toggleMute);
-  }
+  // Set sounds to unmuted by default (no toggle button)
+  isMuted = false;
+  localStorage.setItem('soundMuted', false);
 }
 
 // Initialize scroll sound effect

@@ -1,0 +1,84 @@
+/*-----------------------------------*\
+  #THEME TOGGLE BUTTON
+\*-----------------------------------*/
+
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--border-gradient-onyx);
+  border-radius: 12px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all var(--transition-1);
+  box-shadow: var(--shadow-2);
+}
+
+.theme-toggle::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--eerie-black-1);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-3);
+}
+
+.theme-toggle ion-icon {
+  font-size: 24px;
+  color: var(--orange-yellow-crayola);
+  transition: all var(--transition-1);
+}
+
+.theme-toggle:hover ion-icon {
+  transform: rotate(20deg);
+}
+
+/* Icon visibility based on theme */
+.theme-toggle .sun-icon {
+  display: none;
+}
+
+.theme-toggle .moon-icon {
+  display: block;
+}
+
+[data-theme="light"] .theme-toggle .sun-icon {
+  display: block;
+}
+
+[data-theme="light"] .theme-toggle .moon-icon {
+  display: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 580px) {
+  .theme-toggle {
+    bottom: 80px;
+    left: 15px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .theme-toggle ion-icon {
+    font-size: 22px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 580px) and (max-width: 1024px) {
+  .theme-toggle {
+    bottom: 20px;
+    left: 15px;
+  }
+}

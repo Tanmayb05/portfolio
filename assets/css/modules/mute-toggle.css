@@ -44,7 +44,8 @@
   color: var(--light-gray-70);
 }
 
-.mute-toggle-mobile {
+/* Only hide the mute-toggle-mobile that's NOT in sidebar */
+.mute-toggle-mobile:not(.sidebar-toggle-btn) {
   display: none;
 }
 

@@ -97,6 +97,10 @@
   z-index: -1;
 }
 
+[data-theme="light"] .category-icon::before {
+  background: hsl(45, 30%, 94%);
+}
+
 .category-icon ion-icon {
   --ionicon-stroke-width: 35px;
 }
