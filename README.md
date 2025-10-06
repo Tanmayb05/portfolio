@@ -9,7 +9,9 @@ This is a responsive portfolio website featuring:
 - Work experience and education history
 - Technical skills across programming languages, frameworks, and tools
 - Project showcase with detailed descriptions
+- Travel section with interactive destination cards
 - Contact form and location map
+- Dark/Light theme toggle
 
 ## Technologies Used
 
@@ -22,11 +24,14 @@ This is a responsive portfolio website featuring:
 ## Features
 
 - Responsive design for all devices
+- Dark/Light theme toggle with persistent preference storage
 - Interactive navigation with smooth transitions
 - Skills categorized by type (Programming Languages, Frameworks, Developer Tools, Libraries)
 - Detailed project listings with tech stacks
+- Travel destinations showcase with interactive cards and mobile touch support
 - Contact form integration
 - Social media links (LinkedIn, GitHub)
+- Copy-to-clipboard functionality for contact information
 
 ## Setup
 
