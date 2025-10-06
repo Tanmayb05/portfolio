@@ -1,0 +1,127 @@
+/*-----------------------------------*\
+  #TRAVEL SECTION
+\*-----------------------------------*/
+
+.travel-section {
+  margin-bottom: 30px;
+}
+
+.travel-intro {
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.travel-intro p {
+  margin-bottom: 15px;
+  font-size: var(--fs-6);
+  color: var(--light-gray);
+}
+
+.travel-intro .highlight-word {
+  color: var(--orange-yellow-crayola);
+  font-weight: var(--fw-500);
+}
+
+.travel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.travel-card {
+  background: var(--border-gradient-onyx);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+}
+
+.travel-card::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.travel-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px hsla(45, 100%, 72%, 0.1);
+}
+
+.travel-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.travel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.8s ease;
+  opacity: 1;
+}
+
+.travel-card:hover .travel-image {
+  transform: scale(1.05);
+}
+
+.travel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.travel-eye-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: var(--orange-yellow-crayola);
+  border-radius: 50%;
+  color: var(--smoky-black);
+  font-size: 22px;
+  opacity: 0;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  pointer-events: auto;
+}
+
+.travel-card:hover .travel-eye-icon {
+  opacity: 1;
+}
+
+.travel-overlay:hover .travel-eye-icon {
+  box-shadow:
+    0 0 20px var(--orange-yellow-crayola),
+    0 0 40px var(--orange-yellow-crayola),
+    0 0 60px var(--orange-yellow-crayola);
+  transform: scale(1.1);
+}
+
+.travel-info {
+  padding: 20px;
+  background: var(--eerie-black-2);
+}
+
+.travel-location {
+  color: var(--white-2);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-500);
+  text-align: center;
+  margin: 0;
+}
