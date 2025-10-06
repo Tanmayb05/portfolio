@@ -50,9 +50,11 @@
   z-index: -1;
 }
 
-.travel-card:hover {
+.travel-card:hover,
+.travel-card.touch-active {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px hsla(45, 100%, 72%, 0.1);
+  box-shadow: 0 10px 30px hsla(45, 100%, 72%, 0.3);
+  border: 1px solid var(--orange-yellow-crayola);
 }
 
 .travel-image-container {
@@ -70,7 +72,8 @@
   opacity: 1;
 }
 
-.travel-card:hover .travel-image {
+.travel-card:hover .travel-image,
+.travel-card.touch-active .travel-image {
   transform: scale(1.05);
 }
 
@@ -101,11 +104,13 @@
   pointer-events: auto;
 }
 
-.travel-card:hover .travel-eye-icon {
+.travel-card:hover .travel-eye-icon,
+.travel-card.touch-active .travel-eye-icon {
   opacity: 1;
 }
 
-.travel-overlay:hover .travel-eye-icon {
+.travel-overlay:hover .travel-eye-icon,
+.travel-card.touch-active .travel-overlay .travel-eye-icon {
   box-shadow:
     0 0 20px var(--orange-yellow-crayola),
     0 0 40px var(--orange-yellow-crayola),
@@ -124,4 +129,28 @@
   font-weight: var(--fw-500);
   text-align: center;
   margin: 0;
+  transition: color 0.3s ease;
+}
+
+.travel-card:hover .travel-location,
+.travel-card.touch-active .travel-location {
+  color: var(--orange-yellow-crayola);
+}
+
+/* Add click indicator */
+.travel-info::after {
+  content: "Click to view map →";
+  display: block;
+  text-align: center;
+  font-size: var(--fs-7);
+  color: var(--light-gray-70);
+  margin-top: 8px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.travel-card:hover .travel-info::after,
+.travel-card.touch-active .travel-info::after {
+  color: var(--orange-yellow-crayola);
+  opacity: 1;
 }
