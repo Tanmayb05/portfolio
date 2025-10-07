@@ -15,6 +15,7 @@ import { initTravelCards } from './modules/travel.js';
 import { initSoundSystem, initScrollSound } from './modules/sound-system.js';
 import { initSoundTriggers } from './modules/sound-triggers.js';
 import { initThemeToggle } from './modules/theme-toggle.js';
+import { initProjectSliders } from './modules/project-slider.js';
 
 // Initialize all features
 function init() {
@@ -31,6 +32,7 @@ function init() {
   initArticleTitleGlow();
   initTypewriter();
   initTravelCards();
+  initProjectSliders();
 
   // Sound system
   initSoundSystem();

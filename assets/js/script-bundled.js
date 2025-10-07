@@ -682,6 +682,69 @@ function initThemeToggle() {
 }
 
 // ========================================
+// PROJECT IMAGE SLIDER
+// ========================================
+
+function initProjectSliders() {
+  const sliders = document.querySelectorAll('[data-slider]');
+
+  sliders.forEach(function(slider) {
+    const sliderWrapper = slider.querySelector('.project-images-slider');
+    const slides = slider.querySelectorAll('.project-images-slider img');
+    const prevBtn = slider.querySelector('[data-slider-prev]');
+    const nextBtn = slider.querySelector('[data-slider-next]');
+    const dots = slider.querySelectorAll('[data-slider-dot]');
+
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    function updateSlider() {
+      // Move slider
+      sliderWrapper.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+
+      // Update dots
+      dots.forEach(function(dot, index) {
+        if (index === currentSlide) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlider();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlider();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateSlider();
+    }
+
+    // Event listeners
+    if (prevBtn) {
+      prevBtn.addEventListener('click', prevSlide);
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', nextSlide);
+    }
+
+    dots.forEach(function(dot, index) {
+      dot.addEventListener('click', function() {
+        goToSlide(index);
+      });
+    });
+  });
+}
+
+// ========================================
 // INITIALIZE ALL FEATURES
 // ========================================
 
@@ -699,6 +762,7 @@ function init() {
   initArticleTitleGlow();
   initTypewriter();
   initTravelCards();
+  initProjectSliders();
 
   // Sound system
   initSoundSystem();
