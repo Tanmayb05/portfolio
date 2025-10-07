@@ -140,6 +140,20 @@ reducing API calls by 70% and ensuring offline experience
 • Implemented microservices architecture using Android background se
 </project 4>
 
+<project 5>
+Bangalore Housing Price Prediction
+Tech Stack: Streamlit, scikit-learn, Plotly, Pandas, NumPy
+Date: June 2020
+• Built and deployed an end-to-end machine learning application predicting real estate prices in Bangalore with 85.8% accuracy, serving instant predictions across 237+ locations with an intuitive web
+interface accessed by users worldwide
+• Implemented advanced data science techniques including statistical outlier detection, price-per-sqft analysis, and location-based feature engineering, improving model reliability by filtering 47% of
+noisy data
+• Created interactive data visualization dashboard with 3 analytical views (price comparison, distribution analysis, bathroom trends) using Plotly, enabling users to explore 13,000+ property records
+and market insights
+
+
+</project 5>
+
 </project>
 
 <extra curricular>
