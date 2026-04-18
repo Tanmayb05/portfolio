@@ -62,23 +62,46 @@ export function Hero() {
   }, []);
 
   return (
-    <section ref={rootRef} className="hero">
-      <p className="eyebrow">Cincinnati, OH · Systems Engineer</p>
-      <h1 className="hero-title" aria-label={heroText}>
+    <section ref={rootRef} className="hero deck-section">
+      <h1 className="hero-title deck-title" aria-label={heroText}>
         {characters.map((item) => (
           <span key={item.key} className="hero-char" aria-hidden="true">
             {item.value}
           </span>
         ))}
       </h1>
-      <p className="hero-subtitle">Backend · Distributed Systems · AI Systems</p>
-      <div className="hero-actions">
-        <Link className="accent-button" href="/work">
-          Explore Work
-        </Link>
-        <Link className="ghost-button" href="/resume">
-          Open Resume
-        </Link>
+
+      <div className="hero-layout">
+        <div className="hero-phones" aria-hidden="true">
+          <article className="phone-shell">
+            <div className="phone-notch" />
+            <div className="phone-content phone-content-left">
+              <span className="phone-pill">Systems</span>
+            </div>
+          </article>
+          <article className="phone-shell">
+            <div className="phone-notch" />
+            <div className="phone-content phone-content-right">
+              <span className="phone-pill">AI Builder</span>
+            </div>
+          </article>
+        </div>
+
+        <div className="hero-copy">
+          <p className="eyebrow">Hero Section</p>
+          <p className="hero-subtitle">
+            Tanmay Bhuskute: Backend Engineer / AI Systems Builder. Building reliable systems,
+            automation, and AI tools with focus on impact.
+          </p>
+          <div className="hero-actions">
+            <Link className="accent-button" href="/work">
+              Explore Work
+            </Link>
+            <Link className="ghost-button" href="/resume">
+              Open Resume
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

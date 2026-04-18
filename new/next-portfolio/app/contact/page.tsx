@@ -3,45 +3,23 @@ import { siteConfig } from "@/lib/site";
 
 export default function ContactPage() {
   return (
-    <section className="page container contact-page">
-      <h1>Contact</h1>
+    <section className="page container contact-page deck-section">
+      <h1 className="deck-title">Contact</h1>
 
-      <p>
-        Open to backend, distributed systems, and applied AI engineering opportunities for Summer/Fall
-        2026.
-      </p>
-
-      <section className="surface contact-cards">
-        <a href={`mailto:${siteConfig.email}`} className="contact-card">
-          <p className="eyebrow">Email</p>
-          <p>{siteConfig.email}</p>
+      <section className="surface contact-card-list">
+        <a href={`mailto:${siteConfig.email}`} className="contact-line">
+          {siteConfig.email}
         </a>
-        <a
-          href={siteConfig.social.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="contact-card"
-        >
-          <p className="eyebrow">GitHub</p>
-          <p>github.com/Tanmayb05</p>
+        <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="contact-line">
+          linkedin.com/in/tanmay-bhuskute
         </a>
-        <a
-          href={siteConfig.social.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="contact-card"
-        >
-          <p className="eyebrow">LinkedIn</p>
-          <p>linkedin.com/in/tanmay-bhuskute</p>
+        <a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer" className="contact-line">
+          github.com/Tanmayb05
         </a>
       </section>
 
       <section className="surface">
-        <h2>Send a Message</h2>
-        <p>
-          This opens your email app with a pre-filled draft so we can keep communication direct and
-          lightweight.
-        </p>
+        <h2>Let&apos;s build something useful.</h2>
         <ContactForm />
       </section>
     </section>

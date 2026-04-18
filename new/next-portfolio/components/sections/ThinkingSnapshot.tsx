@@ -4,15 +4,15 @@ import { getThinkingEntries } from "@/lib/mdx";
 export async function ThinkingSnapshot() {
   const posts = (await getThinkingEntries()).slice(0, 3);
   return (
-    <section>
-      <div className="section-head">
-        <h2>Thinking Snapshot</h2>
+    <section className="deck-section blog-research">
+      <div className="section-head deck-section-head">
+        <h2 className="deck-title">Blog &amp; Research</h2>
         <Link href="/thinking" className="inline-link">
           See all posts →
         </Link>
       </div>
 
-      <div className="thinking-grid">
+      <div className="thinking-grid thinking-grid-deck">
         {posts.map((post) => (
           <article key={post.slug} className="thinking-card">
             <p className="thinking-tag">{post.tag ?? "Thinking"}</p>

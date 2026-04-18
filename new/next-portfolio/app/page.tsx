@@ -31,9 +31,9 @@ export default function HomePage() {
       </Reveal>
 
       <Reveal>
-        <section className="surface now-teaser">
-          <p className="eyebrow">Now</p>
-          <h2>Currently: Targeting Backend / AI Systems roles · Summer / Fall 2026</h2>
+        <section className="surface now-teaser deck-section">
+          <p className="eyebrow">Current Focus</p>
+          <h2>Applying for Summer / Fall 2026 roles. Focusing on System Design, DSA, and project building.</h2>
           <Link href="/now" className="inline-link">
             See full /now →
           </Link>

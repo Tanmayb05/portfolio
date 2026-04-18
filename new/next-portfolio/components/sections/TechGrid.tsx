@@ -27,14 +27,14 @@ const techGroups = [
 
 export function TechGrid() {
   return (
-    <section>
-      <div className="section-head">
-        <h2>Tech Stack</h2>
+    <section className="deck-section">
+      <div className="section-head deck-section-head">
+        <h2 className="deck-title">Skills Grid</h2>
       </div>
       <div className="tech-grid-wrap">
         {techGroups.map((group) => (
-          <article key={group.title} className="surface tech-group-card">
-            <p className="eyebrow">{group.title}</p>
+          <article key={group.title} className="tech-group-card surface">
+            <p className="eyebrow tech-group-label">{group.title}</p>
             <div className="tech-chip-grid" aria-label={`${group.title} technology list`}>
               {group.items.map((item) => (
                 <span key={item} className="tech-chip">
