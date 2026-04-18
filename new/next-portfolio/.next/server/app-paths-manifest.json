@@ -1,7 +1,0 @@
-{
-  "/work/page": "app/work/page.js",
-  "/page": "app/page.js",
-  "/work/[slug]/page": "app/work/[slug]/page.js",
-  "/thinking/[slug]/page": "app/thinking/[slug]/page.js",
-  "/life/page": "app/life/page.js"
-}
