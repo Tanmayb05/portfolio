@@ -1,0 +1,23 @@
+---
+title: Distributed Logging Systems Breakdown
+tag: System Design
+date: 2026-04-16
+summary: A structured breakdown of ingestion, indexing, storage, and query tradeoffs in distributed logging systems.
+tags: system-design, distributed-systems, observability
+---
+## Core problem
+A logging platform must ingest high-throughput events from many services, preserve enough context for debugging, and support low-latency search without exploding storage cost.
+
+## Baseline architecture
+- Producers write structured logs with service, trace, environment, and severity metadata.
+- A durable ingestion layer buffers bursts and decouples producers from downstream failures.
+- Stream processors normalize and enrich events before writing to indexed storage.
+- Tiered storage keeps recent logs hot and archives older logs for cheaper retention.
+
+## Main tradeoffs
+- Throughput vs cost: richer indexing improves queries but raises storage and write amplification.
+- Real-time search vs durability: aggressive ingestion optimization can weaken ordering guarantees.
+- Retention depth vs query speed: long retention requires tiering and selective indexing.
+
+## My extension
+I would add adaptive sampling at the edge for verbose sources, plus policy-based retention by service criticality. This keeps incident-critical logs fully searchable while reducing noise-heavy storage pressure.

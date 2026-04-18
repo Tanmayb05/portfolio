@@ -1,0 +1,23 @@
+---
+title: LLM-Based Screen Recording Analysis Notes
+tag: Research
+date: 2026-04-14
+summary: Research notes on converting UI screen recordings into structured, reproducible bug narratives.
+tags: llm-systems, computer-vision, qa-automation
+---
+## Research objective
+Turn long, noisy screen recordings into structured bug reports that engineering teams can reproduce quickly without replaying full videos.
+
+## Working pipeline
+- Segment recordings into interaction units using frame-difference and UI transition heuristics.
+- Extract multimodal context from frames, text overlays, and interaction timing sequences.
+- Use an LLM reasoning layer to build a step-by-step failure narrative with expected vs observed behavior.
+- Emit structured output: reproduction steps, suspected failure point, severity hint, and missing diagnostics.
+
+## Key constraints
+- Hallucination risk must be controlled with evidence-linked summaries.
+- Temporal ordering errors can corrupt reproduction quality.
+- UI-specific vocabulary is required for high-quality issue narratives.
+
+## Next iteration
+I am testing retrieval-augmented prompts with historical bug reports and product-specific UI ontology so generated narratives align better with real triage workflows.

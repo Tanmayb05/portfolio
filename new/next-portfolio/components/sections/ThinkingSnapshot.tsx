@@ -1,27 +1,8 @@
 import Link from "next/link";
+import { getThinkingEntries } from "@/lib/mdx";
 
-const posts = [
-  {
-    slug: "high-signal-technical-evaluation",
-    tag: "Blog",
-    title: "How I Evaluate Technical Projects",
-    summary: "My framework for separating depth from presentation polish during reviews."
-  },
-  {
-    slug: "distributed-logging-systems-breakdown",
-    tag: "System Design",
-    title: "Distributed Logging Systems",
-    summary: "Design constraints, ingestion tradeoffs, and what I would extend in production."
-  },
-  {
-    slug: "llm-screen-analysis-notes",
-    tag: "Research",
-    title: "LLM-Based Screen Recording Analysis",
-    summary: "Early notes on extracting reproducible bug narratives from UI recordings."
-  }
-] as const;
-
-export function ThinkingSnapshot() {
+export async function ThinkingSnapshot() {
+  const posts = (await getThinkingEntries()).slice(0, 3);
   return (
     <section>
       <div className="section-head">
@@ -34,7 +15,7 @@ export function ThinkingSnapshot() {
       <div className="thinking-grid">
         {posts.map((post) => (
           <article key={post.slug} className="thinking-card">
-            <p className="thinking-tag">{post.tag}</p>
+            <p className="thinking-tag">{post.tag ?? "Thinking"}</p>
             <h3>{post.title}</h3>
             <p>{post.summary}</p>
             <Link href={`/thinking/${post.slug}`} className="inline-link">

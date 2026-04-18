@@ -3,31 +3,35 @@ import { Reveal } from "@/components/motion/Reveal";
 const nonNegotiables = [
   {
     title: "Ownership & Accountability",
-    description: "Own outcomes end-to-end, communicate risks early, and close loops without handoff gaps.",
+    description:
+      "I own outcomes end-to-end: problem framing, implementation, rollout, and post-launch reliability.",
     marker: "OA"
   },
   {
     title: "Deep Work Over Shallow Effort",
-    description: "Prioritize high-leverage focus blocks over activity theater and fragmented task switching.",
+    description:
+      "I optimize for uninterrupted execution blocks that ship durable systems, not visible busyness.",
     marker: "DW"
   },
   {
     title: "Simplicity Over Complexity",
-    description: "Default to clear architecture and maintainable systems before introducing advanced abstractions.",
+    description:
+      "I remove unnecessary complexity first so teams can move faster, debug faster, and onboard faster.",
     marker: "SC"
   },
   {
     title: "Trust Is Earned",
-    description: "Reliability, consistency, and delivery discipline are the baseline for long-term collaboration.",
+    description:
+      "I treat reliability and delivery discipline as a professional baseline, especially under production pressure.",
     marker: "TE"
   }
 ];
 
 const operatingPrinciples = [
-  "Design for failure before scale.",
-  "Measure impact, not only output.",
-  "Document decisions while context is fresh.",
-  "Prefer reproducible systems over heroic debugging."
+  "Design for failure before scale so on-call load stays predictable.",
+  "Ship measurable improvements with explicit latency, reliability, and cost targets.",
+  "Document decisions while context is fresh to improve future execution speed.",
+  "Prefer reproducible systems over heroics and one-time fixes."
 ];
 
 const strengths = [
@@ -46,10 +50,11 @@ export default function AboutPage() {
         <section className="about-hero surface">
           <div>
             <p className="eyebrow">About</p>
-            <h1>Building systems that ship fast, stay stable, and scale with intent.</h1>
+            <h1>Backend and AI systems engineer focused on scalable, production-grade execution.</h1>
             <p>
-              I am focused on backend, distributed systems, and AI systems where architectural choices
-              directly influence product velocity and reliability.
+              I build services, pipelines, and deployment workflows that reduce failure risk while
+              increasing shipping velocity. My work sits at the intersection of backend architecture,
+              distributed systems, and applied AI.
             </p>
           </div>
           <div className="about-hero-art" aria-hidden="true">
@@ -63,9 +68,10 @@ export default function AboutPage() {
         <section className="surface about-statement">
           <h2>Personal Statement</h2>
           <p>
-            My core philosophy is simple: systems should be clear enough to evolve, robust enough to
-            survive production pressure, and measurable enough to justify every tradeoff. I care about
-            engineering that is composable, observable, and built for iteration, not one-off demos.
+            I am targeting teams where engineering quality and business outcomes are tightly coupled. I
+            care about designing systems that are observable, resilient, and easy to evolve, so teams can
+            ship faster without increasing operational risk. I bring a pragmatic execution style:
+            high-signal scoping, disciplined delivery, and clear ownership of production outcomes.
           </p>
         </section>
       </Reveal>
@@ -115,12 +121,13 @@ export default function AboutPage() {
         <section className="surface about-section">
           <h2>What I Care About</h2>
           <p>
-            <strong>MLOps:</strong> I care about the path from model experimentation to production
-            reliability, including reproducible pipelines, model versioning, and rollback safety.
+            <strong>MLOps and Applied AI Systems:</strong> I focus on reliable paths from experimentation
+            to production, including retrieval quality, model/version traceability, and safe rollout
+            strategies.
           </p>
           <p>
-            <strong>Distributed Systems:</strong> I care about designing services that remain observable,
-            resilient, and cost-aware as load and complexity increase.
+            <strong>Distributed Systems:</strong> I focus on service boundaries, failure isolation,
+            observability, and cost-aware scaling so systems remain stable as complexity grows.
           </p>
           <p className="about-signoff">- Tanmay</p>
         </section>

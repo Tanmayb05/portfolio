@@ -27,6 +27,8 @@ yarn.lock
 dist/
 build/
 *.log
+.next/
+new/next-portfolio/.next/
 
 # Environment variables
 .env

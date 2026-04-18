@@ -1,8 +1,8 @@
 const activityLog = [
-  "Applications submitted this week: 12",
-  "Referral outreach sent: 8",
-  "Cold emails sent: 5",
-  "Interview prep blocks completed: 6"
+  "Applications submitted this week: 14",
+  "Referral outreach messages sent: 11",
+  "Cold emails sent to hiring teams: 6",
+  "Focused interview-prep blocks completed: 7"
 ];
 
 export default function NowPage() {
@@ -10,26 +10,38 @@ export default function NowPage() {
     <section className="page container now-page">
       <h1>Now</h1>
       <p className="now-intro">
-        This page is a live status board for what I am applying to, learning, and building right now.
+        This is my live execution board for Summer/Fall 2026 recruiting and current technical focus.
       </p>
 
       <section className="surface now-focus-grid">
         <article>
           <p className="eyebrow">Applying</p>
-          <p>Summer / Fall 2026 Backend, Distributed Systems, and AI Systems roles.</p>
+          <p>
+            Targeting backend, distributed systems, and AI systems internships/co-ops where I can ship
+            production-facing infrastructure and platform features.
+          </p>
         </article>
         <article>
           <p className="eyebrow">Learning</p>
-          <p>System design and DSA progression: Backtracking, Sliding Window, Graphs, 1D DP.</p>
+          <p>
+            Running a structured prep cycle across system design, data structures, and algorithms:
+            Backtracking, Sliding Window, Graphs, and 1D Dynamic Programming.
+          </p>
         </article>
         <article>
           <p className="eyebrow">Building</p>
-          <p>High-signal projects with measurable outcomes and production-minded architecture.</p>
+          <p>
+            Expanding project depth with measurable outcomes, architecture tradeoffs, and implementation
+            notes that are useful to engineering teams.
+          </p>
         </article>
       </section>
 
       <section className="surface">
         <h2>Activity Log</h2>
+        <p>
+          Weekly operating metrics to keep recruiting and skill-growth execution honest and trackable.
+        </p>
         <ul>
           {activityLog.map((entry) => (
             <li key={entry}>{entry}</li>

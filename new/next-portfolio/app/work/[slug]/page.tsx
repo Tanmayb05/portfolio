@@ -9,6 +9,9 @@ export default function WorkDetailPage({ params }: { params: { slug: string } })
   }
 
   const caseStudy = caseStudies[project.slug];
+  if (!caseStudy) {
+    notFound();
+  }
 
   return (
     <section className="page container work-detail-stack">
@@ -26,64 +29,52 @@ export default function WorkDetailPage({ params }: { params: { slug: string } })
         ))}
       </div>
 
-      {caseStudy ? (
-        <>
-          <section className="surface case-study-meta">
-            <div>
-              <p className="meta-label">Role</p>
-              <p>{caseStudy.role}</p>
-            </div>
-            <div>
-              <p className="meta-label">Duration</p>
-              <p>{caseStudy.duration}</p>
-            </div>
-          </section>
+      <section className="surface case-study-meta">
+        <div>
+          <p className="meta-label">Role</p>
+          <p>{caseStudy.role}</p>
+        </div>
+        <div>
+          <p className="meta-label">Duration</p>
+          <p>{caseStudy.duration}</p>
+        </div>
+      </section>
 
-          <section className="surface">
-            <h2>Overview</h2>
-            <p>{caseStudy.intro}</p>
-          </section>
+      <section className="surface">
+        <h2>Overview</h2>
+        <p>{caseStudy.intro}</p>
+      </section>
 
-          {caseStudy.sections.map((section) => (
-            <section key={section.title} className="surface">
-              <h2>{section.title}</h2>
-              <ul>
-                {section.bullets.map((bullet) => (
-                  <li key={bullet}>{bullet}</li>
-                ))}
-              </ul>
-            </section>
-          ))}
-
-          <section className="surface">
-            <h2>Outcomes</h2>
-            <ul>
-              {caseStudy.outcomes.map((outcome) => (
-                <li key={outcome}>{outcome}</li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="surface">
-            <h2>Technology</h2>
-            <div className="tag-row">
-              {caseStudy.stack.map((item) => (
-                <span key={item} className="tag-chip">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </section>
-        </>
-      ) : (
-        <section className="surface">
-          <h2>Deep Dive In Progress</h2>
-          <p>
-            This page is scaffolded and queued next. Current summary: {project.detail} Full architecture,
-            decisions, and metrics will be expanded in the next content pass.
-          </p>
+      {caseStudy.sections.map((section) => (
+        <section key={section.title} className="surface">
+          <h2>{section.title}</h2>
+          <ul>
+            {section.bullets.map((bullet) => (
+              <li key={bullet}>{bullet}</li>
+            ))}
+          </ul>
         </section>
-      )}
+      ))}
+
+      <section className="surface">
+        <h2>Outcomes</h2>
+        <ul>
+          {caseStudy.outcomes.map((outcome) => (
+            <li key={outcome}>{outcome}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="surface">
+        <h2>Technology</h2>
+        <div className="tag-row">
+          {caseStudy.stack.map((item) => (
+            <span key={item} className="tag-chip">
+              {item}
+            </span>
+          ))}
+        </div>
+      </section>
     </section>
   );
 }
