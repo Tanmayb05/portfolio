@@ -35,7 +35,7 @@ export default function HomePage() {
       <section className="section-gradient-hero relative overflow-hidden border-b border-[var(--border-soft)] py-24 sm:py-32">
         <div aria-hidden="true" className="soft-grid absolute inset-0" />
         <SiteContainer className="relative">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:items-end">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="max-w-4xl">
               <Reveal>
                 <p className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--accent-teal)]">

@@ -1,4 +1,4 @@
-export type SourceDocument = "readme_portfolio.md" | "resume.json";
+export type SourceDocument = "content-intake.json";
 
 export type ResumeContact = {
   linkedin: string;

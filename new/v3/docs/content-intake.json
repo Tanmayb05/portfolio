@@ -1,0 +1,658 @@
+{
+  "instructions": {
+    "title": "Portfolio Content Intake",
+    "description": "Use this file as the place to paste new content before we convert it into content/*.ts or page copy. Keep it simple. Write in first person. Use bullets. Do not worry about perfect wording on the first pass.",
+    "guidelines": [
+      "Paste facts here first.",
+      "Use 'TBD' only when you intentionally do not know something yet.",
+      "Do not add claims unless you can back them up.",
+      "Keep project metrics exact.",
+      "Put links in plain text.",
+      "Write as 'I built,' 'I learned,' 'I decided,' 'I improved.'",
+      "Avoid 'Tanmay built,' 'he worked on,' or third-person language."
+    ]
+  },
+  "homepage": {
+    "hero": {
+      "identity": "I build systems that scale, from cloud infrastructure to AI-powered applications.",
+      "whatIBuild": [
+        "Cloud infrastructure and DevOps automation (AWS, Kubernetes, Terraform)",
+        "AI/ML systems (LLMs, RAG, recommendation engines)",
+        "Full-stack applications (React, Node.js, Python backends)"
+      ],
+      "whatICareAbout": [
+        "Distributed systems and system design",
+        "MLOps and production AI systems",
+        "Deep work over shallow effort"
+      ],
+      "currentFocus": [
+        "System Design mastery",
+        "DSA consistency (Leetcode)",
+        "High-signal project building for Summer/Fall 2026 roles"
+      ]
+    },
+    "proofPoints": [
+      {
+        "metricOrResult": "Delivered 44 production upgrades in 4 months with zero downtime",
+        "context": "Siemens Industry Software (Jul 2022 - Jun 2024)",
+        "source": "resume.json, work experience"
+      },
+      {
+        "metricOrResult": "Reduced deployment downtime by 50% using Blue-Green deployments",
+        "context": "DevOps automation at Siemens",
+        "source": "resume.json achievement"
+      },
+      {
+        "metricOrResult": "Built LSTM model achieving 93.28% accuracy on 400K+ headlines",
+        "context": "News Headline Classification project (Mar 2025)",
+        "source": "resume.json projects_and_research"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "slug": "spendora",
+      "title": "Spendora - Conversational AI for Expense Insights",
+      "summary": "I built an LLM-powered conversational AI assistant that provides personalized expense insights using retrieval-augmented generation and tool-based reasoning.",
+      "problem": {
+        "whatProblem": "How can users get intelligent insights about their spending habits through natural conversation?",
+        "whoForIsWas": "Anyone wanting AI-powered financial analysis without manual data analysis",
+        "whyDidItMatter": "Most expense tracking tools lack conversational intelligence and context-aware recommendations"
+      },
+      "context": {
+        "whenDidYouBuildIt": "Jun 2025",
+        "typeOfProject": "personal",
+        "constraints": "Limited time, focus on LLM integration quality"
+      },
+      "architecture": {
+        "input": "Natural language queries about expenses",
+        "backend": "LangChain conversational agents with memory management",
+        "dataModelStorage": "Custom financial data toolchains, vector embeddings for RAG",
+        "externalAPIs": "HuggingFace models (Mistral, Gemma), LangChain framework",
+        "outputUserExperience": "Conversational interface with context-aware financial recommendations"
+      },
+      "technicalDecisions": [
+        {
+          "decision": "Used LangChain for agent orchestration",
+          "whyIChoseIt": "Simplifies memory management and tool-use patterns for conversational AI",
+          "alternativeConsidered": "Building custom conversation loop"
+        },
+        {
+          "decision": "Implemented RAG with custom toolchains",
+          "whyIChoseIt": "Enables grounding in actual financial data without fine-tuning",
+          "alternativeConsidered": "Fine-tuned LLM on expense data"
+        }
+      ],
+      "tradeoffs": [
+        "RAG adds latency for retrieval but improves accuracy over hallucination-prone base models",
+        "Multiple toolchains provide flexibility but increase complexity"
+      ],
+      "metrics": [
+        {
+          "exactMetric": "Conversational accuracy on financial queries",
+          "whatItMeasured": "TBD (need to measure)",
+          "source": "TBD"
+        },
+        {
+          "exactMetric": "Reduction in manual analysis time",
+          "whatItMeasured": "TBD",
+          "source": "TBD"
+        }
+      ],
+      "techStack": [
+        "HuggingFace (Mistral, Gemma models)",
+        "LangChain",
+        "Python",
+        "Vector embeddings"
+      ],
+      "links": {
+        "github": "TBD",
+        "demo": "TBD",
+        "paper": "TBD",
+        "video": "TBD",
+        "other": "TBD"
+      },
+      "screenshotsOrVisuals": [
+        "Conversation flow example",
+        "Dashboard showing expense insights"
+      ],
+      "whatIWouldImproveNext": [
+        "Add real-time transaction integration",
+        "Implement budget forecasting",
+        "Support multi-currency analysis"
+      ]
+    },
+    {
+      "slug": "news-headline-classification",
+      "title": "News Headline Classification",
+      "summary": "I built an LSTM-based deep learning model that classifies news headlines with 93.28% accuracy on a dataset of 400K+ headlines.",
+      "problem": {
+        "whatProblem": "Automatically categorize news headlines into topics for content organization",
+        "whoForIsWas": "News platforms, content aggregators",
+        "whyDidItMatter": "Manual classification is time-consuming; automated systems improve discoverability"
+      },
+      "context": {
+        "whenDidYouBuildIt": "Mar 2025",
+        "typeOfProject": "personal / research",
+        "constraints": "Dataset size, model training efficiency"
+      },
+      "architecture": {
+        "input": "Raw news headlines (text)",
+        "backend": "LSTM neural network with embedding layers",
+        "dataModelStorage": "spaCy for preprocessing, PyTorch for training",
+        "externalAPIs": "None",
+        "outputUserExperience": "Predicted category labels with confidence scores"
+      },
+      "technicalDecisions": [
+        {
+          "decision": "Used LSTM over simpler models like logistic regression",
+          "whyIChoseIt": "Captures sequential dependencies in text better than bag-of-words approaches",
+          "alternativeConsidered": "Transformer-based models, but LSTM was more interpretable"
+        },
+        {
+          "decision": "Optimized preprocessing pipeline",
+          "whyIChoseIt": "25% efficiency improvement in training",
+          "alternativeConsidered": "Raw text without optimization"
+        }
+      ],
+      "tradeoffs": [
+        "LSTM training is slower than simpler models but provides better accuracy",
+        "Model requires GPU for practical training time"
+      ],
+      "metrics": [
+        {
+          "exactMetric": "93.28% accuracy",
+          "whatItMeasured": "Correct classification rate on test set",
+          "source": "resume.json"
+        },
+        {
+          "exactMetric": "25% training efficiency improvement",
+          "whatItMeasured": "Speed of preprocessing and training pipeline",
+          "source": "resume.json"
+        }
+      ],
+      "techStack": [
+        "Python",
+        "PyTorch",
+        "spaCy",
+        "NumPy, pandas"
+      ],
+      "links": {
+        "github": "TBD",
+        "demo": "TBD",
+        "paper": "TBD",
+        "video": "TBD",
+        "other": "TBD"
+      },
+      "screenshotsOrVisuals": [
+        "Model architecture diagram",
+        "Confusion matrix",
+        "Training/validation loss curves"
+      ],
+      "whatIWouldImproveNext": [
+        "Explore attention mechanisms for explainability",
+        "Test with modern transformer-based models",
+        "Deploy as API service"
+      ]
+    },
+    {
+      "slug": "media-recommendation-system",
+      "title": "Media Recommendation System",
+      "summary": "I developed a personalized recommendation system for movies, music, and books using multiple algorithms including collaborative filtering, content-based filtering, and clustering.",
+      "problem": {
+        "whatProblem": "Help users discover relevant media across different content types",
+        "whoForIsWas": "Media streaming platforms, discovery engines",
+        "whyDidItMatter": "Personalization drives engagement and user satisfaction"
+      },
+      "context": {
+        "whenDidYouBuildIt": "Mar 2022",
+        "typeOfProject": "academic / research",
+        "constraints": "Dataset availability, algorithm variety"
+      },
+      "architecture": {
+        "input": "User ratings, viewing/listening history, item metadata",
+        "backend": "Multiple recommendation algorithms working in ensemble",
+        "dataModelStorage": "Flask backend, React frontend, Spotify API integration",
+        "externalAPIs": "Spotify API for music metadata",
+        "outputUserExperience": "Ranked recommendations across movies, music, and books"
+      },
+      "technicalDecisions": [
+        {
+          "decision": "Implemented multiple algorithms (content-based, collaborative, K-means, TF-IDF)",
+          "whyIChoseIt": "Different algorithms capture different recommendation signals",
+          "alternativeConsidered": "Single best-performing algorithm"
+        },
+        {
+          "decision": "Used ensemble approach",
+          "whyIChoseIt": "Combines strengths of multiple methods for better recommendations",
+          "alternativeConsidered": "Hybrid approach with explicit weighting"
+        }
+      ],
+      "tradeoffs": [
+        "Multiple algorithms increase computational complexity",
+        "Ensemble approach harder to explain than single algorithm"
+      ],
+      "metrics": [
+        {
+          "exactMetric": "Published in IJRASET (Paper ID: IJRASET42927)",
+          "whatItMeasured": "Academic peer review validation",
+          "source": "resume.json"
+        },
+        {
+          "exactMetric": "Multi-algorithm recommendation delivery",
+          "whatItMeasured": "System successfully used content-based, collaborative, K-means, TF-IDF",
+          "source": "resume.json"
+        }
+      ],
+      "techStack": [
+        "React",
+        "Flask",
+        "Python",
+        "Spotify API",
+        "scikit-learn"
+      ],
+      "links": {
+        "github": "TBD",
+        "demo": "TBD",
+        "paper": "https://ijraset.com/ (IJRASET42927)",
+        "video": "TBD",
+        "other": "TBD"
+      },
+      "screenshotsOrVisuals": [
+        "Recommendation interface screenshots",
+        "Algorithm comparison charts",
+        "User flow diagrams"
+      ],
+      "whatIWouldImproveNext": [
+        "Add real-time recommendation updates",
+        "Implement deep learning models (neural collaborative filtering)",
+        "Add user interaction feedback loop"
+      ]
+    },
+    {
+      "slug": "soundscape-android",
+      "title": "SoundScape - Android Music Streaming App",
+      "summary": "I built an end-to-end Android music streaming app with API integration and intelligent caching that reduced API calls by 70%.",
+      "problem": {
+        "whatProblem": "Create a functional music streaming experience on Android",
+        "whoForIsWas": "Music listeners on Android devices",
+        "whyDidItMatter": "Demonstrates full-stack mobile development and real-world performance optimization"
+      },
+      "context": {
+        "whenDidYouBuildIt": "Dec 2021",
+        "typeOfProject": "personal",
+        "constraints": "Android platform limitations, API rate limits"
+      },
+      "architecture": {
+        "input": "User search/browse queries, playback controls",
+        "backend": "Android SDK with REST API integration",
+        "dataModelStorage": "Room database for caching, MediaPlayer for playback",
+        "externalAPIs": "Musixmatch API for music metadata",
+        "outputUserExperience": "Music streaming player with search, playlist, and playback controls"
+      },
+      "technicalDecisions": [
+        {
+          "decision": "Implemented Room caching layer for Musixmatch API responses",
+          "whyIChoseIt": "Reduces API calls by 70% and improves user experience with instant data",
+          "alternativeConsidered": "No caching, direct API calls (slower, hits rate limits)"
+        },
+        {
+          "decision": "Microservices architecture for playback/notifications",
+          "whyIChoseIt": "Separates concerns, makes each component independently testable",
+          "alternativeConsidered": "Monolithic activity-based approach"
+        }
+      ],
+      "tradeoffs": [
+        "Caching adds storage requirements but dramatically improves performance",
+        "Microservices add complexity but improve maintainability"
+      ],
+      "metrics": [
+        {
+          "exactMetric": "70% API call reduction",
+          "whatItMeasured": "Fewer requests to Musixmatch due to caching",
+          "source": "resume.json"
+        },
+        {
+          "exactMetric": "Full music streaming feature set implemented",
+          "whatItMeasured": "Playback, search, notifications, file operations",
+          "source": "resume.json"
+        }
+      ],
+      "techStack": [
+        "Android SDK",
+        "Java",
+        "Musixmatch API",
+        "Room database",
+        "MediaPlayer",
+        "Gradle",
+        "Git"
+      ],
+      "links": {
+        "github": "TBD",
+        "demo": "TBD",
+        "paper": "TBD",
+        "video": "TBD",
+        "other": "TBD"
+      },
+      "screenshotsOrVisuals": [
+        "Player interface screenshot",
+        "Search/browse screens",
+        "Playlist view"
+      ],
+      "whatIWouldImproveNext": [
+        "Add offline download capability",
+        "Implement user accounts and sync",
+        "Support additional music sources beyond Musixmatch"
+      ]
+    }
+  ],
+  "thinkingPosts": [
+    {
+      "slug": "evaluating-technical-projects",
+      "title": "How I Evaluate Technical Projects",
+      "category": "Technical Evaluation & Judging",
+      "status": "draft",
+      "summary": "I've developed a framework for evaluating student technical projects based on system design, ML rigor, and real-world viability that I apply as a judge at technical expos.",
+      "mainPoint": "The core idea is that strong technical projects balance three dimensions: architectural soundness, methodological rigor, and practical applicability. Most weak projects fail on one or more of these.",
+      "outline": {
+        "intro": "Why I needed a framework when judging at CEAS Expo 2026",
+        "point1": "System Design - Is the architecture scalable? Do they understand tradeoffs?",
+        "point2": "Rigor - Did they validate their approach? Are claims backed by evidence?",
+        "point3": "Real-world Viability - Could this actually work in production? Are edge cases considered?",
+        "conclusion": "Combining these dimensions reveals project quality beyond surface-level impressive demos"
+      },
+      "examplesOrStories": [
+        "Team that built impressive UI but ignored system scalability",
+        "Another team with solid architecture but no validation on their ML model claims"
+      ],
+      "relatedProject": "CEAS Expo Judge (2026)",
+      "tags": [
+        "Technical Evaluation",
+        "Project Assessment",
+        "System Design",
+        "Student Projects"
+      ],
+      "publishDate": "TBD"
+    },
+    {
+      "slug": "systematic-job-search",
+      "title": "How I'm Running My Job Search Like a System",
+      "category": "Career & Job Search",
+      "status": "active",
+      "summary": "Instead of randomly applying to jobs, I've built a structured system around daily applications, referral outreach, and cold emails to founders/recruiters.",
+      "mainPoint": "The core idea is that job search is a numbers game with a process. By systematizing applications, networking, and follow-ups, I can increase signal and reduce noise in my search for Summer/Fall 2026 roles.",
+      "outline": {
+        "intro": "Why random job search doesn't work",
+        "point1": "Daily application targets and tracking",
+        "point2": "Referral outreach and relationship building",
+        "point3": "Cold email strategy to founders and recruiters",
+        "conclusion": "System compounds over time"
+      },
+      "examplesOrStories": [
+        "How structured daily applications led to interview callbacks",
+        "Cold email example that resulted in real opportunity"
+      ],
+      "relatedProject": "Active job search (2026)",
+      "tags": [
+        "Job Search",
+        "Career",
+        "Systems",
+        "Networking"
+      ],
+      "publishDate": "TBD"
+    },
+    {
+      "slug": "judging-student-projects",
+      "title": "What I Look For When Judging Student Projects",
+      "category": "Technical Evaluation & Judging",
+      "status": "draft",
+      "summary": "As a CEAS Expo 2026 judge, I evaluate projects across multiple domains using structured frameworks focused on system design, rigor, and real-world viability.",
+      "mainPoint": "The core idea is that great student projects demonstrate not just implementation ability, but thoughtful decision-making and awareness of constraints and tradeoffs.",
+      "outline": {
+        "intro": "My role at CEAS Expo 2026",
+        "point1": "How I apply structured evaluation frameworks",
+        "point2": "High-signal questions that reveal depth",
+        "point3": "What separates good projects from great ones",
+        "conclusion": "Depth of thinking matters more than feature count"
+      },
+      "examplesOrStories": [
+        "Project that impressed with thoughtful architecture decisions",
+        "Project that failed despite working demo due to missing rigor"
+      ],
+      "relatedProject": "CEAS Expo Judge 2026",
+      "tags": [
+        "Technical Evaluation",
+        "Project Assessment",
+        "Judging",
+        "Student Projects"
+      ],
+      "publishDate": "TBD"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Siemens Industry Software",
+      "role": "Software Developer Engineer",
+      "location": "Remote",
+      "summary": "I automated AWS workflows, led infrastructure improvements, and mentored junior engineers while delivering 44 production upgrades in 4 months with zero downtime.",
+      "mostImportantImpact": [
+        "Reduced deployment downtime by 50% using Blue-Green deployments with Ansible",
+        "Improved deployment effectiveness by 40% through Python automation and reusable packages",
+        "Enhanced code coverage by 200% as Quality Coach and SonarQube Specialist"
+      ],
+      "extraDetails": [
+        "Mentored 5 junior engineers with documentation and training",
+        "Implemented infrastructure-as-code practices improving team velocity",
+        "Applied SAFe Practitioner 5.1 principles to DevOps workflows"
+      ]
+    },
+    {
+      "company": "Siemens Industry Software",
+      "role": "Software Developer Intern",
+      "location": "Remote",
+      "summary": "I developed Go + Terratest framework that caught 95% of infrastructure misconfigurations and automated AWS provisioning, reducing deployment time by 30%.",
+      "mostImportantImpact": [
+        "Automated AWS provisioning with Terraform, reducing deployment time by 30%",
+        "Built Go + Terratest testing framework catching 95% of misconfigurations pre-production",
+        "Optimized DevOps workflows reducing environment setup from hours to minutes"
+      ],
+      "extraDetails": [
+        "Enhanced infrastructure validation using Terragrunt for 100% successful Terraform runs",
+        "Documented infrastructure-as-code patterns adopted by broader team"
+      ]
+    },
+    {
+      "company": "Government of Maharashtra",
+      "role": "Software Developer Intern",
+      "location": "Maharashtra, India",
+      "summary": "I developed a full-stack inward/outward register app that digitized record management and improved department efficiency by 40%.",
+      "mostImportantImpact": [
+        "Developed full-stack React and MySQL application for government record management",
+        "Digitized record management improving efficiency by 40%",
+        "Deployed system improving transparency and accuracy of government records"
+      ],
+      "extraDetails": [
+        "Collaborated with government department to understand process requirements",
+        "Implemented UI/UX improvements based on user feedback"
+      ]
+    }
+  ],
+  "travelAndLife": [
+    {
+      "title": "Seattle Trip",
+      "region": "USA",
+      "stateOrProvince": "Washington",
+      "cityOrPlace": "Seattle",
+      "timeVisited": "TBD",
+      "description": "I explored Seattle and experienced TBD",
+      "locationsVisited": [
+        "TBD",
+        "TBD",
+        "TBD"
+      ],
+      "googleMapsLink": "TBD",
+      "photos": [
+        {
+          "filePath": "TBD",
+          "caption": "TBD"
+        }
+      ],
+      "tags": [
+        "Travel",
+        "USA",
+        "Technology Hub"
+      ]
+    },
+    {
+      "title": "LA Experience",
+      "region": "USA",
+      "stateOrProvince": "California",
+      "cityOrPlace": "Los Angeles",
+      "timeVisited": "TBD",
+      "description": "I had a memorable experience in LA with TBD",
+      "locationsVisited": [
+        "TBD",
+        "TBD"
+      ],
+      "googleMapsLink": "TBD",
+      "photos": [
+        {
+          "filePath": "TBD",
+          "caption": "TBD"
+        }
+      ],
+      "tags": [
+        "Travel",
+        "USA",
+        "California"
+      ]
+    },
+    {
+      "title": "San Diego Experience",
+      "region": "USA",
+      "stateOrProvince": "California",
+      "cityOrPlace": "San Diego",
+      "timeVisited": "TBD",
+      "description": "I had an interesting experience in San Diego with TBD",
+      "locationsVisited": [
+        "TBD",
+        "TBD"
+      ],
+      "googleMapsLink": "TBD",
+      "photos": [
+        {
+          "filePath": "TBD",
+          "caption": "TBD"
+        }
+      ],
+      "tags": [
+        "Travel",
+        "USA",
+        "California"
+      ]
+    }
+  ],
+  "lifeSystems": {
+    "systemsForLife": {
+      "schedulingSystems": [
+        "Structured daily routine for job search (applications, coding, system design)",
+        "Calendar blocking for deep work vs. shallow tasks",
+        "Weekly review cycles for progress tracking"
+      ],
+      "productivityExperiments": [
+        "Daily application targets and tracking",
+        "Time-blocked system design sessions (2-3 hours focused)",
+        "DSA consistency with Leetcode (focus on backtracking, sliding window, graphs)"
+      ],
+      "habitDesign": [
+        "Morning: System design review or Leetcode problems",
+        "Midday: Application and networking outreach",
+        "Evening: Project building or learning"
+      ],
+      "optimizationFrameworks": [
+        "Eisenhower Decision Matrix for prioritizing job search activities",
+        "Shift from instinct-based decisions to structured decision-making",
+        "Simplification-first thinking when evaluating opportunities"
+      ]
+    },
+    "thingsIAmTrying": {
+      "newRoutines": [
+        "Daily job application system (structured targets)",
+        "Referral outreach cadence (3-5 per week)",
+        "Cold email outreach to founders/recruiters"
+      ],
+      "learningExperiments": [
+        "System Design base problems (ongoing)",
+        "Leetcode backtracking and sliding window optimization",
+        "Behavioral interview preparation"
+      ],
+      "performanceOptimizationAttempts": [
+        "Measuring application-to-interview conversion rate",
+        "Tracking response rates from referral vs. cold outreach",
+        "Monitoring technical interview preparation effectiveness"
+      ]
+    }
+  },
+  "contact": {
+    "preferredEmail": "tanmay.v.bhuskute@gmail.com",
+    "preferredLinkedIn": "linkedin.com/in/tanmay-bhuskute",
+    "preferredGitHub": "github.com/Tanmayb05",
+    "openToRoles": [
+      "Backend Engineer",
+      "Software Engineer",
+      "DevOps Engineer",
+      "Data Engineer",
+      "ML Engineer / AI Engineer",
+      "Data Scientist"
+    ],
+    "shortContactNote": "I'm actively searching for Summer/Fall 2026 roles in backend engineering, distributed systems, and AI/ML infrastructure. I'm particularly interested in companies building scalable systems or innovative AI products."
+  },
+  "globalLinks": {
+    "projectRepositories": [
+      {
+        "project": "Spendora",
+        "url": "TBD"
+      },
+      {
+        "project": "News Headline Classification",
+        "url": "TBD"
+      },
+      {
+        "project": "Media Recommendation System",
+        "url": "TBD"
+      },
+      {
+        "project": "SoundScape",
+        "url": "TBD"
+      }
+    ],
+    "liveDemos": [
+      {
+        "project": "Spendora",
+        "url": "TBD"
+      },
+      {
+        "project": "SoundScape",
+        "url": "TBD"
+      }
+    ],
+    "papers": [
+      {
+        "project": "Media Recommendation System",
+        "url": "https://ijraset.com/ (Paper ID: IJRASET42927)"
+      }
+    ],
+    "resume": {
+      "currentFilename": "resume.json",
+      "notes": "Interactive resume with education, skills, experience, and projects"
+    }
+  },
+  "reviewChecklist": [
+    "I used first-person active voice.",
+    "I included exact metrics only where I know they are true.",
+    "I did not invent dates, links, locations, or results.",
+    "I marked unknowns as 'TBD'.",
+    "I kept each section easy to skim.",
+    "I included source notes for important claims."
+  ]
+}

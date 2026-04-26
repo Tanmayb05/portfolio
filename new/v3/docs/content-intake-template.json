@@ -1,0 +1,181 @@
+{
+  "instructions": {
+    "title": "Portfolio Content Intake Template",
+    "description": "Use this file as the place to paste new content before we convert it into content/*.ts or page copy. Keep it simple. Write in first person. Use bullets. Do not worry about perfect wording on the first pass.",
+    "guidelines": [
+      "Paste facts here first.",
+      "Use 'TBD' only when you intentionally do not know something yet.",
+      "Do not add claims unless you can back them up.",
+      "Keep project metrics exact.",
+      "Put links in plain text.",
+      "Write as 'I built,' 'I learned,' 'I decided,' 'I improved.'",
+      "Avoid 'Tanmay built,' 'he worked on,' or third-person language."
+    ]
+  },
+  "homepage": {
+    "hero": {
+      "identity": "I ...",
+      "whatIBuild": [],
+      "whatICareAbout": [],
+      "currentFocus": []
+    },
+    "proofPoints": [
+      {
+        "metricOrResult": "",
+        "context": "",
+        "source": ""
+      }
+    ]
+  },
+  "projects": [
+    {
+      "slug": "project-slug",
+      "title": "Project Name",
+      "summary": "I built ...",
+      "problem": {
+        "whatProblem": "",
+        "whoForIsWas": "",
+        "whyDidItMatter": ""
+      },
+      "context": {
+        "whenDidYouBuildIt": "",
+        "typeOfProject": "class/personal/work/research/hackathon/app",
+        "constraints": ""
+      },
+      "architecture": {
+        "input": "",
+        "backend": "",
+        "dataModelStorage": "",
+        "externalAPIs": "",
+        "outputUserExperience": ""
+      },
+      "technicalDecisions": [
+        {
+          "decision": "",
+          "whyIChoseIt": "",
+          "alternativeConsidered": ""
+        }
+      ],
+      "tradeoffs": [],
+      "metrics": [
+        {
+          "exactMetric": "",
+          "whatItMeasured": "",
+          "source": ""
+        }
+      ],
+      "techStack": [],
+      "links": {
+        "github": "TBD",
+        "demo": "TBD",
+        "paper": "TBD",
+        "video": "TBD",
+        "other": "TBD"
+      },
+      "screenshotsOrVisuals": [],
+      "whatIWouldImproveNext": []
+    }
+  ],
+  "thinkingPosts": [
+    {
+      "slug": "post-slug",
+      "title": "Post Title",
+      "category": "Problem Breakdowns / Technical Evaluation & Judging / Career & Job Search / What I'm Learning Now / Mental Models / Research Notes",
+      "status": "planned / draft / active / published",
+      "summary": "I ...",
+      "mainPoint": "The core idea is ...",
+      "outline": {
+        "intro": "",
+        "point1": "",
+        "point2": "",
+        "point3": "",
+        "conclusion": ""
+      },
+      "examplesOrStories": [],
+      "relatedProject": "",
+      "tags": [],
+      "publishDate": "TBD"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Company Name",
+      "role": "Role Title",
+      "location": "",
+      "summary": "I ...",
+      "mostImportantImpact": [],
+      "extraDetails": []
+    }
+  ],
+  "travelAndLife": [
+    {
+      "title": "Trip or Place Name",
+      "region": "USA / India / China",
+      "stateOrProvince": "",
+      "cityOrPlace": "",
+      "timeVisited": "",
+      "description": "I ...",
+      "locationsVisited": [],
+      "googleMapsLink": "TBD",
+      "photos": [
+        {
+          "filePath": "",
+          "caption": ""
+        }
+      ],
+      "tags": []
+    }
+  ],
+  "lifeSystems": {
+    "systemsForLife": {
+      "schedulingSystems": [],
+      "productivityExperiments": [],
+      "habitDesign": [],
+      "optimizationFrameworks": []
+    },
+    "thingsIAmTrying": {
+      "newRoutines": [],
+      "learningExperiments": [],
+      "performanceOptimizationAttempts": []
+    }
+  },
+  "contact": {
+    "preferredEmail": "TBD",
+    "preferredLinkedIn": "TBD",
+    "preferredGitHub": "TBD",
+    "openToRoles": [],
+    "shortContactNote": "I ..."
+  },
+  "globalLinks": {
+    "projectRepositories": [
+      {
+        "project": "",
+        "url": ""
+      }
+    ],
+    "liveDemos": [
+      {
+        "project": "",
+        "url": ""
+      }
+    ],
+    "papers": [
+      {
+        "project": "",
+        "url": ""
+      }
+    ],
+    "resume": {
+      "currentFilename": "resume.json",
+      "notes": ""
+    }
+  },
+  "reviewChecklist": [
+    "I used first-person active voice.",
+    "I included exact metrics only where I know they are true.",
+    "I did not invent dates, links, locations, or results.",
+    "I marked unknowns as 'TBD'.",
+    "I kept each section easy to skim.",
+    "I included source notes for important claims."
+  ]
+}

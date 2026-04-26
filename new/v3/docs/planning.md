@@ -5,9 +5,10 @@ This plan turns the V3 foundation into a complete personal portfolio. The site m
 ## Source of Truth
 
 - `docs/site-system.md`: design system, visual direction, page structure, interaction rules.
-- `docs/readme_portfolio.md`: content strategy, thinking topics, proof-of-work structure, life/personality sections.
-- `docs/resume.json`: structured resume data for education, work experience, skills, projects, research, and contact links.
-- `docs/resume.pdf`: downloadable resume asset and reference for recruiter-facing detail.
+- **`docs/content-intake.json`**: SINGLE SOURCE OF TRUTH for all portfolio facts, projects, thinking posts, experience, travel, and life systems.
+- `docs/content-intake-template.json`: template for adding new content in the same structured format.
+- `docs/resume.json`: read-only structured backup for legacy compatibility (synced from content-intake.json).
+- `public/resume.pdf`: downloadable resume asset and reference for recruiter-facing detail (served via `/resume.pdf` route).
 
 Do not invent personal facts, metrics, companies, roles, links, publications, travel details, or project claims outside these files. Use obvious placeholders only where the source explicitly says `TBD`.
 
@@ -90,7 +91,7 @@ docs/
   readme_portfolio.md
   resume.json
   resume.pdf
-  panning.md
+  planning.md
 public/
   resume.pdf
 ```
@@ -101,13 +102,13 @@ Goal: create a typed content system from the existing docs.
 
 Tasks:
 
-- Copy or expose `docs/resume.pdf` through `public/resume.pdf` for download.
-- Create `lib/resume.ts` to import or read structured resume data.
+- Resume PDF is served from `public/resume.pdf` via `/resume.pdf` route.
+- Create `lib/resume.ts` to import structured resume data from `content-intake.json`.
 - Create shared TypeScript types for projects, thinking posts, experience items, skills, and travel entries.
-- Create `content/projects.ts` from `resume.json` and `readme_portfolio.md`.
-- Create `content/thinking.ts` from the Thinking section in `readme_portfolio.md`.
-- Create `content/now.ts` from the Now and Learning sections in `readme_portfolio.md`.
-- Create `content/travel.ts` with only known categories and `TBD` placeholders where the source says `TBD`.
+- Create `content/projects.ts` from `content-intake.json`.
+- Create `content/thinking.ts` from the thinkingPosts section in `content-intake.json`.
+- Create `content/now.ts` from the lifeSystems section in `content-intake.json`.
+- Create `content/travel.ts` from travelAndLife section in `content-intake.json` with only known categories and `TBD` placeholders.
 - Normalize external links:
   - GitHub: `https://github.com/Tanmayb05`
   - LinkedIn: `https://linkedin.com/in/tanmay-bhuskute`
@@ -117,7 +118,7 @@ Acceptance criteria:
 
 - Content is typed.
 - No page hardcodes large data arrays when a content module should own them.
-- All factual claims map back to `readme_portfolio.md` or `resume.json`.
+- All factual claims map back to `content-intake.json`.
 
 ## Phase 2: Motion Foundation
 
@@ -402,3 +403,215 @@ Run before final delivery:
 - Dark mode feels canonical and light mode works cleanly.
 - All primary pages exist and link correctly.
 - Lint, typecheck, and build pass.
+
+## Post-MVP Roadmap
+
+These phases capture the remaining work after Phases 1-10. Research each phase before implementation so the next pass is intentional instead of just adding more UI.
+
+## Phase 11: Content Completion System
+
+Goal: replace placeholders and shallow summaries with polished, source-backed content.
+
+Research questions:
+
+- What content is missing from each page?
+- Which facts can come from resume, project repos, papers, screenshots, or notes?
+- Which items should stay private or unpublished?
+- What is the minimum content needed for each page to feel complete?
+
+Tasks:
+
+- Use `docs/content-intake.json` as the structured content source.
+- Fill project case study details using the JSON structure.
+- Fill Thinking essays or mark them intentionally as upcoming.
+- Add real Travel & Life details only where facts exist.
+- Add locations to experience if the resume should show them.
+- Add project repo/demo/paper links if they are available.
+- Use `docs/content-intake-template.json` as reference for adding new content.
+
+Acceptance criteria:
+
+- No `TBD` remains on public pages unless intentionally shown as a placeholder.
+- No invented dates, roles, locations, project links, or metrics.
+- Every content-heavy page has first-person active voice.
+
+## Phase 12: Project Case Study Deepening
+
+Goal: turn each project page into a stronger engineering case study.
+
+Research questions:
+
+- What architecture did each project actually use?
+- What technical decisions were difficult or meaningful?
+- What tradeoffs did I make?
+- What evidence proves the system worked?
+- Which screenshots, diagrams, or code snippets should support each project?
+
+Tasks:
+
+- Create real architecture diagrams for Spendora, News Headline Classification, Media Recommender, and SoundScape.
+- Add repo/demo/paper links where available.
+- Add failure modes and constraints.
+- Add implementation details without overwhelming the page.
+- Add clearer “what I would improve next” sections.
+
+Acceptance criteria:
+
+- Each project page has real technical depth.
+- Each project has at least one native diagram or architecture visual.
+- Metrics are either sourced or omitted.
+
+## Phase 13: Thinking Essay Publishing
+
+Goal: convert structured snapshots into readable essays.
+
+Research questions:
+
+- Which thinking entries are worth publishing first?
+- Which entries should remain as outlines?
+- What structure makes each post easy to read?
+- Should posts include related projects, tags, reading time, and dates?
+
+Tasks:
+
+- Choose the first 3-5 posts to publish fully.
+- Add dates and reading-time estimates.
+- Add a consistent article layout.
+- Add related-project links where relevant.
+- Keep exploratory writing structured and concrete.
+
+Acceptance criteria:
+
+- Published posts read like complete notes, not placeholders.
+- Draft/planned notes are clearly labeled.
+- Thinking remains organized by topic.
+
+## Phase 14: Travel & Life Real Data
+
+Goal: upgrade Travel & Life from placeholder map UI to real content.
+
+Research questions:
+
+- Which countries, states, cities, and places should appear?
+- Which Google Maps links are correct?
+- Which photos are worth publishing?
+- Should the first map implementation use native SVG/CSS, GeoJSON, or `react-simple-maps`?
+- How should India and China data be structured if only some regions are visited?
+
+Tasks:
+
+- Add real entries for USA, India, and China.
+- Add dates/time visited where appropriate.
+- Add Google Maps links only when verified.
+- Add optional image/gallery fields.
+- Decide whether to install a real map library after the data exists.
+
+Acceptance criteria:
+
+- Travel cards no longer depend on generic `TBD`.
+- Map hover/click states correspond to real places.
+- The page stays polished and uncluttered.
+
+## Phase 15: Visual QA and Browser Testing
+
+Goal: verify the design in actual rendered viewports.
+
+Research questions:
+
+- Which screenshot tool should be used: Playwright, Puppeteer, or manual browser review?
+- Which viewport sizes matter most?
+- Which pages need visual regression checks?
+- How should reduced motion and light mode be tested?
+
+Tasks:
+
+- Add Playwright or another browser QA setup if needed.
+- Capture desktop and mobile screenshots for all primary routes.
+- Check dark mode and light mode.
+- Check mobile menu behavior.
+- Check hover, click, scroll reveal, and reduced-motion behavior.
+- Fix text overflow, spacing, and layout issues.
+
+Acceptance criteria:
+
+- Desktop and mobile screenshots are reviewed.
+- No obvious overlap, clipping, or unreadable text.
+- Motion feels restrained and works with reduced-motion settings.
+
+## Phase 16: SEO, Metadata, and Sharing
+
+Goal: make the site more complete for search, sharing, and recruiters.
+
+Research questions:
+
+- What should the production domain be?
+- What metadata should each route use?
+- Should project and thinking pages have Open Graph images?
+- What should the sitemap and robots configuration include?
+
+Tasks:
+
+- Set `siteConfig.url` after the real domain is known.
+- Add route-specific metadata.
+- Add Open Graph and Twitter metadata.
+- Add sitemap and robots files.
+- Add canonical URLs.
+
+Acceptance criteria:
+
+- Every primary page has useful metadata.
+- Project and Thinking detail pages have meaningful titles/descriptions.
+- No fake production URL is used.
+
+## Phase 17: Content Editing and Voice Pass
+
+Goal: make the whole site sound consistent and sharp.
+
+Research questions:
+
+- Does every page use first-person active voice?
+- Are any sections too verbose, generic, or resume-like?
+- Are there claims that need stronger evidence?
+- Does the homepage still prioritize thinking and systems?
+
+Tasks:
+
+- Review all public copy.
+- Remove third-person wording.
+- Remove generic portfolio filler.
+- Tighten long sentences.
+- Make project pages more rigorous and Thinking pages more reflective.
+
+Acceptance criteria:
+
+- The site sounds like one person wrote it.
+- Copy is clear, direct, and credible.
+- No page feels like a generic resume website.
+
+## Phase 18: Production Readiness
+
+Goal: prepare the site for deployment.
+
+Research questions:
+
+- Where should the site deploy?
+- What environment variables or domain settings are needed?
+- Should analytics be added?
+- How should form/contact behavior work if email links are not enough?
+
+Tasks:
+
+- Choose deployment target.
+- Set the production URL.
+- Run final build.
+- Check all links after deployment.
+- Add analytics only if useful.
+- Document deploy commands.
+
+Acceptance criteria:
+
+- Production build passes.
+- Production links work.
+- Resume download works.
+- Contact paths work.
+- Deployment steps are documented.
