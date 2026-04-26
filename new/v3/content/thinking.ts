@@ -7,7 +7,7 @@ export const thinkingEntries: ThinkingEntry[] = [
     category: "Problem Breakdowns",
     status: "planned",
     summary:
-      "I’m breaking down how automated Android bug reproduction systems can observe, reason about, and replay failure paths.",
+      "I'm breaking down how automated Android bug reproduction systems can observe, reason about, and replay failure paths.",
     tags: ["Android", "Automation", "Systems"],
     source: ["readme_portfolio.md"]
   },
@@ -17,7 +17,7 @@ export const thinkingEntries: ThinkingEntry[] = [
     category: "Problem Breakdowns",
     status: "planned",
     summary:
-      "I’m studying how distributed logging systems preserve useful evidence across services, deployments, and failure modes.",
+      "I'm studying how distributed logging systems preserve useful evidence across services, deployments, and failure modes.",
     tags: ["Distributed Systems", "Observability"],
     source: ["readme_portfolio.md"]
   },
@@ -27,7 +27,7 @@ export const thinkingEntries: ThinkingEntry[] = [
     category: "Problem Breakdowns",
     status: "planned",
     summary:
-      "I’m mapping the likely recommendation-system pieces behind Reels, from candidate generation to ranking and feedback loops.",
+      "I'm mapping the likely recommendation-system pieces behind Reels, from candidate generation to ranking and feedback loops.",
     tags: ["Recommendations", "ML Systems"],
     source: ["readme_portfolio.md"]
   },
@@ -37,7 +37,7 @@ export const thinkingEntries: ThinkingEntry[] = [
     category: "Problem Breakdowns",
     status: "planned",
     summary:
-      "I’m exploring how user-captured images can become a shared AR world model through vision, mapping, and infrastructure.",
+      "I'm exploring how user-captured images can become a shared AR world model through vision, mapping, and infrastructure.",
     tags: ["AR", "Computer Vision", "Systems"],
     source: ["readme_portfolio.md"]
   },
@@ -73,11 +73,11 @@ export const thinkingEntries: ThinkingEntry[] = [
   },
   {
     slug: "how-i-am-running-my-job-search-like-a-system",
-    title: "How I’m Running My Job Search Like a System",
+    title: "How I'm Running My Job Search Like a System",
     category: "Career & Job Search",
     status: "active",
     summary:
-      "I’m running my job search with daily applications, referral outreach, cold emails, and a structured improvement loop.",
+      "I'm running my job search with daily applications, referral outreach, cold emails, and a structured improvement loop.",
     tags: ["Career", "Systems", "Process"],
     source: ["readme_portfolio.md"]
   },
@@ -87,7 +87,7 @@ export const thinkingEntries: ThinkingEntry[] = [
     category: "Career & Job Search",
     status: "planned",
     summary:
-      "I’m documenting what the application process exposed about targeting, positioning, feedback, and iteration.",
+      "I'm documenting what the application process exposed about targeting, positioning, feedback, and iteration.",
     tags: ["Career", "Job Search"],
     source: ["readme_portfolio.md"]
   },
@@ -97,7 +97,7 @@ export const thinkingEntries: ThinkingEntry[] = [
     category: "Career & Job Search",
     status: "planned",
     summary:
-      "I’m analyzing where applications break down and what I’m fixing in my own outreach and positioning system.",
+      "I'm analyzing where applications break down and what I'm fixing in my own outreach and positioning system.",
     tags: ["Career", "Job Search"],
     source: ["readme_portfolio.md"]
   }
@@ -107,7 +107,7 @@ export const thinkingCategories = [
   "Problem Breakdowns",
   "Technical Evaluation & Judging",
   "Career & Job Search",
-  "What I’m Learning Now",
+  "What I'm Learning Now",
   "Mental Models",
   "Research Notes"
 ] as const;

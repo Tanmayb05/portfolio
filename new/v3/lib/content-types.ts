@@ -51,6 +51,12 @@ export type Project = {
   shortTitle: string;
   date: string;
   summary: string;
+  problem: string;
+  context: string;
+  architecture: string[];
+  decisions: string[];
+  tradeoffs: string[];
+  nextImprovements: string[];
   proofPoints: string[];
   metrics: string[];
   techStack: string[];
@@ -62,7 +68,7 @@ export type ThinkingCategory =
   | "Problem Breakdowns"
   | "Technical Evaluation & Judging"
   | "Career & Job Search"
-  | "What I’m Learning Now"
+  | "What I'm Learning Now"
   | "Mental Models"
   | "Research Notes";
 
