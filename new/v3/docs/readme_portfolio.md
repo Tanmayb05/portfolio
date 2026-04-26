@@ -284,29 +284,6 @@
 
 ---
 
-## 🧱 STRUCTURE
-
-Home  
-│  
-├── About  
-├── Work  
-├── Thinking  
-│   ├── Blogs  
-│   ├── System Design  
-│   ├── Research Notes  
-│  
-├── Experiments  
-├── Life  
-│   ├── Travel Map  
-│   ├── Journal  
-│   ├── Systems  
-│  
-├── Now  
-├── Resume  
-└── Contact  
-
----
-
 ## 🎯 META
 
 ### Tone
