@@ -20,6 +20,7 @@
   --accent-teal-border: rgba(45, 212, 191, 0.28);
   --nav-background: rgba(7, 11, 16, 0.78);
   --footer-background: #070b10;
+  --elevated-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
 }
 
 :root[data-theme="light"] {
@@ -39,6 +40,7 @@
   --accent-teal-border: rgba(15, 118, 110, 0.24);
   --nav-background: rgba(247, 250, 252, 0.78);
   --footer-background: #f7fafc;
+  --elevated-shadow: 0 18px 48px rgba(15, 23, 42, 0.1);
 }
 
 * {
@@ -48,6 +50,11 @@
 html {
   min-height: 100%;
   scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: clip;
 }
 
 body {
@@ -66,6 +73,14 @@ a {
   text-decoration: none;
 }
 
+p,
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: anywhere;
+}
+
 ::selection {
   background: var(--accent-teal-soft);
   color: var(--text-primary);
@@ -78,7 +93,7 @@ a {
 .section-gradient-hero {
   background:
     radial-gradient(circle at 86% 8%, var(--accent-teal-soft), transparent 26rem),
-    linear-gradient(135deg, var(--background-1), var(--background-2));
+    linear-gradient(135deg, var(--background-1), var(--background-2) 72%, var(--background-1));
 }
 
 .section-gradient-projects {
@@ -88,11 +103,15 @@ a {
 }
 
 .section-gradient-thinking {
-  background: linear-gradient(180deg, var(--background-1), var(--background-2));
+  background:
+    radial-gradient(circle at 88% 18%, rgba(59, 130, 246, 0.06), transparent 24rem),
+    linear-gradient(180deg, var(--background-1), var(--background-2));
 }
 
 .section-gradient-experience {
-  background: linear-gradient(180deg, var(--background-2), var(--background-3));
+  background:
+    radial-gradient(circle at 8% 20%, rgba(148, 163, 184, 0.06), transparent 22rem),
+    linear-gradient(180deg, var(--background-2), var(--background-3));
 }
 
 .section-gradient-travel {
@@ -102,7 +121,9 @@ a {
 }
 
 .section-gradient-contact {
-  background: linear-gradient(180deg, var(--background-2), var(--background-1));
+  background:
+    radial-gradient(circle at 50% 0%, var(--accent-teal-soft), transparent 28rem),
+    linear-gradient(180deg, var(--background-2), var(--background-1));
 }
 
 .soft-grid {
@@ -147,7 +168,7 @@ a {
 .motion-border-glow:hover,
 .motion-border-glow:focus-visible {
   border-color: var(--accent-teal-border);
-  box-shadow: 0 0 0 1px var(--accent-teal-border), 0 18px 48px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 0 0 1px var(--accent-teal-border), var(--elevated-shadow);
 }
 
 .motion-link {
