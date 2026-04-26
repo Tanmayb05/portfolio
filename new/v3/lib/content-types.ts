@@ -78,6 +78,7 @@ export type ThinkingEntry = {
   category: ThinkingCategory;
   status: "planned" | "active" | "draft";
   summary: string;
+  focusPoints: string[];
   tags: string[];
   source: SourceDocument[];
 };
