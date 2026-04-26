@@ -236,9 +236,9 @@ export default function HomePage() {
             <Reveal>
               <div>
                 <SectionHeading
-                  eyebrow="Travel"
+                  eyebrow="Travel & Life"
                   title="I'm adding a map-first layer for life outside the code."
-                  description="Travel will become the most visual part of the site, but it still needs to feel native to the same calm technical system."
+                  description="Travel & Life will become the most visual part of the site, but it still needs to feel native to the same calm technical system."
                 />
                 <div className="mt-7 flex flex-wrap gap-2">
                   {travelRegions.map((region) => (
@@ -270,9 +270,9 @@ export default function HomePage() {
                 </div>
                 <Link
                   className="motion-focus mt-5 inline-flex text-sm font-semibold text-[var(--accent-teal)] transition duration-200 hover:text-[var(--text-primary)]"
-                  href="/travel"
+                  href="/travel-life"
                 >
-                  Open travel map <span aria-hidden="true" className="ml-2">-&gt;</span>
+                  Open Travel & Life <span aria-hidden="true" className="ml-2">-&gt;</span>
                 </Link>
               </div>
             </Reveal>

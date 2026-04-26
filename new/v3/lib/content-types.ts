@@ -96,6 +96,14 @@ export type TravelEntry = {
   title: string;
   region: TravelRegion;
   status: "placeholder";
+  placeLabel: string;
+  timeVisited: string;
+  tags: string[];
   notes: string[];
+  mapPosition: {
+    x: number;
+    y: number;
+  };
+  googleMapsUrl?: string;
   source: SourceDocument[];
 };

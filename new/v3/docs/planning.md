@@ -48,7 +48,7 @@ Already implemented:
 - Next.js App Router structure in `new/v3/app`.
 - Dark-first theme tokens and light mode toggle.
 - Shared shell components: `Navbar`, `Footer`, `ThemeToggle`, `SiteContainer`, `PageHeader`, `SectionHeading`.
-- Minimal homepage placeholder with links to Projects, Thinking, Experience, Travel, and Contact.
+- Minimal homepage placeholder with links to Projects, Thinking, Experience, Travel & Life, and Contact.
 
 Next work should build on this foundation instead of replacing it.
 
@@ -67,7 +67,7 @@ app/
       page.tsx
   experience/
     page.tsx
-  travel/
+  travel-life/
     page.tsx
   contact/
     page.tsx
@@ -147,7 +147,7 @@ Sections:
 2. Featured Systems
 3. How I Think
 4. Experience Preview
-5. Travel Preview
+5. Travel & Life Preview
 6. Currently / Living System
 7. Soft CTA
 
@@ -283,13 +283,13 @@ Acceptance criteria:
 - Resume download is visible near the top.
 - Skills stay compact and supportive.
 
-## Phase 7: Travel and Life
+## Phase 7: Travel & Life
 
 Goal: add personality through a polished map-first experience while staying visually aligned.
 
 Page:
 
-- `/travel`
+- `/travel-life`
 
 Structure:
 
@@ -306,7 +306,7 @@ Structure:
 
 Acceptance criteria:
 
-- Travel page uses the same typography, gradients, teal highlights, and card rules.
+- Travel & Life page uses the same typography, gradients, teal highlights, and card rules.
 - Unknown locations remain placeholders until real data exists.
 - Map hover/click states are polished and restrained.
 
@@ -389,7 +389,7 @@ Run before final delivery:
 5. Build Thinking index and selected detail pages.
 6. Build Experience page.
 7. Build Contact page.
-8. Build Travel page.
+8. Build Travel & Life page.
 9. Add final visual polish.
 10. Run full verification and fix issues.
 

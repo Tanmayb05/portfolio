@@ -8,7 +8,7 @@ export const siteConfig = {
     { label: "Projects", href: "/projects" },
     { label: "Thinking", href: "/thinking" },
     { label: "Experience", href: "/experience" },
-    { label: "Travel", href: "/travel" },
+    { label: "Travel & Life", href: "/travel-life" },
     { label: "Contact", href: "/contact" }
   ],
   social: {
