@@ -91,19 +91,57 @@ export type NowItem = {
 
 export type TravelRegion = "USA" | "India" | "China";
 
+export type TravelPlace = {
+  id: string;
+  title: string;
+  note?: string;
+  url: string;
+  tags: string[];
+  comment?: string;
+  googleMapsPlaceId?: string;
+  coordinates?: { lat: number; lng: number } | null;
+};
+
+export type TravelTrip = {
+  id: string;
+  title: string;
+  sourceFile: string;
+  country: string;
+  primaryCity: string;
+  stateCodes: string[];
+  stateNames: string[];
+  dateRange: {
+    start: string;
+    end: string;
+  };
+  preambleNotes: string[];
+  placeCount: number;
+  places: TravelPlace[];
+};
+
 export type TravelEntry = {
   slug: string;
   title: string;
   region: TravelRegion;
-  status: "placeholder";
+  status: "placeholder" | "real";
   placeLabel: string;
   timeVisited: string;
   tags: string[];
   notes: string[];
-  mapPosition: {
+  // Geographic (for choropleth map)
+  stateCode?: string;
+  stateName?: string;
+  // Statistics
+  placeCount?: number;
+  tripCount?: number;
+  hiddenPlaceCount?: number;
+  // Deprecated - kept for backwards compatibility
+  mapPosition?: {
     x: number;
     y: number;
   };
   googleMapsUrl?: string;
+  // Associated data
+  trips?: TravelTrip[];
   source: SourceDocument[];
 };
