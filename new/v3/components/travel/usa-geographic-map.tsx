@@ -472,50 +472,54 @@ export function USAGeographicMap({
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.98 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="absolute bottom-5 right-5 z-30 w-[min(520px,calc(100%-2rem))] rounded-[1.5rem] border border-white/10 bg-[linear-gradient(135deg,rgba(15,23,42,0.96),rgba(20,184,166,0.10))] shadow-2xl backdrop-blur-xl pointer-events-auto"
+              className="absolute bottom-5 right-5 z-30 w-[min(680px,calc(100%-2rem))] rounded-[1.5rem] border border-white/10 bg-[linear-gradient(135deg,rgba(15,23,42,0.96),rgba(17,24,39,0.94))] p-5 shadow-2xl backdrop-blur-xl pointer-events-auto"
             >
-              {/* Header Section - No Scroll */}
-              <div className="p-4 pb-3">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex-1 min-w-0">
-                    <div className="mb-2 inline-flex rounded-full bg-teal-300/10 px-2.5 py-0.5 text-xs font-semibold text-teal-200">
-                      {selectedState.stateCode}
-                    </div>
-                    <h3 className="text-xl font-semibold text-white">
-                      {selectedState.stateName}
-                    </h3>
-                    <p className="mt-0.5 text-xs text-slate-400">
-                      {selectedState.placeCount} places · {selectedState.tripCount} trip
-                      {selectedState.tripCount !== 1 ? "s" : ""} · {getDateRange(selectedState)}
-                    </p>
+              {/* Header Section */}
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1 min-w-0">
+                  <div className="mb-2 inline-flex rounded-full bg-teal-300/10 px-3 py-1 text-xs font-semibold text-teal-200">
+                    {selectedState.stateCode}
                   </div>
-
-                  <button
-                    onClick={() => {
-                      setPopupOpen(false);
-                      setSelectedStateCode(null);
-                    }}
-                    className="shrink-0 rounded-full border border-white/10 px-2.5 py-0.5 text-xs text-slate-300 hover:bg-white/10 transition-colors"
-                  >
-                    Close
-                  </button>
+                  <h3 className="text-3xl font-semibold text-white">
+                    {selectedState.stateName}
+                  </h3>
+                  <p className="mt-1 text-sm text-slate-400">
+                    {selectedState.placeCount} places · {selectedState.tripCount} trip
+                    {selectedState.tripCount !== 1 ? "s" : ""} · {getDateRange(selectedState)}
+                  </p>
                 </div>
 
-                {getStateHighlights(selectedState).length > 0 && (
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {getStateHighlights(selectedState)
-                      .slice(0, 5)
-                      .map((highlight, idx) => (
-                        <span
-                          key={idx}
-                          className="rounded-full bg-white/[0.06] px-2.5 py-0.5 text-xs text-slate-200 ring-1 ring-white/10"
-                        >
-                          {highlight}
-                        </span>
-                      ))}
-                  </div>
-                )}
+                <button
+                  onClick={() => {
+                    setPopupOpen(false);
+                    setSelectedStateCode(null);
+                  }}
+                  className="shrink-0 rounded-full border border-white/10 px-3 py-1.5 text-sm text-slate-300 hover:bg-white/10 transition-colors"
+                >
+                  Close
+                </button>
               </div>
+
+              {/* Highlights Section - Max 4 + "+N more" */}
+              {getStateHighlights(selectedState).length > 0 && (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {getStateHighlights(selectedState)
+                    .slice(0, 4)
+                    .map((highlight, idx) => (
+                      <span
+                        key={idx}
+                        className="rounded-full bg-white/[0.05] px-3 py-1 text-xs text-slate-300 ring-1 ring-white/10"
+                      >
+                        {highlight}
+                      </span>
+                    ))}
+                  {getStateHighlights(selectedState).length > 4 && (
+                    <span className="rounded-full bg-white/[0.05] px-3 py-1 text-xs text-slate-400 ring-1 ring-white/10">
+                      +{getStateHighlights(selectedState).length - 4} more
+                    </span>
+                  )}
+                </div>
+              )}
 
               {/* Vertically Scrollable Places Section */}
               <div
@@ -527,28 +531,32 @@ export function USAGeographicMap({
                 style={{
                   cursor: dragState.current.isDown ? "grabbing" : "grab",
                 }}
-                className="max-h-[240px] overflow-y-auto overflow-x-hidden px-4 pb-4 pt-1 pr-2 select-none"
+                className="mt-4 max-h-[240px] overflow-y-auto overflow-x-hidden pr-2 select-none"
               >
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {getPublicPlacesForState(selectedState).map((place) => (
                     <a
                       key={place.id}
                       href={place.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="block rounded-lg border border-white/10 bg-slate-900/60 p-2.5 text-left transition hover:border-teal-300/40 hover:bg-slate-800/80 pointer-events-auto"
+                      className="block rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3 transition hover:border-teal-300/25 hover:bg-white/[0.05] pointer-events-auto"
                       draggable={false}
                     >
-                      <div className="text-xs font-semibold text-slate-100">
-                        {place.title}
-                      </div>
-                      {place.note && (
-                        <div className="mt-1.5 text-xs leading-4 text-slate-400">
-                          {place.note}
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0">
+                          <div className="truncate text-base font-medium text-slate-100">
+                            {place.title}
+                          </div>
+                          {place.note && (
+                            <div className="mt-1 text-sm text-slate-400">
+                              {place.note}
+                            </div>
+                          )}
                         </div>
-                      )}
-                      <div className="mt-2 text-xs font-medium text-teal-300">
-                        Open in Maps ↗
+                        <div className="shrink-0 text-sm font-medium text-teal-300">
+                          Open in Maps ↗
+                        </div>
                       </div>
                     </a>
                   ))}
