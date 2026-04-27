@@ -13,6 +13,7 @@ import {
   getMaxPlaceCount,
   getChoroplethColor,
   getChoroplethIntensity,
+  CODE_TO_STATE_NAME,
 } from "@/lib/travel";
 
 const geoUrl = "/maps/us-states-10m.json";
@@ -71,20 +72,80 @@ const FIPS_TO_CODE: Record<string, string> = {
   "56": "WY",
 };
 
-// Approximate state centroids for label positioning
+// Approximate state centroids for label positioning (all contiguous states)
 const STATE_LABEL_COORDS: Record<string, [number, number]> = {
-  CA: [-119.5, 37.2],
+  AL: [-86.8, 32.8],
+  AR: [-92.4, 34.8],
   AZ: [-111.8, 34.2],
-  WA: [-120.7, 47.4],
+  CA: [-119.5, 37.2],
+  CO: [-105.5, 39.0],
+  CT: [-72.7, 41.6],
+  DE: [-75.5, 39.0],
+  FL: [-82.5, 28.2],
+  GA: [-83.5, 32.7],
+  IA: [-93.5, 42.1],
+  ID: [-114.5, 44.3],
   IL: [-89.2, 40.0],
+  IN: [-86.2, 39.9],
+  KS: [-98.2, 38.5],
+  KY: [-84.8, 37.7],
+  LA: [-91.9, 30.9],
+  MA: [-71.8, 42.2],
+  MD: [-76.7, 39.0],
+  ME: [-69.0, 45.2],
   MI: [-85.5, 44.2],
+  MN: [-94.6, 46.0],
+  MO: [-92.5, 38.5],
+  MS: [-89.7, 32.7],
+  MT: [-110.0, 46.9],
+  NC: [-79.0, 35.5],
+  ND: [-100.5, 47.5],
+  NE: [-99.7, 41.5],
+  NH: [-71.6, 43.7],
+  NJ: [-74.7, 40.1],
+  NM: [-106.1, 34.5],
+  NV: [-117.0, 39.4],
   NY: [-75.3, 42.9],
   OH: [-82.8, 40.3],
-  NJ: [-74.7, 40.1],
+  OK: [-97.5, 35.6],
+  OR: [-120.6, 44.0],
   PA: [-77.8, 40.9],
+  RI: [-71.5, 41.7],
+  SC: [-81.0, 33.8],
+  SD: [-100.0, 44.5],
   TN: [-86.0, 35.8],
-  GA: [-83.5, 32.7],
+  TX: [-99.3, 31.2],
+  UT: [-111.8, 39.3],
+  VA: [-78.8, 37.6],
+  VT: [-72.7, 44.0],
+  WA: [-120.7, 47.4],
+  WI: [-89.8, 44.7],
+  WV: [-80.7, 38.6],
+  WY: [-107.5, 43.0],
 };
+
+// Route structure for future use (disabled by default)
+interface Route {
+  id: string;
+  title: string;
+  coordinates: Array<[number, number]>;
+  enabled: boolean;
+}
+
+const ROUTES: Route[] = [
+  {
+    id: "cincinnati-chicago-michigan",
+    title: "Cincinnati → Chicago → Michigan",
+    coordinates: [
+      [-84.512, 39.103],
+      [-87.6298, 41.8781],
+      [-85.6024, 44.3148],
+    ],
+    enabled: false,
+  },
+];
+
+type VisualizationMode = "places" | "trips" | "timeline" | "wishlist";
 
 type Props = {
   entries: TravelEntry[];
@@ -97,6 +158,7 @@ type TooltipState = {
   stateName: string;
   placeCount: number;
   tripCount: number;
+  isVisited: boolean;
 } | null;
 
 export function USAGeographicMap({
@@ -106,6 +168,8 @@ export function USAGeographicMap({
 }: Props) {
   const [tooltip, setTooltip] = useState<TooltipState>(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
+  const [mode, setMode] = useState<VisualizationMode>("places");
+  const [showRoutes, setShowRoutes] = useState(false);
 
   const visitedStates = getVisitedStates(entries);
   const maxPlaceCount = getMaxPlaceCount(entries);
@@ -142,23 +206,104 @@ export function USAGeographicMap({
     event: React.MouseEvent
   ) {
     const entry = stateCodeMap[stateCode];
-    if (entry) {
-      const rect = (event.currentTarget as SVGElement).getBoundingClientRect();
-      setTooltip({
-        stateCode,
-        stateName: entry.stateName || "",
-        placeCount: entry.placeCount || 0,
-        tripCount: entry.tripCount || 0,
-      });
-      setTooltipPos({
-        x: rect.left + rect.width / 2,
-        y: rect.top - 10,
-      });
-    }
+    const stateName = CODE_TO_STATE_NAME[stateCode] || stateCode;
+    const isVisited = Boolean(entry);
+
+    const rect = (event.currentTarget as SVGElement).getBoundingClientRect();
+    setTooltip({
+      stateCode,
+      stateName,
+      placeCount: entry?.placeCount || 0,
+      tripCount: entry?.tripCount || 0,
+      isVisited,
+    });
+    setTooltipPos({
+      x: rect.left + rect.width / 2,
+      y: rect.top - 10,
+    });
   }
+
+  function getTotalStats() {
+    const states = visitedStates.length;
+    const places = visitedStates.reduce((sum, s) => sum + (s.placeCount || 0), 0);
+    const trips = visitedStates.reduce((sum, s) => sum + (s.tripCount || 0), 0);
+    const topState = visitedStates[0]?.stateName || "N/A";
+    return { states, places, trips, topState };
+  }
+
+  function getLegendLabel(intensity: string): string {
+    const labels: Record<string, Record<string, string>> = {
+      places: {
+        "very-light": "1–12 places",
+        "light": "13–24 places",
+        "medium": "25–36 places",
+        "dark": "37+ places",
+      },
+      trips: {
+        "very-light": "1 trip",
+        "light": "2–3 trips",
+        "medium": "4–5 trips",
+        "dark": "6+ trips",
+      },
+      timeline: {
+        "very-light": "Older visits",
+        "light": "Past year",
+        "medium": "Recent",
+        "dark": "Very recent",
+      },
+      wishlist: {
+        "very-light": "Wishlist",
+        "light": "Wishlist",
+        "medium": "Wishlist",
+        "dark": "Visited",
+      },
+    };
+    return labels[mode]?.[intensity] || intensity;
+  }
+
+  const stats = getTotalStats();
 
   return (
     <div className="w-full">
+      {/* Travel Stats Strip */}
+      <div className="mb-4 p-3 rounded-lg bg-[var(--surface-elevated)] border border-[var(--border-soft)]">
+        <div className="flex flex-wrap items-center gap-4 text-xs">
+          <div className="flex items-center gap-1">
+            <span className="font-semibold text-[var(--text-primary)]">
+              {stats.states}
+            </span>
+            <span className="text-[var(--text-secondary)]">
+              state{stats.states !== 1 ? "s" : ""}
+            </span>
+          </div>
+          <span className="text-[var(--text-muted)]">•</span>
+          <div className="flex items-center gap-1">
+            <span className="font-semibold text-[var(--text-primary)]">
+              {stats.places}
+            </span>
+            <span className="text-[var(--text-secondary)]">
+              place{stats.places !== 1 ? "s" : ""}
+            </span>
+          </div>
+          <span className="text-[var(--text-muted)]">•</span>
+          <div className="flex items-center gap-1">
+            <span className="font-semibold text-[var(--text-primary)]">
+              {stats.trips}
+            </span>
+            <span className="text-[var(--text-secondary)]">
+              trip{stats.trips !== 1 ? "s" : ""}
+            </span>
+          </div>
+          <span className="text-[var(--text-muted)]">•</span>
+          <div className="flex items-center gap-1">
+            <span className="text-[var(--text-secondary)]">Top:</span>
+            <span className="font-semibold text-[var(--text-primary)]">
+              {stats.topState}
+            </span>
+          </div>
+        </div>
+      </div>
+
       {/* Header */}
       <div className="mb-4 space-y-1">
         <h3 className="text-sm font-semibold text-[var(--text-primary)]">
@@ -167,6 +312,33 @@ export function USAGeographicMap({
         <p className="text-xs text-[var(--text-secondary)]">
           Darker color means more places saved
         </p>
+      </div>
+
+      {/* Visualization Mode Toggles */}
+      <div className="mb-4 flex flex-wrap gap-2">
+        {(["places", "trips", "timeline", "wishlist"] as const).map((m) => (
+          <button
+            key={m}
+            onClick={() => setMode(m)}
+            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
+              mode === m
+                ? "bg-[var(--accent)] text-white"
+                : "bg-[var(--surface-secondary)] text-[var(--text-secondary)] hover:bg-[var(--surface-tertiary)]"
+            }`}
+          >
+            {m.charAt(0).toUpperCase() + m.slice(1)}
+          </button>
+        ))}
+        <button
+          onClick={() => setShowRoutes(!showRoutes)}
+          className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
+            showRoutes
+              ? "bg-amber-600 text-white"
+              : "bg-[var(--surface-secondary)] text-[var(--text-secondary)] hover:bg-[var(--surface-tertiary)]"
+          }`}
+        >
+          Routes
+        </button>
       </div>
 
       {/* Map Container */}
@@ -239,20 +411,25 @@ export function USAGeographicMap({
             }
           </Geographies>
 
-          {/* State Labels */}
+          {/* State Labels - All contiguous states */}
           {Object.entries(STATE_LABEL_COORDS).map(([code, coordinates]) => {
-            const state = stateCodeMap[code];
-            if (!state) return null;
+            const isVisited = Boolean(stateCodeMap[code]);
 
             return (
               <Marker key={`label-${code}`} coordinates={coordinates}>
                 <text
                   textAnchor="middle"
-                  dy="0.3em"
-                  className="pointer-events-none select-none font-bold text-[10px] fill-slate-950 dark:fill-white"
-                  paintOrder="stroke"
-                  stroke="rgba(255,255,255,0.8)"
-                  strokeWidth="2px"
+                  dominantBaseline="middle"
+                  className="pointer-events-none select-none font-bold drop-shadow-sm"
+                  style={{
+                    fontSize: isVisited ? "10px" : "8px",
+                    fill: isVisited
+                      ? "rgb(15, 23, 42)"
+                      : "rgb(148, 163, 184)",
+                    paintOrder: "stroke",
+                  }}
+                  stroke="rgba(255, 255, 255, 0.8)"
+                  strokeWidth="1.5px"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
@@ -262,6 +439,42 @@ export function USAGeographicMap({
             );
           })}
         </ComposableMap>
+      </div>
+
+      {/* Enhanced Legend */}
+      <div className="mt-6 p-3 rounded-lg bg-[var(--surface-elevated)] border border-[var(--border-soft)]">
+        <div className="text-xs font-semibold text-[var(--text-primary)] mb-2">
+          Legend
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          {(
+            [
+              "very-light",
+              "light",
+              "medium",
+              "dark",
+            ] as const
+          ).map((intensity) => (
+            <div key={intensity} className="flex items-center gap-2">
+              <div
+                className="w-4 h-4 rounded border border-gray-300"
+                style={{
+                  backgroundColor:
+                    intensity === "very-light"
+                      ? "#e8f4f8"
+                      : intensity === "light"
+                        ? "#a8d8e8"
+                        : intensity === "medium"
+                          ? "#5cb8d8"
+                          : "#2a7fa8",
+                }}
+              />
+              <span className="text-[var(--text-secondary)]">
+                {getLegendLabel(intensity)}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Tooltip */}
@@ -277,13 +490,21 @@ export function USAGeographicMap({
           <div className="font-semibold text-[var(--text-primary)]">
             {tooltip.stateName}
           </div>
-          <div className="text-[var(--text-secondary)]">
-            {tooltip.placeCount} place{tooltip.placeCount !== 1 ? "s" : ""} •{" "}
-            {tooltip.tripCount} trip{tooltip.tripCount !== 1 ? "s" : ""}
-          </div>
-          <div className="mt-1 text-[var(--text-muted)]">
-            Click to explore
-          </div>
+          {tooltip.isVisited ? (
+            <>
+              <div className="text-[var(--text-secondary)]">
+                {tooltip.placeCount} place{tooltip.placeCount !== 1 ? "s" : ""} •{" "}
+                {tooltip.tripCount} trip{tooltip.tripCount !== 1 ? "s" : ""}
+              </div>
+              <div className="mt-1 text-[var(--text-muted)]">
+                Click to explore
+              </div>
+            </>
+          ) : (
+            <div className="text-[var(--text-muted)]">
+              Not visited yet
+            </div>
+          )}
         </div>
       )}
     </div>
