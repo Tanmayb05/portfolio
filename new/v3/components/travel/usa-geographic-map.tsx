@@ -14,6 +14,8 @@ import {
   getChoroplethColor,
   getChoroplethIntensity,
   CODE_TO_STATE_NAME,
+  getPublicPlacesForState,
+  formatDateRange,
 } from "@/lib/travel";
 
 const geoUrl = "/maps/us-states-10m.json";
@@ -124,29 +126,6 @@ const STATE_LABEL_COORDS: Record<string, [number, number]> = {
   WY: [-107.5, 43.0],
 };
 
-// Route structure for future use (disabled by default)
-interface Route {
-  id: string;
-  title: string;
-  coordinates: Array<[number, number]>;
-  enabled: boolean;
-}
-
-const ROUTES: Route[] = [
-  {
-    id: "cincinnati-chicago-michigan",
-    title: "Cincinnati → Chicago → Michigan",
-    coordinates: [
-      [-84.512, 39.103],
-      [-87.6298, 41.8781],
-      [-85.6024, 44.3148],
-    ],
-    enabled: false,
-  },
-];
-
-type VisualizationMode = "places" | "trips" | "timeline" | "wishlist";
-
 type Props = {
   entries: TravelEntry[];
   selectedCode?: string | null;
@@ -168,8 +147,7 @@ export function USAGeographicMap({
 }: Props) {
   const [tooltip, setTooltip] = useState<TooltipState>(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
-  const [mode, setMode] = useState<VisualizationMode>("places");
-  const [showRoutes, setShowRoutes] = useState(false);
+  const [popupOpen, setPopupOpen] = useState(false);
 
   const visitedStates = getVisitedStates(entries);
   const maxPlaceCount = getMaxPlaceCount(entries);
@@ -231,37 +209,40 @@ export function USAGeographicMap({
     return { states, places, trips, topState };
   }
 
-  function getLegendLabel(intensity: string): string {
-    const labels: Record<string, Record<string, string>> = {
-      places: {
-        "very-light": "1–12 places",
-        "light": "13–24 places",
-        "medium": "25–36 places",
-        "dark": "37+ places",
-      },
-      trips: {
-        "very-light": "1 trip",
-        "light": "2–3 trips",
-        "medium": "4–5 trips",
-        "dark": "6+ trips",
-      },
-      timeline: {
-        "very-light": "Older visits",
-        "light": "Past year",
-        "medium": "Recent",
-        "dark": "Very recent",
-      },
-      wishlist: {
-        "very-light": "Wishlist",
-        "light": "Wishlist",
-        "medium": "Wishlist",
-        "dark": "Visited",
-      },
-    };
-    return labels[mode]?.[intensity] || intensity;
-  }
-
   const stats = getTotalStats();
+
+  const selectedState = selectedCode
+    ? stateCodeMap[selectedCode]
+    : null;
+
+  const getStateHighlights = (state: TravelEntry): string[] => {
+    if (!state.trips || state.trips.length === 0) return [];
+    const highlights: string[] = [];
+    for (const trip of state.trips) {
+      if (trip.places.length > 0) {
+        const topPlaces = trip.places.slice(0, 5);
+        highlights.push(...topPlaces.map((p) => p.title));
+      }
+    }
+    return highlights.slice(0, 5);
+  };
+
+  const getDateRange = (state: TravelEntry): string => {
+    if (!state.trips || state.trips.length === 0) return "Unknown";
+    const dates = state.trips
+      .map(t => t.dateRange)
+      .filter(d => d) as Array<{ start: string; end: string }>;
+    if (dates.length === 0) return "Unknown";
+
+    const sortedDates = dates.sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
+    const firstStart = sortedDates[0].start;
+    const lastEnd = sortedDates[sortedDates.length - 1].end;
+
+    if (firstStart === lastEnd) {
+      return formatDateRange({ start: firstStart, end: firstStart });
+    }
+    return formatDateRange({ start: firstStart, end: lastEnd });
+  };
 
   return (
     <div className="w-full">
@@ -314,35 +295,8 @@ export function USAGeographicMap({
         </p>
       </div>
 
-      {/* Visualization Mode Toggles */}
-      <div className="mb-4 flex flex-wrap gap-2">
-        {(["places", "trips", "timeline", "wishlist"] as const).map((m) => (
-          <button
-            key={m}
-            onClick={() => setMode(m)}
-            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
-              mode === m
-                ? "bg-[var(--accent)] text-white"
-                : "bg-[var(--surface-secondary)] text-[var(--text-secondary)] hover:bg-[var(--surface-tertiary)]"
-            }`}
-          >
-            {m.charAt(0).toUpperCase() + m.slice(1)}
-          </button>
-        ))}
-        <button
-          onClick={() => setShowRoutes(!showRoutes)}
-          className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
-            showRoutes
-              ? "bg-amber-600 text-white"
-              : "bg-[var(--surface-secondary)] text-[var(--text-secondary)] hover:bg-[var(--surface-tertiary)]"
-          }`}
-        >
-          Routes
-        </button>
-      </div>
-
-      {/* Map Container */}
-      <div className="overflow-x-auto rounded-lg border border-[var(--border-soft)] bg-[var(--surface-elevated)] backdrop-blur-xl">
+      {/* Map Container with Legend & Popup Overlay */}
+      <div className="relative rounded-lg border border-[var(--border-soft)] bg-[var(--surface-elevated)] backdrop-blur-xl overflow-visible">
         <ComposableMap
           projection="geoAlbersUsa"
           width={1000}
@@ -369,6 +323,7 @@ export function USAGeographicMap({
                       onClick={() => {
                         if (isVisited && entry) {
                           onSelectState(entry);
+                          setPopupOpen(true);
                         }
                       }}
                       onMouseEnter={(event: React.MouseEvent) => {
@@ -439,42 +394,96 @@ export function USAGeographicMap({
             );
           })}
         </ComposableMap>
-      </div>
 
-      {/* Enhanced Legend */}
-      <div className="mt-6 p-3 rounded-lg bg-[var(--surface-elevated)] border border-[var(--border-soft)]">
-        <div className="text-xs font-semibold text-[var(--text-primary)] mb-2">
-          Legend
-        </div>
-        <div className="grid grid-cols-2 gap-2">
-          {(
-            [
-              "very-light",
-              "light",
-              "medium",
-              "dark",
-            ] as const
-          ).map((intensity) => (
-            <div key={intensity} className="flex items-center gap-2">
-              <div
-                className="w-4 h-4 rounded border border-gray-300"
-                style={{
-                  backgroundColor:
-                    intensity === "very-light"
-                      ? "#e8f4f8"
-                      : intensity === "light"
-                        ? "#a8d8e8"
-                        : intensity === "medium"
-                          ? "#5cb8d8"
-                          : "#2a7fa8",
-                }}
-              />
-              <span className="text-[var(--text-secondary)]">
-                {getLegendLabel(intensity)}
-              </span>
+        {/* Legend - Inside Map, Bottom-Left */}
+        <div className="absolute bottom-4 left-4 z-20 rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-xs text-slate-300 shadow-xl backdrop-blur-md pointer-events-none">
+          <div className="mb-2 font-semibold text-slate-100">Places visited</div>
+          <div className="grid gap-2">
+            <div className="flex items-center gap-2">
+              <span className="h-3 w-3 rounded" style={{ backgroundColor: "#e8f4f8" }} />
+              <span>1–12 places</span>
             </div>
-          ))}
+            <div className="flex items-center gap-2">
+              <span className="h-3 w-3 rounded" style={{ backgroundColor: "#a8d8e8" }} />
+              <span>13–24 places</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="h-3 w-3 rounded" style={{ backgroundColor: "#5cb8d8" }} />
+              <span>25–36 places</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="h-3 w-3 rounded" style={{ backgroundColor: "#2a7fa8" }} />
+              <span>37+ places</span>
+            </div>
+          </div>
         </div>
+
+        {/* Horizontal Popup Card - Bottom Right */}
+        {selectedState && popupOpen && (
+          <div className="absolute bottom-5 right-5 z-30 w-[min(900px,calc(100%-2rem))] rounded-[1.75rem] border border-white/10 bg-[linear-gradient(135deg,rgba(15,23,42,0.96),rgba(20,184,166,0.12))] p-5 shadow-2xl backdrop-blur-xl pointer-events-auto">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <div className="mb-2 inline-flex rounded-full bg-teal-300/10 px-3 py-1 text-xs font-semibold text-teal-200">
+                  {selectedState.stateCode}
+                </div>
+                <h3 className="text-2xl font-semibold text-white">
+                  {selectedState.stateName}
+                </h3>
+                <p className="mt-1 text-sm text-slate-400">
+                  {selectedState.placeCount} places · {selectedState.tripCount} trip
+                  {selectedState.tripCount !== 1 ? "s" : ""} · {getDateRange(selectedState)}
+                </p>
+              </div>
+
+              <button
+                onClick={() => setPopupOpen(false)}
+                className="rounded-full border border-white/10 px-3 py-1 text-sm text-slate-300 hover:bg-white/10"
+              >
+                Close
+              </button>
+            </div>
+
+            {getStateHighlights(selectedState).length > 0 && (
+              <div className="mt-4 flex flex-wrap gap-2">
+                {getStateHighlights(selectedState)
+                  .slice(0, 5)
+                  .map((highlight, idx) => (
+                    <span
+                      key={idx}
+                      className="rounded-full bg-white/[0.06] px-3 py-1 text-xs text-slate-200 ring-1 ring-white/10"
+                    >
+                      {highlight}
+                    </span>
+                  ))}
+              </div>
+            )}
+
+            {/* Horizontal Place Cards */}
+            <div className="mt-5 flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory">
+              {getPublicPlacesForState(selectedState).map((place) => (
+                <a
+                  key={place.id}
+                  href={place.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="min-w-[260px] snap-start rounded-2xl border border-white/10 bg-slate-900/80 p-4 transition hover:border-teal-300/40 hover:bg-slate-800"
+                >
+                  <div className="text-sm font-semibold text-slate-100">
+                    {place.title}
+                  </div>
+                  {place.note && (
+                    <div className="mt-2 text-xs leading-5 text-slate-400">
+                      {place.note}
+                    </div>
+                  )}
+                  <div className="mt-4 text-xs font-medium text-teal-300">
+                    Open in Maps ↗
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Tooltip */}
