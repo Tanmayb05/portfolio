@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   ComposableMap,
   Geographies,
   Geography,
   Marker,
 } from "react-simple-maps";
+import { AnimatePresence, motion } from "framer-motion";
 import type { TravelEntry } from "@/lib/content-types";
 import {
   getVisitedStates,
@@ -148,6 +149,14 @@ export function USAGeographicMap({
   const [tooltip, setTooltip] = useState<TooltipState>(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
   const [popupOpen, setPopupOpen] = useState(false);
+  const [selectedStateCode, setSelectedStateCode] = useState<string | null>(null);
+
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const dragState = useRef({
+    isDown: false,
+    startY: 0,
+    startScrollTop: 0,
+  });
 
   const visitedStates = getVisitedStates(entries);
   const maxPlaceCount = getMaxPlaceCount(entries);
@@ -166,7 +175,7 @@ export function USAGeographicMap({
     const entry = stateCodeMap[stateCode];
     if (!entry || !entry.placeCount) return "#f3f4f6";
 
-    if (stateCode === selectedCode) return "#facc15"; // yellow highlight
+    if (stateCode === selectedStateCode) return "#facc15"; // yellow highlight
 
     const intensity = getChoroplethIntensity(entry.placeCount, maxPlaceCount);
     return getChoroplethColor(intensity);
@@ -174,7 +183,7 @@ export function USAGeographicMap({
 
   function getStrokeColor(stateCode?: string): string {
     if (!stateCode) return "#d1d5db";
-    if (stateCode === selectedCode) return "#ffffff";
+    if (stateCode === selectedStateCode) return "#ffffff";
     const entry = stateCodeMap[stateCode];
     return entry ? "#1f2937" : "#d1d5db";
   }
@@ -211,8 +220,8 @@ export function USAGeographicMap({
 
   const stats = getTotalStats();
 
-  const selectedState = selectedCode
-    ? stateCodeMap[selectedCode]
+  const selectedState = selectedStateCode
+    ? stateCodeMap[selectedStateCode]
     : null;
 
   const getStateHighlights = (state: TravelEntry): string[] => {
@@ -242,6 +251,40 @@ export function USAGeographicMap({
       return formatDateRange({ start: firstStart, end: firstStart });
     }
     return formatDateRange({ start: firstStart, end: lastEnd });
+  };
+
+  const handleStateClick = (entry: TravelEntry) => {
+    if (!entry.stateCode) return;
+
+    // if clicking the same state that's already selected and popup is open, close it
+    if (selectedStateCode === entry.stateCode && popupOpen) {
+      setPopupOpen(false);
+      setSelectedStateCode(null);
+    } else {
+      // open popup for new state or switch to different state
+      onSelectState(entry);
+      setSelectedStateCode(entry.stateCode);
+      setPopupOpen(true);
+    }
+  };
+
+  const handleScrollMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    dragState.current.isDown = true;
+    dragState.current.startY = e.clientY;
+    dragState.current.startScrollTop = el.scrollTop;
+  };
+
+  const handleScrollMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = scrollRef.current;
+    if (!el || !dragState.current.isDown) return;
+    const dy = e.clientY - dragState.current.startY;
+    el.scrollTop = dragState.current.startScrollTop - dy;
+  };
+
+  const stopDragging = () => {
+    dragState.current.isDown = false;
   };
 
   return (
@@ -322,8 +365,7 @@ export function USAGeographicMap({
                       geography={geo}
                       onClick={() => {
                         if (isVisited && entry) {
-                          onSelectState(entry);
-                          setPopupOpen(true);
+                          handleStateClick(entry);
                         }
                       }}
                       onMouseEnter={(event: React.MouseEvent) => {
@@ -336,14 +378,14 @@ export function USAGeographicMap({
                         default: {
                           fill: getFill(stateCode),
                           stroke: getStrokeColor(stateCode),
-                          strokeWidth: stateCode === selectedCode ? 1.5 : 0.75,
+                          strokeWidth: stateCode === selectedStateCode ? 1.5 : 0.75,
                           outline: "none",
                           cursor: isVisited ? "pointer" : "default",
                           transition: "all 200ms ease-in-out",
                         },
                         hover: {
                           fill:
-                            stateCode === selectedCode
+                            stateCode === selectedStateCode
                               ? "#facc15"
                               : isVisited
                                 ? "#60a5fa"
@@ -369,18 +411,21 @@ export function USAGeographicMap({
           {/* State Labels - All contiguous states */}
           {Object.entries(STATE_LABEL_COORDS).map(([code, coordinates]) => {
             const isVisited = Boolean(stateCodeMap[code]);
+            const isSelected = code === selectedStateCode;
 
             return (
               <Marker key={`label-${code}`} coordinates={coordinates}>
                 <text
                   textAnchor="middle"
                   dominantBaseline="middle"
-                  className="pointer-events-none select-none font-bold drop-shadow-sm"
+                  className="pointer-events-none select-none font-bold drop-shadow-sm transition-all duration-200"
                   style={{
-                    fontSize: isVisited ? "10px" : "8px",
-                    fill: isVisited
-                      ? "rgb(15, 23, 42)"
-                      : "rgb(148, 163, 184)",
+                    fontSize: isSelected ? "11px" : isVisited ? "10px" : "8px",
+                    fill: isSelected
+                      ? "#facc15"
+                      : isVisited
+                        ? "rgb(15, 23, 42)"
+                        : "rgb(148, 163, 184)",
                     paintOrder: "stroke",
                   }}
                   stroke="rgba(255, 255, 255, 0.8)"
@@ -418,72 +463,100 @@ export function USAGeographicMap({
           </div>
         </div>
 
-        {/* Horizontal Popup Card - Bottom Right */}
-        {selectedState && popupOpen && (
-          <div className="absolute bottom-5 right-5 z-30 w-[min(900px,calc(100%-2rem))] rounded-[1.75rem] border border-white/10 bg-[linear-gradient(135deg,rgba(15,23,42,0.96),rgba(20,184,166,0.12))] p-5 shadow-2xl backdrop-blur-xl pointer-events-auto">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <div className="mb-2 inline-flex rounded-full bg-teal-300/10 px-3 py-1 text-xs font-semibold text-teal-200">
-                  {selectedState.stateCode}
-                </div>
-                <h3 className="text-2xl font-semibold text-white">
-                  {selectedState.stateName}
-                </h3>
-                <p className="mt-1 text-sm text-slate-400">
-                  {selectedState.placeCount} places · {selectedState.tripCount} trip
-                  {selectedState.tripCount !== 1 ? "s" : ""} · {getDateRange(selectedState)}
-                </p>
-              </div>
-
-              <button
-                onClick={() => setPopupOpen(false)}
-                className="rounded-full border border-white/10 px-3 py-1 text-sm text-slate-300 hover:bg-white/10"
-              >
-                Close
-              </button>
-            </div>
-
-            {getStateHighlights(selectedState).length > 0 && (
-              <div className="mt-4 flex flex-wrap gap-2">
-                {getStateHighlights(selectedState)
-                  .slice(0, 5)
-                  .map((highlight, idx) => (
-                    <span
-                      key={idx}
-                      className="rounded-full bg-white/[0.06] px-3 py-1 text-xs text-slate-200 ring-1 ring-white/10"
-                    >
-                      {highlight}
-                    </span>
-                  ))}
-              </div>
-            )}
-
-            {/* Horizontal Place Cards */}
-            <div className="mt-5 flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory">
-              {getPublicPlacesForState(selectedState).map((place) => (
-                <a
-                  key={place.id}
-                  href={place.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="min-w-[260px] snap-start rounded-2xl border border-white/10 bg-slate-900/80 p-4 transition hover:border-teal-300/40 hover:bg-slate-800"
-                >
-                  <div className="text-sm font-semibold text-slate-100">
-                    {place.title}
-                  </div>
-                  {place.note && (
-                    <div className="mt-2 text-xs leading-5 text-slate-400">
-                      {place.note}
+        {/* Animated Popup Card - Bottom Right */}
+        <AnimatePresence>
+          {selectedState && popupOpen && (
+            <motion.div
+              key={`popup-${selectedState.stateCode}`}
+              initial={{ opacity: 0, y: 16, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 10, scale: 0.98 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="absolute bottom-5 right-5 z-30 w-[min(520px,calc(100%-2rem))] rounded-[1.5rem] border border-white/10 bg-[linear-gradient(135deg,rgba(15,23,42,0.96),rgba(20,184,166,0.10))] shadow-2xl backdrop-blur-xl pointer-events-auto"
+            >
+              {/* Header Section - No Scroll */}
+              <div className="p-4 pb-3">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex-1 min-w-0">
+                    <div className="mb-2 inline-flex rounded-full bg-teal-300/10 px-2.5 py-0.5 text-xs font-semibold text-teal-200">
+                      {selectedState.stateCode}
                     </div>
-                  )}
-                  <div className="mt-4 text-xs font-medium text-teal-300">
-                    Open in Maps ↗
+                    <h3 className="text-xl font-semibold text-white">
+                      {selectedState.stateName}
+                    </h3>
+                    <p className="mt-0.5 text-xs text-slate-400">
+                      {selectedState.placeCount} places · {selectedState.tripCount} trip
+                      {selectedState.tripCount !== 1 ? "s" : ""} · {getDateRange(selectedState)}
+                    </p>
                   </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
+
+                  <button
+                    onClick={() => {
+                      setPopupOpen(false);
+                      setSelectedStateCode(null);
+                    }}
+                    className="shrink-0 rounded-full border border-white/10 px-2.5 py-0.5 text-xs text-slate-300 hover:bg-white/10 transition-colors"
+                  >
+                    Close
+                  </button>
+                </div>
+
+                {getStateHighlights(selectedState).length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {getStateHighlights(selectedState)
+                      .slice(0, 5)
+                      .map((highlight, idx) => (
+                        <span
+                          key={idx}
+                          className="rounded-full bg-white/[0.06] px-2.5 py-0.5 text-xs text-slate-200 ring-1 ring-white/10"
+                        >
+                          {highlight}
+                        </span>
+                      ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Vertically Scrollable Places Section */}
+              <div
+                ref={scrollRef}
+                onMouseDown={handleScrollMouseDown}
+                onMouseMove={handleScrollMouseMove}
+                onMouseUp={stopDragging}
+                onMouseLeave={stopDragging}
+                style={{
+                  cursor: dragState.current.isDown ? "grabbing" : "grab",
+                }}
+                className="max-h-[240px] overflow-y-auto overflow-x-hidden px-4 pb-4 pt-1 pr-2 select-none"
+              >
+                <div className="space-y-2">
+                  {getPublicPlacesForState(selectedState).map((place) => (
+                    <a
+                      key={place.id}
+                      href={place.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block rounded-lg border border-white/10 bg-slate-900/60 p-2.5 text-left transition hover:border-teal-300/40 hover:bg-slate-800/80 pointer-events-auto"
+                      draggable={false}
+                    >
+                      <div className="text-xs font-semibold text-slate-100">
+                        {place.title}
+                      </div>
+                      {place.note && (
+                        <div className="mt-1.5 text-xs leading-4 text-slate-400">
+                          {place.note}
+                        </div>
+                      )}
+                      <div className="mt-2 text-xs font-medium text-teal-300">
+                        Open in Maps ↗
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Tooltip */}

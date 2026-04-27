@@ -14,7 +14,14 @@
       "Bash(npx tsc *)",
       "Bash(killall node *)",
       "Bash(curl -s http://localhost:3000/about)",
-      "Bash(git commit -m 'refactor: streamline USA travel map with horizontal popup and inline legend *)"
+      "Bash(git commit -m 'refactor: streamline USA travel map with horizontal popup and inline legend *)",
+      "Bash(git commit -m 'refactor: remove StateDrawer from parent component *)",
+      "Bash(curl -s http://localhost:3001/portfolio/travel)",
+      "Bash(curl -s http://localhost:3001/travel-life)",
+      "Bash(python3 -m json.tool /Users/tanmaybhuskute/Documents/portfolio/new/v3/public/usa_travel_places.json)",
+      "Bash(python3)",
+      "Bash(awk '{print $2}')",
+      "Bash(xargs -r kill -9)"
     ],
     "additionalDirectories": [
       "/private/tmp"

@@ -10,9 +10,9 @@
     "Hawaii"
   ],
   "summary": {
-    "tripCount": 11,
-    "visitedStateCount": 11,
-    "totalPlaces": 263,
+    "tripCount": 14,
+    "visitedStateCount": 13,
+    "totalPlaces": 319,
     "visitedStateCodes": [
       "AZ",
       "CA",
@@ -20,10 +20,12 @@
       "IL",
       "MI",
       "NJ",
+      "NV",
       "NY",
       "OH",
       "PA",
       "TN",
+      "UT",
       "WA"
     ]
   },
@@ -2905,6 +2907,570 @@
           "coordinates": null
         }
       ]
+    },
+    {
+      "id": "arizona-2026-03",
+      "title": "Arizona (March 2026)",
+      "sourceFile": "2026 03 AZ-UT-NV.csv",
+      "country": "United States",
+      "primaryCity": "Arizona",
+      "stateCodes": [
+        "AZ"
+      ],
+      "stateNames": [
+        "Arizona"
+      ],
+      "dateRange": {
+        "start": "2026-02-26",
+        "end": "2026-03-05"
+      },
+      "preambleNotes": [],
+      "places": [
+        {
+          "title": "Virgin River Gorge",
+          "note": "2026 03 02 Day 4 Best View in the Whole World Wallpaper Scene",
+          "url": "https://www.google.com/maps/place/Virgin+River+Gorge/data=!4m2!3m1!1s0x80ca368e91b3e9cf:0xe4cee7527585c73e",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Delhi Palace Cuisine of India",
+          "note": "2026 02 28 Day 2 Dinner",
+          "url": "https://www.google.com/maps/place/Delhi+Palace+Cuisine+of+India/data=!4m2!3m1!1s0x872d858777adc71b:0xcf82c829dcab101d",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Seven Sacred Pools",
+          "note": "2026 02 28 Day 2 Spot",
+          "url": "https://www.google.com/maps/place/Seven+Sacred+Pools/data=!4m2!3m1!1s0x872da10b5025f24b:0x29731f767aa450af",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "The Historic Grand Canyon Hotel",
+          "note": "2026 02 27 Day 1 Stay",
+          "url": "https://www.google.com/maps/place/The+Historic+Grand+Canyon+Hotel/data=!4m2!3m1!1s0x87329f1d1eccb75d:0x79d36c6396790987",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Sedona Airport",
+          "note": "2026 02 28 Day 2 Spot",
+          "url": "https://www.google.com/maps/place/Sedona+Airport/data=!4m2!3m1!1s0x872da6ca933f2abd:0x42d89564ba092545",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Sedona Airport Scenic Lookout",
+          "note": "2026 02 28 Day 2 Spot",
+          "url": "https://www.google.com/maps/place/Sedona+Airport+Scenic+Lookout/data=!4m2!3m1!1s0x872da14c9c47da69:0x847612b3ac32d5aa",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Arizona Route 66 Museum",
+          "note": "2026 02 27 Day 1 Lunch",
+          "url": "https://www.google.com/maps/place/Arizona+Route+66+Museum/data=!4m2!3m1!1s0x80cdde7c9e951061:0xd268cb8526bcc4b6",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Hoover Dam",
+          "note": "2026 02 27 Day 1 Hoover Dam",
+          "url": "https://www.google.com/maps/place/Hoover+Dam/data=!4m2!3m1!1s0x80c92b497f82a14b:0x89d59d0bd29de37",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Desert Botanical Garden",
+          "note": "2026 02 27 Botanical Garden Evening Spot",
+          "url": "https://www.google.com/maps/place/Desert+Botanical+Garden/data=!4m2!3m1!1s0x872b0953082d9e21:0x215ce99d25055d17",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Mr D'z Route 66 Diner",
+          "note": null,
+          "url": "https://www.google.com/maps/place/Mr+D'z+Route+66+Diner/data=!4m2!3m1!1s0x80cdde7c7f522ab1:0x377e589e5f677157",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "utah-2026-03",
+      "title": "Utah (March 2026)",
+      "sourceFile": "2026 03 AZ-UT-NV.csv",
+      "country": "United States",
+      "primaryCity": "Zion National Park / Page",
+      "stateCodes": [
+        "UT"
+      ],
+      "stateNames": [
+        "Utah"
+      ],
+      "dateRange": {
+        "start": "2026-02-28",
+        "end": "2026-03-03"
+      },
+      "preambleNotes": [],
+      "places": [
+        {
+          "title": "Canyon Coffee",
+          "note": null,
+          "url": "https://www.google.com/maps/place/Canyon+Coffee/data=!4m2!3m1!1s0x80cac3b63388b289:0x3635bedeb311c8ff",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Riverside Walk Trailhead",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Riverside+Walk+Trailhead/data=!4m2!3m1!1s0x80cac1740027e779:0x3b6ce2cee5a9cf1e",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Observation Point",
+          "note": "2026 03 02 Day 4 Spot Sunset point",
+          "url": "https://www.google.com/maps/place/Observation+Point/data=!4m2!3m1!1s0x80cac164c266e20d:0x8f23e13fa714ecbb",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Weeping Rock Trailhead",
+          "note": "2026 03 02 Day 4 Spot 10 -15 mins trail",
+          "url": "https://www.google.com/maps/place/Weeping+Rock+Trailhead/data=!4m2!3m1!1s0x80cac3d88a4e715d:0x2feea585f8293ae5",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Big Bend Viewpoint",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Big+Bend+Viewpoint/data=!4m2!3m1!1s0x80cac17dccbe4c3f:0x1a62defa14e7cb75",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Zion National Park Lodge",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Zion+National+Park+Lodge/data=!4m2!3m1!1s0x80cae8027837e373:0xf17f5bc5014ca39e",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Lower Emerald Pool",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Lower+Emerald+Pool/data=!4m2!3m1!1s0x80cac3cb030a3c55:0xcf9baa40cf67fa9",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Emerald Pools Trailhead",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Emerald+Pools+Trailhead/data=!4m2!3m1!1s0x80cac22e2c2c0389:0x248d03ed0ed2fb6f",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "The Grotto Picnic Area",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/The+Grotto+Picnic+Area/data=!4m2!3m1!1s0x80cac3cd7e6c886d:0xe1b7de63bde234e2",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Zion Canyon Visitor Center",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Zion+Canyon+Visitor+Center/data=!4m2!3m1!1s0x80cac2bd35ac0a47:0x8e601e4c459d754d",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Deep Creek Coffee Company",
+          "note": "2026 03 02 Day 4 Breakfast",
+          "url": "https://www.google.com/maps/place/Deep+Creek+Coffee+Company/data=!4m2!3m1!1s0x80cac2a7e7d49e71:0x5b1f49c2a2448e70",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Canyon Junction Bridge",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Canyon+Junction+Bridge/data=!4m2!3m1!1s0x80cac2f37284085d:0xc861773f4e861d36",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "595 W Greens Lake Dr",
+          "note": "2026 03 01 Day 3 Stay",
+          "url": "https://www.google.com/maps/place/595+W+Greens+Lake+Dr/data=!4m2!3m1!1s0x80b561df95236c8d:0xf46413ae212efda4",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "The New Wave",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/The+New+Wave/data=!4m2!3m1!1s0x87346b59a9712bbb:0x41b8f61bbeab8e16",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Lake Powell",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/Lake+Powell/data=!4m2!3m1!1s0x8739d46fcc1d6c6b:0x409adb24f99ef4f5",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "The Chains",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/The+Chains/data=!4m2!3m1!1s0x87346b29a5eede29:0xcf0ab441014494ad",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Glen Canyon Dam Overlook",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/Glen+Canyon+Dam+Overlook/data=!4m2!3m1!1s0x87346b4ae3514927:0x4830fbce8cf2e424",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Hanging Garden Trailhead",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/Hanging+Garden+Trailhead/data=!4m2!3m1!1s0x87346b32a88f45b1:0x78e2b2a6ae9e57e5",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Super 8 by Wyndham Page/Lake Powell",
+          "note": "2026 02 28 Day 2 Stay",
+          "url": "https://www.google.com/maps/place/Super+8+by+Wyndham+Page%2FLake+Powell/data=!4m2!3m1!1s0x87346b569f3ae87b:0x27d509a5ec703941",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Glen Canyon Dam Bridge",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/Glen+Canyon+Dam+Bridge/data=!4m2!3m1!1s0x87346bc4b9a6d5bf:0xc12cbbbc7b7482b2",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "El Tapatio",
+          "note": "2026 03 01 Day 3 Lunch",
+          "url": "https://www.google.com/maps/place/El+Tapatio/data=!4m2!3m1!1s0x873414a3f27d6593:0x1c65f2315e3805f2",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Fiesta Mexicana Restaurant",
+          "note": "2026 03 01 Day 3 Lunch",
+          "url": "https://www.google.com/maps/place/Fiesta+Mexicana+Restaurant/data=!4m2!3m1!1s0x873414a3ebef7001:0x4c1a81f7094dc937",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Biidi The Arch",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/Biidi+The+Arch/data=!4m2!3m1!1s0x873413004d5352c1:0xb5c2bd7f1adf1864",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Shell",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/Shell/data=!4m2!3m1!1s0x873413d99edccf85:0x117b22032b7f2dc1",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "nevada-2026-03",
+      "title": "Nevada (March 2026)",
+      "sourceFile": "2026 03 AZ-UT-NV.csv",
+      "country": "United States",
+      "primaryCity": "Las Vegas",
+      "stateCodes": [
+        "NV"
+      ],
+      "stateNames": [
+        "Nevada"
+      ],
+      "dateRange": {
+        "start": "2026-03-02",
+        "end": "2026-03-05"
+      },
+      "preambleNotes": [],
+      "places": [
+        {
+          "title": "ACE Rent A Car",
+          "note": "2026 03 03 Day 5 Spot",
+          "url": "https://www.google.com/maps/place/ACE+Rent+A+Car/data=!4m2!3m1!1s0x80c8cfe3edaf338b:0x9204bc7e1f7baf33",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Circus Circus Hotel and Casino",
+          "note": "2026 03 03 Day 5 Spot",
+          "url": "https://www.google.com/maps/place/Circus+Circus+Hotel+and+Casino/data=!4m2!3m1!1s0x80c8c40cdc682b99:0x13e0487c787924f4",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Starbucks Coffee Company",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Starbucks+Coffee+Company/data=!4m2!3m1!1s0x80ca2ba8cc6cd7e3:0x807ba396b7dff94a",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Greenhouse Smoothie Bar & Eatery",
+          "note": "2026 03 05 Day 5 Before Airport",
+          "url": "https://www.google.com/maps/place/Greenhouse+Smoothie+Bar+%26+Eatery/data=!4m2!3m1!1s0x80c8b929ef92b421:0x9422f4f52dbc0ecd",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Chowrastha - Indian Eatery",
+          "note": "2026 03 03 Day 5 Lunch",
+          "url": "https://www.google.com/maps/place/Chowrastha+-+Indian+Eatery/data=!4m2!3m1!1s0x80c8c508d26dbfdb:0xd329d639bc2dc6a5",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Paradise Falls Chapel at Flamingo Las Vegas",
+          "note": "2026 03 03 Day 5 Spot",
+          "url": "https://www.google.com/maps/place/Paradise+Falls+Chapel+at+Flamingo+Las+Vegas/data=!4m2!3m1!1s0x80c8c43963ca2305:0x13bdb2755b259ac8",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Flamingo Las Vegas",
+          "note": "2026 03 03 Day 5 Spot",
+          "url": "https://www.google.com/maps/place/Flamingo+Las+Vegas/data=!4m2!3m1!1s0x80c8c43bca8fd755:0x645b9d40c4e2ea75",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Venetian Self Park garage",
+          "note": "2026 03 03 Day 5 Spot",
+          "url": "https://www.google.com/maps/place/Venetian+Self+Park+garage/data=!4m2!3m1!1s0x80c8c52579775dc1:0x475fed81d7bd49db",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "The Venetian Las Vegas",
+          "note": "2026 03 03 Day 5 Spot",
+          "url": "https://www.google.com/maps/place/The+Venetian+Las+Vegas/data=!4m2!3m1!1s0x80c8c415ac77058b:0xa1b4397e7377d345",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Caesars Palace",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Caesars+Palace/data=!4m2!3m1!1s0x80c8c43c44cae095:0x77c9c8f2a2af3ff7",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Las Vegas Strip",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Las+Vegas+Strip/data=!4m2!3m1!1s0x80c8c4383428d4eb:0x43e2195d0c26834c",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Fountains of Bellagio",
+          "note": "2026 03 02 Day 4 Midnight Fountain Show Spot",
+          "url": "https://www.google.com/maps/place/Fountains+of+Bellagio/data=!4m2!3m1!1s0x80c8c43aaa9a0bb3:0xe2474a6cdc71f0d6",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Bellagio Hotel & Casino",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Bellagio+Hotel+%26+Casino/data=!4m2!3m1!1s0x80c8c430cb5147bd:0x82f2c7c5d9d10d84",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Bellagio Conservatory & Botanical Gardens",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Bellagio+Conservatory+%26+Botanical+Gardens/data=!4m2!3m1!1s0x80c8c43ac9848249:0xc6fc6b3ca0d29325",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Planet Hollywood Las Vegas Resort & Casino",
+          "note": "2026 03 02 Day 4 Stay",
+          "url": "https://www.google.com/maps/place/Planet+Hollywood+Las+Vegas+Resort+%26+Casino/data=!4m2!3m1!1s0x80c8c43661d137ab:0x7c546576745a059c",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Liquor World",
+          "note": "2026 03 02 Day 4 Liquor",
+          "url": "https://www.google.com/maps/place/Liquor+World/data=!4m2!3m1!1s0x80c8c5ad53223989:0xb2f1be66135a554",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Awesome Thai & Pho",
+          "note": "2026 03 02 Day 4 Dinner",
+          "url": "https://www.google.com/maps/place/Awesome+Thai+%26+Pho/data=!4m2!3m1!1s0x80c8c5c0f364c3b3:0x2bd14c52ec44f1d6",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Hawthorn Suites By Wyndham Las Vegas/Henderson",
+          "note": "2026 02 26 Day 0 Stay",
+          "url": "https://www.google.com/maps/place/Hawthorn+Suites+By+Wyndham+Las+Vegas%2FHenderson/data=!4m2!3m1!1s0x80c8d4287de12819:0x54f7911468233199",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Harry Reid International Airport",
+          "note": "2026 02 26 Airport Land",
+          "url": "https://www.google.com/maps/place/Harry+Reid+International+Airport/data=!4m2!3m1!1s0x80c8c59f1f049c5d:0x471359241ec41e1e",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "The Las Vegas Strip",
+          "note": null,
+          "url": "https://www.google.com/maps/place/The+Las+Vegas+Strip/data=!4m2!3m1!1s0x80c8c506324933bd:0x5f1fc22579e84333",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Dallas Fort Worth International Airport",
+          "note": null,
+          "url": "https://www.google.com/maps/place/Dallas+Fort+Worth+International+Airport/data=!4m2!3m1!1s0x864c2a660d222aa7:0x73323f5e067d201c",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        },
+        {
+          "title": "Orlando International Airport",
+          "note": null,
+          "url": "https://www.google.com/maps/place/Orlando+International+Airport/data=!4m2!3m1!1s0x88e76327c6b492f3:0xad4ab9369411e16d",
+          "tags": [],
+          "comment": null,
+          "googleMapsPlaceId": null,
+          "coordinates": null
+        }
+      ]
     }
   ],
   "states": {
@@ -2914,7 +3480,8 @@
       "country": "United States",
       "visited": true,
       "tripIds": [
-        "arizona-trip"
+        "arizona-trip",
+        "arizona-utah-nevada-2026-03"
       ],
       "trips": [
         {
@@ -2926,9 +3493,19 @@
           },
           "primaryCity": "Phoenix / Sedona / Arizona",
           "placeCount": 26
+        },
+        {
+          "id": "arizona-utah-nevada-2026-03",
+          "title": "Arizona, Utah & Nevada Trip",
+          "dateRange": {
+            "start": "2026-02-26",
+            "end": "2026-03-05"
+          },
+          "primaryCity": "Las Vegas / Page / Zion / Sedona",
+          "placeCount": 23
         }
       ],
-      "placeCount": 26,
+      "placeCount": 49,
       "places": [
         {
           "tripId": "arizona-trip",
@@ -3160,6 +3737,213 @@
           "title": "Bombay House",
           "note": null,
           "url": "https://www.google.com/maps/place/Bombay+House/data=!4m2!3m1!1s0x872b07545d9f7b55:0x1a04d76eac3bbf46",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Virgin River Gorge",
+          "note": "2026 03 02 Day 4 Best View in the Whole World Wallpaper Scene",
+          "url": "https://www.google.com/maps/place/Virgin+River+Gorge/data=!4m2!3m1!1s0x80ca368e91b3e9cf:0xe4cee7527585c73e",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "The New Wave",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/The+New+Wave/data=!4m2!3m1!1s0x87346b59a9712bbb:0x41b8f61bbeab8e16",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Lake Powell",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/Lake+Powell/data=!4m2!3m1!1s0x8739d46fcc1d6c6b:0x409adb24f99ef4f5",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "The Chains",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/The+Chains/data=!4m2!3m1!1s0x87346b29a5eede29:0xcf0ab441014494ad",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Glen Canyon Dam Overlook",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/Glen+Canyon+Dam+Overlook/data=!4m2!3m1!1s0x87346b4ae3514927:0x4830fbce8cf2e424",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Hanging Garden Trailhead",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/Hanging+Garden+Trailhead/data=!4m2!3m1!1s0x87346b32a88f45b1:0x78e2b2a6ae9e57e5",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Super 8 by Wyndham Page/Lake Powell",
+          "note": "2026 02 28 Day 2 Stay",
+          "url": "https://www.google.com/maps/place/Super+8+by+Wyndham+Page%2FLake+Powell/data=!4m2!3m1!1s0x87346b569f3ae87b:0x27d509a5ec703941",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Glen Canyon Dam Bridge",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/Glen+Canyon+Dam+Bridge/data=!4m2!3m1!1s0x87346bc4b9a6d5bf:0xc12cbbbc7b7482b2",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "El Tapatio",
+          "note": "2026 03 01 Day 3 Lunch",
+          "url": "https://www.google.com/maps/place/El+Tapatio/data=!4m2!3m1!1s0x873414a3f27d6593:0x1c65f2315e3805f2",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Fiesta Mexicana Restaurant",
+          "note": "2026 03 01 Day 3 Lunch",
+          "url": "https://www.google.com/maps/place/Fiesta+Mexicana+Restaurant/data=!4m2!3m1!1s0x873414a3ebef7001:0x4c1a81f7094dc937",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Biidi The Arch",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/Biidi+The+Arch/data=!4m2!3m1!1s0x873413004d5352c1:0xb5c2bd7f1adf1864",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Horseshoe Bend",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/Horseshoe+Bend/data=!4m2!3m1!1s0x87346c8d22566b09:0x45637089634f1702",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Shell",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/Shell/data=!4m2!3m1!1s0x873413d99edccf85:0x117b22032b7f2dc1",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Dixie's Lower Antelope Canyon Tours",
+          "note": "2026 03 01 Day 3 Spot",
+          "url": "https://www.google.com/maps/place/Dixie's+Lower+Antelope+Canyon+Tours/data=!4m2!3m1!1s0x8734139684856e1f:0x2170c2722ad9e485",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Delhi Palace Cuisine of India",
+          "note": "2026 02 28 Day 2 Dinner",
+          "url": "https://www.google.com/maps/place/Delhi+Palace+Cuisine+of+India/data=!4m2!3m1!1s0x872d858777adc71b:0xcf82c829dcab101d",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Seven Sacred Pools",
+          "note": "2026 02 28 Day 2 Spot",
+          "url": "https://www.google.com/maps/place/Seven+Sacred+Pools/data=!4m2!3m1!1s0x872da10b5025f24b:0x29731f767aa450af",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "The Historic Grand Canyon Hotel",
+          "note": "2026 02 27 Day 1 Stay",
+          "url": "https://www.google.com/maps/place/The+Historic+Grand+Canyon+Hotel/data=!4m2!3m1!1s0x87329f1d1eccb75d:0x79d36c6396790987",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Sedona Airport",
+          "note": "2026 02 28 Day 2 Spot",
+          "url": "https://www.google.com/maps/place/Sedona+Airport/data=!4m2!3m1!1s0x872da6ca933f2abd:0x42d89564ba092545",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "The Chai Spot",
+          "note": "2026 02 28 Day 2 Evening Spot",
+          "url": "https://www.google.com/maps/place/The+Chai+Spot/data=!4m2!3m1!1s0x872da155de2e2503:0x669572879842e0fe",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Sedona Airport Scenic Lookout",
+          "note": "2026 02 28 Day 2 Spot",
+          "url": "https://www.google.com/maps/place/Sedona+Airport+Scenic+Lookout/data=!4m2!3m1!1s0x872da14c9c47da69:0x847612b3ac32d5aa",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Arizona Route 66 Museum",
+          "note": "2026 02 27 Day 1 Lunch",
+          "url": "https://www.google.com/maps/place/Arizona+Route+66+Museum/data=!4m2!3m1!1s0x80cdde7c9e951061:0xd268cb8526bcc4b6",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Desert Botanical Garden",
+          "note": "2026 02 27 Botanical Garden Evening Spot",
+          "url": "https://www.google.com/maps/place/Desert+Botanical+Garden/data=!4m2!3m1!1s0x872b0953082d9e21:0x215ce99d25055d17",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Mr D'z Route 66 Diner",
+          "note": null,
+          "url": "https://www.google.com/maps/place/Mr+D'z+Route+66+Diner/data=!4m2!3m1!1s0x80cdde7c7f522ab1:0x377e589e5f677157",
           "tags": [],
           "comment": null,
           "coordinates": null
@@ -5984,6 +6768,379 @@
           "coordinates": null
         }
       ]
+    },
+    "UT": {
+      "stateCode": "UT",
+      "stateName": "Utah",
+      "country": "United States",
+      "visited": true,
+      "tripIds": [
+        "arizona-utah-nevada-2026-03"
+      ],
+      "trips": [
+        {
+          "id": "arizona-utah-nevada-2026-03",
+          "title": "Arizona, Utah & Nevada Trip",
+          "dateRange": {
+            "start": "2026-02-26",
+            "end": "2026-03-05"
+          },
+          "primaryCity": "Las Vegas / Page / Zion / Sedona",
+          "placeCount": 15
+        }
+      ],
+      "placeCount": 15,
+      "places": [
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Starbucks Coffee Company",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Starbucks+Coffee+Company/data=!4m2!3m1!1s0x80ca2be92d0a786d:0xebbefa74713bda1e",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Starbucks Coffee Company",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Starbucks+Coffee+Company/data=!4m2!3m1!1s0x80ca2ba8cc6cd7e3:0x807ba396b7dff94a",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Canyon Coffee",
+          "note": null,
+          "url": "https://www.google.com/maps/place/Canyon+Coffee/data=!4m2!3m1!1s0x80cac3b63388b289:0x3635bedeb311c8ff",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Riverside Walk Trailhead",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Riverside+Walk+Trailhead/data=!4m2!3m1!1s0x80cac1740027e779:0x3b6ce2cee5a9cf1e",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Observation Point",
+          "note": "2026 03 02 Day 4 Spot Sunset point",
+          "url": "https://www.google.com/maps/place/Observation+Point/data=!4m2!3m1!1s0x80cac164c266e20d:0x8f23e13fa714ecbb",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Weeping Rock Trailhead",
+          "note": "2026 03 02 Day 4 Spot 10 -15 mins trail",
+          "url": "https://www.google.com/maps/place/Weeping+Rock+Trailhead/data=!4m2!3m1!1s0x80cac3d88a4e715d:0x2feea585f8293ae5",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Big Bend Viewpoint",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Big+Bend+Viewpoint/data=!4m2!3m1!1s0x80cac17dccbe4c3f:0x1a62defa14e7cb75",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Zion National Park Lodge",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Zion+National+Park+Lodge/data=!4m2!3m1!1s0x80cae8027837e373:0xf17f5bc5014ca39e",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Lower Emerald Pool",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Lower+Emerald+Pool/data=!4m2!3m1!1s0x80cac3cb030a3c55:0xcf9baa40cf67fa9",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Emerald Pools Trailhead",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Emerald+Pools+Trailhead/data=!4m2!3m1!1s0x80cac22e2c2c0389:0x248d03ed0ed2fb6f",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "The Grotto Picnic Area",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/The+Grotto+Picnic+Area/data=!4m2!3m1!1s0x80cac3cd7e6c886d:0xe1b7de63bde234e2",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Zion Canyon Visitor Center",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Zion+Canyon+Visitor+Center/data=!4m2!3m1!1s0x80cac2bd35ac0a47:0x8e601e4c459d754d",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Deep Creek Coffee Company",
+          "note": "2026 03 02 Day 4 Breakfast",
+          "url": "https://www.google.com/maps/place/Deep+Creek+Coffee+Company/data=!4m2!3m1!1s0x80cac2a7e7d49e71:0x5b1f49c2a2448e70",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Canyon Junction Bridge",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Canyon+Junction+Bridge/data=!4m2!3m1!1s0x80cac2f37284085d:0xc861773f4e861d36",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "595 W Greens Lake Dr",
+          "note": "2026 03 01 Day 3 Stay",
+          "url": "https://www.google.com/maps/place/595+W+Greens+Lake+Dr/data=!4m2!3m1!1s0x80b561df95236c8d:0xf46413ae212efda4",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        }
+      ]
+    },
+    "NV": {
+      "stateCode": "NV",
+      "stateName": "Nevada",
+      "country": "United States",
+      "visited": true,
+      "tripIds": [
+        "arizona-utah-nevada-2026-03"
+      ],
+      "trips": [
+        {
+          "id": "arizona-utah-nevada-2026-03",
+          "title": "Arizona, Utah & Nevada Trip",
+          "dateRange": {
+            "start": "2026-02-26",
+            "end": "2026-03-05"
+          },
+          "primaryCity": "Las Vegas / Page / Zion / Sedona",
+          "placeCount": 21
+        }
+      ],
+      "placeCount": 21,
+      "places": [
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "ACE Rent A Car",
+          "note": "2026 03 03 Day 5 Spot",
+          "url": "https://www.google.com/maps/place/ACE+Rent+A+Car/data=!4m2!3m1!1s0x80c8cfe3edaf338b:0x9204bc7e1f7baf33",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Circus Circus Hotel and Casino",
+          "note": "2026 03 03 Day 5 Spot",
+          "url": "https://www.google.com/maps/place/Circus+Circus+Hotel+and+Casino/data=!4m2!3m1!1s0x80c8c40cdc682b99:0x13e0487c787924f4",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Starbucks Coffee Company",
+          "note": "2026 03 03 Day 5 Spot",
+          "url": "https://www.google.com/maps/place/Starbucks+Coffee+Company/data=!4m2!3m1!1s0x80c8cf38af1d566d:0x129af68df5f43ea1",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Greenhouse Smoothie Bar & Eatery",
+          "note": "2026 03 05 Day 5 Before Airport",
+          "url": "https://www.google.com/maps/place/Greenhouse+Smoothie+Bar+%26+Eatery/data=!4m2!3m1!1s0x80c8b929ef92b421:0x9422f4f52dbc0ecd",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Chowrastha - Indian Eatery",
+          "note": "2026 03 03 Day 5 Lunch",
+          "url": "https://www.google.com/maps/place/Chowrastha+-+Indian+Eatery/data=!4m2!3m1!1s0x80c8c508d26dbfdb:0xd329d639bc2dc6a5",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Paradise Falls Chapel at Flamingo Las Vegas",
+          "note": "2026 03 03 Day 5 Spot",
+          "url": "https://www.google.com/maps/place/Paradise+Falls+Chapel+at+Flamingo+Las+Vegas/data=!4m2!3m1!1s0x80c8c43963ca2305:0x13bdb2755b259ac8",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Flamingo Las Vegas",
+          "note": "2026 03 03 Day 5 Spot",
+          "url": "https://www.google.com/maps/place/Flamingo+Las+Vegas/data=!4m2!3m1!1s0x80c8c43bca8fd755:0x645b9d40c4e2ea75",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Venetian Self Park garage",
+          "note": "2026 03 03 Day 5 Spot",
+          "url": "https://www.google.com/maps/place/Venetian+Self+Park+garage/data=!4m2!3m1!1s0x80c8c52579775dc1:0x475fed81d7bd49db",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "The Venetian Las Vegas",
+          "note": "2026 03 03 Day 5 Spot",
+          "url": "https://www.google.com/maps/place/The+Venetian+Las+Vegas/data=!4m2!3m1!1s0x80c8c415ac77058b:0xa1b4397e7377d345",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Caesars Palace",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Caesars+Palace/data=!4m2!3m1!1s0x80c8c43c44cae095:0x77c9c8f2a2af3ff7",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Las Vegas Strip",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Las+Vegas+Strip/data=!4m2!3m1!1s0x80c8c4383428d4eb:0x43e2195d0c26834c",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Fountains of Bellagio",
+          "note": "2026 03 02 Day 4 Midnight Fountain Show Spot",
+          "url": "https://www.google.com/maps/place/Fountains+of+Bellagio/data=!4m2!3m1!1s0x80c8c43aaa9a0bb3:0xe2474a6cdc71f0d6",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Bellagio Hotel & Casino",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Bellagio+Hotel+%26+Casino/data=!4m2!3m1!1s0x80c8c430cb5147bd:0x82f2c7c5d9d10d84",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Bellagio Conservatory & Botanical Gardens",
+          "note": "2026 03 02 Day 4 Spot",
+          "url": "https://www.google.com/maps/place/Bellagio+Conservatory+%26+Botanical+Gardens/data=!4m2!3m1!1s0x80c8c43ac9848249:0xc6fc6b3ca0d29325",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Planet Hollywood Las Vegas Resort & Casino",
+          "note": "2026 03 02 Day 4 Stay",
+          "url": "https://www.google.com/maps/place/Planet+Hollywood+Las+Vegas+Resort+%26+Casino/data=!4m2!3m1!1s0x80c8c43661d137ab:0x7c546576745a059c",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Liquor World",
+          "note": "2026 03 02 Day 4 Liquor",
+          "url": "https://www.google.com/maps/place/Liquor+World/data=!4m2!3m1!1s0x80c8c5ad53223989:0xb2f1be66135a554",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Awesome Thai & Pho",
+          "note": "2026 03 02 Day 4 Dinner",
+          "url": "https://www.google.com/maps/place/Awesome+Thai+%26+Pho/data=!4m2!3m1!1s0x80c8c5c0f364c3b3:0x2bd14c52ec44f1d6",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Hoover Dam",
+          "note": "2026 02 27 Day 1 Hoover Dam",
+          "url": "https://www.google.com/maps/place/Hoover+Dam/data=!4m2!3m1!1s0x80c92b497f82a14b:0x89d59d0bd29de37",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Hawthorn Suites By Wyndham Las Vegas/Henderson",
+          "note": "2026 02 26 Day 0 Stay",
+          "url": "https://www.google.com/maps/place/Hawthorn+Suites+By+Wyndham+Las+Vegas%2FHenderson/data=!4m2!3m1!1s0x80c8d4287de12819:0x54f7911468233199",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "Harry Reid International Airport",
+          "note": "2026 02 26 Airport Land",
+          "url": "https://www.google.com/maps/place/Harry+Reid+International+Airport/data=!4m2!3m1!1s0x80c8c59f1f049c5d:0x471359241ec41e1e",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        },
+        {
+          "tripId": "arizona-utah-nevada-2026-03",
+          "title": "The Las Vegas Strip",
+          "note": null,
+          "url": "https://www.google.com/maps/place/The+Las+Vegas+Strip/data=!4m2!3m1!1s0x80c8c506324933bd:0x5f1fc22579e84333",
+          "tags": [],
+          "comment": null,
+          "coordinates": null
+        }
+      ]
     }
-  }
+  },
+  "lastUpdated": "2026-04-27"
 }
