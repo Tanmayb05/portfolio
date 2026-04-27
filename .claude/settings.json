@@ -3,7 +3,15 @@
     "allow": [
       "Bash(awk '{print $9, \"\\(\" $5 \"\\)\"}')",
       "Skill(gsd:execute-phase)",
-      "Skill(gsd:execute-phase:*)"
+      "Skill(gsd:execute-phase:*)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3000/travel-life)",
+      "Bash(pkill -f \"npm run dev\")",
+      "Bash(git add *)",
+      "Bash(git commit -m 'fix: replace card grid with real SVG geographic choropleth map *)"
+    ],
+    "additionalDirectories": [
+      "/private/tmp"
     ]
   }
 }
