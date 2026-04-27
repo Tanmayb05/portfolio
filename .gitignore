@@ -10,6 +10,12 @@ Thumbs.db
 # IDE and editor files
 .vscode/
 .idea/
+.cursor/
+.kiro/
+.cursorrules
+.windsurfrules
+.mcp.json
+.opencode.json
 *.sublime-project
 *.sublime-workspace
 *.swp
@@ -35,7 +41,18 @@ new/next-portfolio/.next/
 .env.local
 .env.*.local
 
+# Python virtual environment
+.venv/
+venv/
+ENV/
+env/
+
 # Temporary files
 *.tmp
 *.temp
 .cache/
+
+# Code review graph (auto-generated)
+.code-review-graph/
+# Added by code-review-graph
+.code-review-graph/
