@@ -480,28 +480,28 @@ export function USAGeographicMap({
       {/* Tooltip */}
       {tooltip && (
         <div
-          className="pointer-events-none fixed z-50 rounded-lg border border-[var(--border-soft)] bg-[var(--surface-elevated)] px-3 py-2 text-xs shadow-lg backdrop-blur-sm"
+          className="pointer-events-none fixed z-50 rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs shadow-lg"
           style={{
             left: `${tooltipPos.x}px`,
             top: `${tooltipPos.y}px`,
             transform: "translate(-50%, -100%)",
           }}
         >
-          <div className="font-semibold text-[var(--text-primary)]">
+          <div className="font-semibold text-gray-900">
             {tooltip.stateName}
           </div>
           {tooltip.isVisited ? (
             <>
-              <div className="text-[var(--text-secondary)]">
+              <div className="text-gray-600">
                 {tooltip.placeCount} place{tooltip.placeCount !== 1 ? "s" : ""} •{" "}
                 {tooltip.tripCount} trip{tooltip.tripCount !== 1 ? "s" : ""}
               </div>
-              <div className="mt-1 text-[var(--text-muted)]">
+              <div className="mt-1 text-gray-500">
                 Click to explore
               </div>
             </>
           ) : (
-            <div className="text-[var(--text-muted)]">
+            <div className="text-gray-500">
               Not visited yet
             </div>
           )}
