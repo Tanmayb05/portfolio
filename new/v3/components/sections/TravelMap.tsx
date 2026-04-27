@@ -57,9 +57,10 @@ export function TravelMap({ entries, region }: TravelMapProps) {
           </p>
         </div>
 
-        {entries.length > 0 ? (
+        {entries.length > 0 && entries.some(e => e.mapPosition) ? (
           <div className="absolute inset-0 z-20">
             {entries.map((entry) => {
+              if (!entry.mapPosition) return null;
               const isSelected = selectedEntry?.slug === entry.slug;
 
               return (

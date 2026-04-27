@@ -1,4 +1,4 @@
-export type SourceDocument = "content-intake.json";
+export type SourceDocument = "content-intake.json" | "readme_portfolio.md" | "resume.json";
 
 export type ResumeContact = {
   linkedin: string;
@@ -94,11 +94,11 @@ export type TravelRegion = "USA" | "India" | "China";
 export type TravelPlace = {
   id: string;
   title: string;
-  note?: string;
+  note?: string | null;
   url: string;
   tags: string[];
-  comment?: string;
-  googleMapsPlaceId?: string;
+  comment?: string | null;
+  googleMapsPlaceId?: string | null;
   coordinates?: { lat: number; lng: number } | null;
 };
 

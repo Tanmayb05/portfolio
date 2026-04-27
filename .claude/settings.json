@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk '{print $9, \"\\(\" $5 \"\\)\"}')",
+      "Skill(gsd:execute-phase)",
+      "Skill(gsd:execute-phase:*)"
+    ]
+  }
+}
