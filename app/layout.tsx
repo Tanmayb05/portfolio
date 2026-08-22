@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "@/app/globals.css";
 import { Footer } from "@/components/shared/Footer";
 import { Navbar } from "@/components/shared/Navbar";
+import { SiteProgressBar } from "@/components/shared/SiteProgressBar";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <SiteProgressBar />
         <Navbar />
         <main>{children}</main>
         <Footer />

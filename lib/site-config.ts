@@ -5,11 +5,11 @@ export const siteConfig = {
     "A calm technical portfolio for systems, engineering notes, experience, travel, and contact.",
   url: "",
   navItems: [
-    { label: "Projects", href: "/projects" },
-    { label: "Thinking", href: "/thinking" },
-    { label: "Experience", href: "/experience" },
-    { label: "Travel & Life", href: "/travel-life" },
-    { label: "Contact", href: "/contact" }
+    { label: "War Stories", href: "/experience", realName: "Experience" },
+    { label: "Things I Built", href: "/projects", realName: "Projects" },
+    { label: "Brain Dump", href: "/thinking", realName: "Thinking" },
+    { label: "Life, Offline", href: "/travel-life", realName: "Travel & Life" },
+    { label: "Say Hi", href: "/contact", realName: "Contact" }
   ],
   social: {
     github: "https://github.com/Tanmayb05",

@@ -42,8 +42,8 @@ export default function ExperiencePage() {
   return (
     <>
       <PageHeader
-        eyebrow="Experience"
-        title="I turn infrastructure, automation, and engineering ownership into shipped outcomes."
+        eyebrow="War Stories"
+        title="I automate the boring parts so I only have to be annoyed once."
         description="I keep this page scannable by showing the timeline, impact, and skills that support the full resume instead of duplicating every resume bullet."
       />
 
@@ -142,7 +142,7 @@ export default function ExperiencePage() {
           >
             {resume.education.map((education) => (
               <article
-                className="motion-card motion-border-glow rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)] p-5 hover:bg-[var(--surface-elevated)] sm:p-6"
+                className="motion-card motion-border-glow flex h-full flex-col rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)] p-5 hover:bg-[var(--surface-elevated)] sm:p-6"
                 key={`${education.institution}-${education.degree}`}
               >
                 <p className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--accent-teal)]">
@@ -154,11 +154,21 @@ export default function ExperiencePage() {
                 <p className="mt-2 text-sm text-[var(--text-secondary)]">
                   {education.institution}
                 </p>
+                {education.gpa ? (
+                  <p className="mt-1 font-mono text-xs font-semibold uppercase tracking-[0.1em] text-[var(--accent-teal)]">
+                    GPA {education.gpa}
+                  </p>
+                ) : null}
                 <div className="mt-5 flex flex-wrap gap-2">
                   {education.coursework.map((course) => (
                     <TechStackBadge key={course}>{course}</TechStackBadge>
                   ))}
                 </div>
+                {education.activities.length > 0 ? (
+                  <p className="mt-4 text-sm text-[var(--text-secondary)]">
+                    {education.activities.join(", ")}
+                  </p>
+                ) : null}
               </article>
             ))}
           </StaggerGroup>

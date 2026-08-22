@@ -21,7 +21,7 @@ export function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border-soft)] bg-[var(--nav-background)] backdrop-blur-xl">
+    <header className="sticky top-1 z-50 border-b border-[var(--border-soft)] bg-[var(--nav-background)] backdrop-blur-xl">
       <SiteContainer className="flex h-16 items-center justify-between">
         <Link
           className="motion-focus rounded-sm text-sm font-semibold tracking-normal text-[var(--text-primary)] transition duration-200 hover:text-[var(--accent-teal)]"
@@ -36,7 +36,7 @@ export function Navbar() {
         >
           {siteConfig.navItems.map((item) => (
             <Link
-              className={`motion-focus rounded-full px-3 py-2 text-sm text-[var(--text-secondary)] transition duration-200 hover:bg-[var(--accent-teal-soft)] hover:text-[var(--text-primary)] ${
+              className={`motion-focus group relative rounded-full px-3 py-2 text-sm text-[var(--text-secondary)] transition duration-200 hover:bg-[var(--accent-teal-soft)] hover:text-[var(--text-primary)] ${
                 isActive(item.href) ? "motion-active" : ""
               }`}
               data-active={isActive(item.href)}
@@ -44,6 +44,9 @@ export function Navbar() {
               key={item.href}
             >
               {item.label}
+              <span className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[var(--surface-elevated)] px-2 py-1 text-xs text-[var(--text-secondary)] opacity-0 shadow-lg ring-1 ring-[var(--border-soft)] transition duration-150 group-hover:opacity-100">
+                {item.realName}
+              </span>
             </Link>
           ))}
         </nav>
@@ -74,13 +77,16 @@ export function Navbar() {
             <nav aria-label="Mobile navigation" className="grid gap-1">
               {siteConfig.navItems.map((item) => (
                 <Link
-                  className={`motion-focus rounded-lg px-3 py-3 text-sm text-[var(--text-secondary)] transition duration-200 hover:bg-[var(--accent-teal-soft)] hover:text-[var(--text-primary)] ${
+                  className={`motion-focus flex items-baseline gap-2 rounded-lg px-3 py-3 text-sm text-[var(--text-secondary)] transition duration-200 hover:bg-[var(--accent-teal-soft)] hover:text-[var(--text-primary)] ${
                     isActive(item.href) ? "motion-active" : ""
                   }`}
                   href={item.href}
                   key={item.href}
                 >
                   {item.label}
+                  <span className="text-xs text-[var(--text-secondary)] opacity-60">
+                    {item.realName}
+                  </span>
                 </Link>
               ))}
               <Link

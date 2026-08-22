@@ -1,29 +1,33 @@
-import experienceJson from "@/data/source/experience.json";
-import projectsJson from "@/data/source/projects.json";
-import contactJson from "@/data/source/contact.json";
+import summaryJson from "@/data/source/1.0-professional-summary.json";
+import experienceJson from "@/data/source/1-experience.json";
+import technicalSkillsJson from "@/data/source/1.1-technical-skills.json";
+import educationJson from "@/data/source/1.2-education.json";
+import extracurricularJson from "@/data/source/1.3-extracurricular.json";
+import projectsJson from "@/data/source/2-projects.json";
+import contactJson from "@/data/source/5-contact.json";
 import type { ResumeData } from "@/lib/content-types";
 
 // Extract resume data from data/source/*.json
 const resumeData: ResumeData = {
   name: "Tanmay Bhuskute",
+  summary: summaryJson.summary,
   contact: {
     email: contactJson.preferredEmail,
     github: contactJson.preferredGitHub,
-    linkedin: contactJson.preferredLinkedIn
+    linkedin: contactJson.preferredLinkedIn,
+    secondaryEmail: contactJson.secondaryEmail,
+    phone: contactJson.phone,
+    website: contactJson.website,
+    location: contactJson.location
   },
-  education: [], // Not yet in data/source structure
-  technical_skills: {
-    programming: [],
-    frameworks: [],
-    developer_tools: [],
-    libraries: []
-  },
+  education: educationJson,
+  technical_skills: technicalSkillsJson,
   work_experience: experienceJson.map(exp => ({
     title: exp.role,
     company: exp.company,
-    start_date: "TBD",
-    end_date: "TBD",
-    tech_stack: [],
+    start_date: exp.startDate,
+    end_date: exp.endDate,
+    tech_stack: exp.techStack,
     achievements: exp.mostImportantImpact
   })),
   projects_and_research: projectsJson.map(proj => ({
@@ -32,7 +36,7 @@ const resumeData: ResumeData = {
     tech_stack: proj.techStack,
     details: proj.whatIWouldImproveNext
   })),
-  extracurricular: []
+  extracurricular: extracurricularJson
 };
 
 export const resume = resumeData satisfies ResumeData;

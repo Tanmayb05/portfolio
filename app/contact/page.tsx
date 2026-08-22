@@ -14,9 +14,8 @@ export default function ContactPage() {
         <SiteContainer>
           <Reveal>
             <SectionHeading
-              eyebrow="Open to"
-              title="Roles I am targeting"
-              description="I am actively applying for Summer / Fall 2026 roles and keeping the target surface clear."
+              eyebrow="Say Hi"
+              title="Roles I'm shamelessly hunting for."
             />
           </Reveal>
 

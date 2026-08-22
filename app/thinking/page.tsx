@@ -23,8 +23,8 @@ export default function ThinkingPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Thinking"
-        title="I write to make my technical reasoning visible."
+        eyebrow="Brain Dump"
+        title="Where I overthink things in public, on purpose."
         description="This is not a chronological blog dump. I organize notes around systems, evaluation, learning, research, and the operating models I use to improve."
       />
 
@@ -35,15 +35,15 @@ export default function ThinkingPage() {
               <div>
                 <SectionHeading
                   eyebrow="Current"
-                  title="Active and draft notes"
-                  description="I keep active notes close to the top so the page reflects what I am actually thinking through now."
+                  title="Thoughts in progress (send help)"
+                  description="Half-baked ideas get top billing here — fresher chaos deserves more attention."
                 />
                 <div className="mt-7 flex flex-wrap gap-2">
                   <TechStackBadge>
-                    {`${activeEntries.length} active/draft`}
+                    {`${activeEntries.length} mid-crisis`}
                   </TechStackBadge>
                   <TechStackBadge>
-                    {`${plannedEntries.length} planned`}
+                    {`${plannedEntries.length} someday, maybe`}
                   </TechStackBadge>
                 </div>
               </div>

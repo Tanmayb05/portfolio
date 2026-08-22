@@ -1,0 +1,118 @@
+[
+  {
+    "company": "University of Cincinnati (Research)",
+    "role": "AI/ML Research Assistant - Android Bug Reproduction",
+    "location": "Cincinnati, OH",
+    "startDate": "February 2026",
+    "endDate": "Present",
+    "techStack": [
+      "Python",
+      "Google Gemini 2.5 Pro",
+      "Vertex AI",
+      "ADB",
+      "uiautomator2",
+      "scikit-image"
+    ],
+    "summary": "I'm proposing a two-stage memory-augmented LLM pipeline that reproduces Android GUI bugs from screen recordings, cutting per-run latency 25.7x against a published VLM baseline while preserving task-completion fidelity.",
+    "mostImportantImpact": [
+      "Designed a two-stage memory-augmented LLM method (Gemini 2.5 Pro video-to-memory extraction, then memory-conditioned device automation) that avoids repeated per-scene VLM inference",
+      "Evaluated against ViBR (GPT-4o + GroundingDINO + CLIP) across 53 successful runs on 20+ real-world Android apps using a provider-agnostic LLM abstraction (Gemini, GPT-4o, Llama, Qwen, MiniCPM)",
+      "Demonstrated 25.7x latency reduction (39.4s vs 1012.1s avg per run) over exhaustive scene-by-scene VLM replay"
+    ],
+    "extraDetails": [
+      "Implemented the pipeline as a staged, config-driven experimental harness (--stage 1/2/all) with dry-run validation for reproducible evaluation runs",
+      "Built device automation harness (uiautomator2/ADB) with stall detection and a history-windowed decision loop to execute inferred actions during evaluation",
+      "Designed a flat, versioned run-artifact schema to keep every experimental trial reproducible and auditable"
+    ]
+  },
+  {
+    "company": "Siemens Industry Software",
+    "role": "Software Development Engineer",
+    "location": "Remote",
+    "startDate": "July 2022",
+    "endDate": "June 2024",
+    "techStack": [
+      "AWS",
+      "Python",
+      "Boto3",
+      "REST APIs",
+      "Hashicorp Vault",
+      "Ansible",
+      "GitLab CI/CD",
+      "Shell",
+      "Kubernetes",
+      "ArgoCD",
+      "Helm",
+      "Amazon EFS",
+      "DynamoDB"
+    ],
+    "summary": "I automated Teamcenter X infrastructure workflows, migrated 40+ production environments to Kubernetes, and served as Quality Coach, raising automated code coverage from 35% to 78% while delivering 44 production upgrades in 4 months.",
+    "mostImportantImpact": [
+      "Automated Teamcenter X infrastructure workflows with Python (Boto3), replacing legacy Ruby scripts and reducing deployment time by 40% across AWS environments",
+      "Executed 44 production environment upgrades in 4 months, diagnosing and resolving live infrastructure issues across Linux, EC2, databases, and Teamcenter X services",
+      "Designed an Ansible-based Blue-Green deployment framework, reducing production upgrade downtime by 50% while enabling reliable rollback and recovery",
+      "Migrated 40+ production environments from process-based deployments to Kubernetes using ArgoCD, Helm, GitLab CI/CD, Amazon EFS, and HashiCorp Vault to modernize deployment architecture",
+      "Served as Quality Coach and SonarQube Specialist for the Agile Release Train, increasing automated code coverage from 35% to 78% by enforcing coding standards and CI/CD quality gates",
+      "Mentored 5 software engineers through structured onboarding, technical documentation, and standardized development practices, accelerating team productivity"
+    ],
+    "extraDetails": [
+      "Diagnosed live production infrastructure issues across Linux, EC2, databases, and containerized services using CloudWatch metrics and Datadog log correlation",
+      "Designed and maintained GitOps-based CI/CD pipelines with GitLab CI/CD and ArgoCD, enabling automated, auditable, rollback-capable deployments across the environment fleet",
+      "Built automated rollback capability into the Blue-Green framework, enabling full environment recovery within 15 minutes via Ansible workflows",
+      "Built Infrastructure as Code automation using Terraform and Ansible for environment provisioning and orchestration, standardizing setup across 40+ production environments",
+      "Developed Ansible workflows to automate post-provisioning configuration steps, reducing manual setup work after environment creation",
+      "Tracked environment configs, provisioning state, and automation job status across 40+ production environments using DynamoDB, enabling reliable state lookups for the Ansible/CLI provisioning workflows",
+      "Reduced monthly AWS spend by 40% (from $15K to $9K) through EC2 rightsizing and automated cleanup of unused/orphaned cloud resources",
+      "Used CloudWatch utilization metrics to identify and resolve resource inefficiencies, directly informing cost-optimization decisions",
+      "Built a self-service developer platform (dashboard + CLI/YAML automation) for environment lifecycle management, adopted by 15 engineers",
+      "Reduced environment start/stop/delete time by up to 90% (5-7 min to under 1 min) through self-service dashboard automation",
+      "Cut environment provisioning turnaround by 70% (10 min to 3 min) with a CLI + YAML-driven provisioning workflow",
+      "Managed HashiCorp Vault secrets and IAM access policies across production and non-production environments to strengthen security posture"
+    ]
+  },
+  {
+    "company": "Siemens Industry Software",
+    "role": "Software Developer Intern",
+    "location": "Remote",
+    "startDate": "March 2022",
+    "endDate": "June 2022",
+    "techStack": [
+      "AWS",
+      "Terraform",
+      "Ansible",
+      "Terratest",
+      "Go"
+    ],
+    "summary": "I developed a Go + Terratest framework that caught 95% of infrastructure misconfigurations and automated AWS provisioning with Terraform, reducing deployment time by 30%.",
+    "mostImportantImpact": [
+      "Automated provisioning of AWS resources with Terraform, reducing deployment time by 30%",
+      "Developed a Go + Terratest framework, catching 95% of misconfigurations pre-production",
+      "Optimized DevOps workflows with Ansible, reducing environment setup time from hours to minutes"
+    ],
+    "extraDetails": [
+      "Enhanced infrastructure validation with Terragrunt, ensuring 100% successful Terraform runs"
+    ]
+  },
+  {
+    "company": "Government of Maharashtra",
+    "role": "Software Developer Intern",
+    "location": "Maharashtra, India",
+    "startDate": "September 2021",
+    "endDate": "December 2021",
+    "techStack": [
+      "React.js",
+      "MySQL",
+      "Full-Stack Development",
+      "UI/UX Design",
+      "Process Automation"
+    ],
+    "summary": "I built and deployed a full-stack React and MySQL workflow application that digitized departmental record management and improved operational efficiency by 40%.",
+    "mostImportantImpact": [
+      "Built and deployed a full-stack React and MySQL workflow application that digitized departmental record management",
+      "Automated manual processes, improving operational efficiency by 40%"
+    ],
+    "extraDetails": [
+      "Collaborated with the department to understand process requirements and applied UI/UX design to the workflow application"
+    ]
+  }
+]

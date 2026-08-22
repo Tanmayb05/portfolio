@@ -1,0 +1,32 @@
+[
+  {
+    "degree": "Master of Science in Computer Science",
+    "institution": "University of Cincinnati",
+    "gpa": "",
+    "start_date": "August 2024",
+    "end_date": "December 2026 (Expected)",
+    "coursework": [
+      "Advanced Algorithms",
+      "Deep Learning",
+      "Intelligent Data Analysis",
+      "Database Theory"
+    ],
+    "activities": []
+  },
+  {
+    "degree": "Bachelor of Engineering in Computer Engineering",
+    "institution": "AISSMS College of Engineering, Pune, India (Savitribai Phule Pune University)",
+    "gpa": "9.14/10 (3.76/4.0)",
+    "start_date": "August 2018",
+    "end_date": "July 2022",
+    "coursework": [
+      "Data Mining",
+      "Data Analytics",
+      "Machine Learning",
+      "Object-Oriented Programming"
+    ],
+    "activities": [
+      "Código Madrid Club (Technical Club)"
+    ]
+  }
+]

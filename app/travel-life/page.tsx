@@ -25,8 +25,8 @@ export default function TravelLifePage() {
   return (
     <>
       <PageHeader
-        eyebrow="Travel & Life"
-        title="I want Travel & Life to feel like the creative map layer of this site."
+        eyebrow="Life, Offline"
+        title="The parts of me that aren't a terminal window."
         description="I am keeping this page map-first, calm, and source-faithful. The current travel notes are placeholders, so the UI shows interaction patterns without inventing trip details."
       />
 

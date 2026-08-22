@@ -1,0 +1,598 @@
+[
+  {
+    "slug": "spendora",
+    "title": "Spendora - Conversational AI for Expense Insights",
+    "summary": "I built an LLM-powered conversational AI assistant that provides personalized expense insights using retrieval-augmented generation and tool-based reasoning.",
+    "problem": {
+      "whatProblem": "How can users get intelligent insights about their spending habits through natural conversation?",
+      "whoForIsWas": "Anyone wanting AI-powered financial analysis without manual data analysis",
+      "whyDidItMatter": "Most expense tracking tools lack conversational intelligence and context-aware recommendations"
+    },
+    "context": {
+      "whenDidYouBuildIt": "Jun 2025",
+      "typeOfProject": "personal",
+      "constraints": "Limited time, focus on LLM integration quality"
+    },
+    "architecture": {
+      "input": "Natural language queries about expenses",
+      "backend": "LangChain conversational agents with memory management",
+      "dataModelStorage": "Custom financial data toolchains, vector embeddings for RAG",
+      "externalAPIs": "HuggingFace models (Mistral, Gemma), LangChain framework",
+      "outputUserExperience": "Conversational interface with context-aware financial recommendations"
+    },
+    "technicalDecisions": [
+      {
+        "decision": "Used LangChain for agent orchestration",
+        "whyIChoseIt": "Simplifies memory management and tool-use patterns for conversational AI",
+        "alternativeConsidered": "Building custom conversation loop"
+      },
+      {
+        "decision": "Implemented RAG with custom toolchains",
+        "whyIChoseIt": "Enables grounding in actual financial data without fine-tuning",
+        "alternativeConsidered": "Fine-tuned LLM on expense data"
+      }
+    ],
+    "tradeoffs": [
+      "RAG adds latency for retrieval but improves accuracy over hallucination-prone base models",
+      "Multiple toolchains provide flexibility but increase complexity"
+    ],
+    "metrics": [
+      {
+        "exactMetric": "Conversational accuracy on financial queries",
+        "whatItMeasured": "TBD (need to measure)",
+        "source": "TBD"
+      },
+      {
+        "exactMetric": "Reduction in manual analysis time",
+        "whatItMeasured": "TBD",
+        "source": "TBD"
+      }
+    ],
+    "techStack": [
+      "HuggingFace (Mistral, Gemma models)",
+      "LangChain",
+      "Python",
+      "Vector embeddings"
+    ],
+    "links": {
+      "github": "TBD",
+      "demo": "TBD",
+      "paper": "TBD",
+      "video": "TBD",
+      "other": "TBD"
+    },
+    "screenshotsOrVisuals": [
+      "Conversation flow example",
+      "Dashboard showing expense insights"
+    ],
+    "whatIWouldImproveNext": [
+      "Add real-time transaction integration",
+      "Implement budget forecasting",
+      "Support multi-currency analysis"
+    ]
+  },
+  {
+    "slug": "news-headline-classification",
+    "title": "News Headline Classification",
+    "summary": "I built an LSTM-based deep learning model that classifies news headlines with 93.28% accuracy on a dataset of 400K+ headlines.",
+    "problem": {
+      "whatProblem": "Automatically categorize news headlines into topics for content organization",
+      "whoForIsWas": "News platforms, content aggregators",
+      "whyDidItMatter": "Manual classification is time-consuming; automated systems improve discoverability"
+    },
+    "context": {
+      "whenDidYouBuildIt": "Mar 2025",
+      "typeOfProject": "personal / research",
+      "constraints": "Dataset size, model training efficiency"
+    },
+    "architecture": {
+      "input": "Raw news headlines (text)",
+      "backend": "LSTM neural network with embedding layers",
+      "dataModelStorage": "spaCy for preprocessing, PyTorch for training",
+      "externalAPIs": "None",
+      "outputUserExperience": "Predicted category labels with confidence scores"
+    },
+    "technicalDecisions": [
+      {
+        "decision": "Used LSTM over simpler models like logistic regression",
+        "whyIChoseIt": "Captures sequential dependencies in text better than bag-of-words approaches",
+        "alternativeConsidered": "Transformer-based models, but LSTM was more interpretable"
+      },
+      {
+        "decision": "Optimized preprocessing pipeline",
+        "whyIChoseIt": "25% efficiency improvement in training",
+        "alternativeConsidered": "Raw text without optimization"
+      }
+    ],
+    "tradeoffs": [
+      "LSTM training is slower than simpler models but provides better accuracy",
+      "Model requires GPU for practical training time"
+    ],
+    "metrics": [
+      {
+        "exactMetric": "93.28% accuracy",
+        "whatItMeasured": "Correct classification rate on test set",
+        "source": "resume.json"
+      },
+      {
+        "exactMetric": "25% training efficiency improvement",
+        "whatItMeasured": "Speed of preprocessing and training pipeline",
+        "source": "resume.json"
+      }
+    ],
+    "techStack": [
+      "Python",
+      "PyTorch",
+      "spaCy",
+      "NumPy, pandas"
+    ],
+    "links": {
+      "github": "TBD",
+      "demo": "TBD",
+      "paper": "TBD",
+      "video": "TBD",
+      "other": "TBD"
+    },
+    "screenshotsOrVisuals": [
+      "Model architecture diagram",
+      "Confusion matrix",
+      "Training/validation loss curves"
+    ],
+    "whatIWouldImproveNext": [
+      "Explore attention mechanisms for explainability",
+      "Test with modern transformer-based models",
+      "Deploy as API service"
+    ]
+  },
+  {
+    "slug": "media-recommendation-system",
+    "title": "Media Recommendation System",
+    "summary": "I developed a personalized recommendation system for movies, music, and books using multiple algorithms including collaborative filtering, content-based filtering, and clustering.",
+    "problem": {
+      "whatProblem": "Help users discover relevant media across different content types",
+      "whoForIsWas": "Media streaming platforms, discovery engines",
+      "whyDidItMatter": "Personalization drives engagement and user satisfaction"
+    },
+    "context": {
+      "whenDidYouBuildIt": "Mar 2022",
+      "typeOfProject": "academic / research",
+      "constraints": "Dataset availability, algorithm variety"
+    },
+    "architecture": {
+      "input": "User ratings, viewing/listening history, item metadata",
+      "backend": "Multiple recommendation algorithms working in ensemble",
+      "dataModelStorage": "Flask backend, React frontend, Spotify API integration",
+      "externalAPIs": "Spotify API for music metadata",
+      "outputUserExperience": "Ranked recommendations across movies, music, and books"
+    },
+    "technicalDecisions": [
+      {
+        "decision": "Implemented multiple algorithms: Cosine Similarity for content-based filtering, Pearson Correlation for collaborative filtering, K-Nearest Neighbors (KNN) for user-based recommendations, K-Means Clustering for user segmentation, and TF-IDF for content analysis and feature extraction",
+        "whyIChoseIt": "Different algorithms capture different recommendation signals",
+        "alternativeConsidered": "Single best-performing algorithm"
+      },
+      {
+        "decision": "Used ensemble approach",
+        "whyIChoseIt": "Combines strengths of multiple methods for better recommendations",
+        "alternativeConsidered": "Hybrid approach with explicit weighting"
+      }
+    ],
+    "tradeoffs": [
+      "Multiple algorithms increase computational complexity",
+      "Ensemble approach harder to explain than single algorithm"
+    ],
+    "metrics": [
+      {
+        "exactMetric": "Published in IJRASET (Paper ID: IJRASET42927)",
+        "whatItMeasured": "Academic peer review validation",
+        "source": "resume.json"
+      },
+      {
+        "exactMetric": "Multi-algorithm recommendation delivery",
+        "whatItMeasured": "System successfully used content-based, collaborative, K-means, TF-IDF",
+        "source": "resume.json"
+      },
+      {
+        "exactMetric": "85% user satisfaction rate",
+        "whatItMeasured": "User testing with 500+ participants",
+        "source": "master-resume"
+      }
+    ],
+    "techStack": [
+      "React",
+      "Flask",
+      "Python",
+      "Spotify API",
+      "Machine Learning",
+      "NLP",
+      "scikit-learn"
+    ],
+    "links": {
+      "github": "TBD",
+      "demo": "TBD",
+      "paper": "https://ijraset.com/ (IJRASET42927)",
+      "video": "TBD",
+      "other": "TBD"
+    },
+    "screenshotsOrVisuals": [
+      "Recommendation interface screenshots",
+      "Algorithm comparison charts",
+      "User flow diagrams"
+    ],
+    "whatIWouldImproveNext": [
+      "Add real-time recommendation updates",
+      "Implement deep learning models (neural collaborative filtering)",
+      "Add user interaction feedback loop"
+    ]
+  },
+  {
+    "slug": "soundscape-android",
+    "title": "SoundScape - Android Music Streaming App",
+    "summary": "I built an end-to-end Android music streaming app with API integration and intelligent caching that reduced API calls by 70%.",
+    "problem": {
+      "whatProblem": "Create a functional music streaming experience on Android",
+      "whoForIsWas": "Music listeners on Android devices",
+      "whyDidItMatter": "Demonstrates full-stack mobile development and real-world performance optimization"
+    },
+    "context": {
+      "whenDidYouBuildIt": "Dec 2021",
+      "typeOfProject": "personal",
+      "constraints": "Android platform limitations, API rate limits"
+    },
+    "architecture": {
+      "input": "User search/browse queries, playback controls",
+      "backend": "Android SDK with REST API integration",
+      "dataModelStorage": "Room database for caching, MediaPlayer for playback",
+      "externalAPIs": "Musixmatch API for music metadata",
+      "outputUserExperience": "Music streaming player with search, playlist, and playback controls"
+    },
+    "technicalDecisions": [
+      {
+        "decision": "Implemented Room caching layer for Musixmatch API responses",
+        "whyIChoseIt": "Reduces API calls by 70% and improves user experience with instant data",
+        "alternativeConsidered": "No caching, direct API calls (slower, hits rate limits)"
+      },
+      {
+        "decision": "Microservices architecture for playback/notifications",
+        "whyIChoseIt": "Separates concerns, makes each component independently testable",
+        "alternativeConsidered": "Monolithic activity-based approach"
+      }
+    ],
+    "tradeoffs": [
+      "Caching adds storage requirements but dramatically improves performance",
+      "Microservices add complexity but improve maintainability"
+    ],
+    "metrics": [
+      {
+        "exactMetric": "70% API call reduction",
+        "whatItMeasured": "Fewer requests to Musixmatch due to caching",
+        "source": "resume.json"
+      },
+      {
+        "exactMetric": "Full music streaming feature set implemented",
+        "whatItMeasured": "Playback, search, notifications, file operations",
+        "source": "resume.json"
+      }
+    ],
+    "techStack": [
+      "Android SDK",
+      "Java",
+      "REST APIs",
+      "Musixmatch API",
+      "Room database",
+      "MediaPlayer",
+      "Gradle",
+      "Git"
+    ],
+    "links": {
+      "github": "TBD",
+      "demo": "TBD",
+      "paper": "TBD",
+      "video": "TBD",
+      "other": "TBD"
+    },
+    "screenshotsOrVisuals": [
+      "Player interface screenshot",
+      "Search/browse screens",
+      "Playlist view"
+    ],
+    "whatIWouldImproveNext": [
+      "Add offline download capability",
+      "Implement user accounts and sync",
+      "Support additional music sources beyond Musixmatch"
+    ]
+  },
+  {
+    "slug": "policypilot",
+    "title": "PolicyPilot - Medical Benefit Policy Intelligence Portal",
+    "summary": "I built a citation-backed RAG portal that unifies fragmented multi-payer insurance policies so clinicians can answer drug coverage and prior-authorization questions without digging through 50-500 page PDFs.",
+    "problem": {
+      "whatProblem": "Clinicians manually dig through 50-500 page insurance payer policy PDFs to answer drug coverage/prior-authorization eligibility questions",
+      "whoForIsWas": "Clinicians and care teams handling prior-authorization and coverage eligibility decisions",
+      "whyDidItMatter": "Fragmented, unversioned payer policy data makes it easy to silently surface criteria from an outdated policy in a high-stakes healthcare decision"
+    },
+    "context": {
+      "whenDidYouBuildIt": "May 2026",
+      "typeOfProject": "hackathon (Prompt Opinion hackathon)",
+      "constraints": "Hackathon timeframe; healthcare data required citation-backed accuracy over speed"
+    },
+    "architecture": {
+      "input": "Multi-payer policy PDFs and patient documents",
+      "backend": "Express 5 REST API + 17-tool MCP server on a single Node.js process",
+      "dataModelStorage": "PDF-to-structured-data pipeline (parse -> clean -> chunk -> validate) with Zod schema validation at data boundaries",
+      "externalAPIs": "Google Gemini 2.5-flash, FHIR (Da Vinci guides)",
+      "outputUserExperience": "React SPA with unified drug coverage search across payers, cross-payer side-by-side comparison, real-time policy-change tracking, AI chat for coverage/PA/eligibility questions, and an Evidence Explorer for verifying answers against source documents"
+    },
+    "technicalDecisions": [
+      {
+        "decision": "Architected an evidence-grounded RAG pipeline forcing citation-backed answers",
+        "whyIChoseIt": "Eliminates hallucination risk in high-stakes healthcare eligibility decisions",
+        "alternativeConsidered": "Unconstrained LLM chat responses without mandatory citations"
+      },
+      {
+        "decision": "Designed a 17-tool MCP server (e.g. get_drug_coverage, check_patient_readiness, diff_policy_versions) exposing structured LLM tool-calling for PA extraction, patient-readiness evaluation, and cross-payer comparison",
+        "whyIChoseIt": "Lets external AI agents replace manual multi-payer PDF lookups with direct queries",
+        "alternativeConsidered": "A single monolithic chat endpoint without discrete tool boundaries"
+      },
+      {
+        "decision": "Migrated from Ollama to Gemini 2.5-flash after benchmarking",
+        "whyIChoseIt": "Lower hallucination rates on policy-grounded questions",
+        "alternativeConsidered": "Staying on Ollama for local/self-hosted inference"
+      },
+      {
+        "decision": "Built citation/version tracing into every LLM answer",
+        "whyIChoseIt": "Surfaces retrieval mismatches (e.g. an outdated policy version) immediately instead of silently misleading a provider",
+        "alternativeConsidered": "Returning answers without source/version attribution"
+      }
+    ],
+    "tradeoffs": [
+      "Citation-backed grounding adds retrieval and validation overhead but is required for healthcare-safe answers",
+      "Retrieval and document structure mattered more than the model choice - policy PDFs vary widely in layout, and the same rule can appear under different sections, headings, or tables",
+      "Standards like HL7's Da Vinci FHIR guides only cover transmitting coverage details - keeping underlying multi-payer data correct and versioned was the harder problem"
+    ],
+    "metrics": [
+      {
+        "exactMetric": "17 MCP tool APIs with Zod validation at every data boundary",
+        "whatItMeasured": "Eliminated a class of runtime type-mismatch bugs across all external tool calls",
+        "source": "master-resume"
+      },
+      {
+        "exactMetric": "WCAG AA accessibility coverage",
+        "whatItMeasured": "axe-core accessibility test coverage on the PDF-to-structured-data pipeline",
+        "source": "master-resume"
+      }
+    ],
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "Google Gemini",
+      "MCP",
+      "Docker",
+      "Zod",
+      "FHIR",
+      "Railway",
+      "Vitest",
+      "axe-core (WCAG AA)"
+    ],
+    "links": {
+      "github": "TBD",
+      "demo": "TBD",
+      "paper": "TBD",
+      "video": "TBD",
+      "other": "TBD"
+    },
+    "screenshotsOrVisuals": [
+      "Coverage search interface",
+      "Evidence Explorer view",
+      "Cross-payer comparison screen"
+    ],
+    "whatIWouldImproveNext": [
+      "Expand payer coverage beyond the initial dataset",
+      "Add real-time policy-change alerting",
+      "Broaden FHIR standard coverage"
+    ]
+  },
+  {
+    "slug": "nyc-mobility-forecasting",
+    "title": "NYC Mobility Forecasting - ML-Driven Taxi/Rideshare Demand Prediction System",
+    "summary": "I built an end-to-end ML system forecasting NYC taxi/rideshare demand across 263 zones, cutting prediction error (RMSE) by 43% over a baseline Random Forest and serving live predictions through a REST API and dashboard.",
+    "problem": {
+      "whatProblem": "Forecast NYC taxi/FHV demand at zone/hour granularity to support supply planning and surge-risk awareness",
+      "whoForIsWas": "Rideshare/taxi operations planning and demand-forecasting use cases",
+      "whyDidItMatter": "Accurate zone/hour demand forecasts reduce both undersupply and oversupply risk in a highly variable transportation market"
+    },
+    "context": {
+      "whenDidYouBuildIt": "Jul 2026",
+      "typeOfProject": "personal",
+      "constraints": "Large-scale data processing (2.3M-row hourly dataset); free-tier cloud deployment budget"
+    },
+    "architecture": {
+      "input": "NYC TLC trip data, weather data, geospatial zone data",
+      "backend": "Spark-based medallion (bronze/silver/gold) pipeline; two-stage classification + regression Poisson hurdle model",
+      "dataModelStorage": "PySpark, Delta Lake, PostgreSQL, Redis caching",
+      "externalAPIs": "Weather data feed",
+      "outputUserExperience": "React/map-based dashboard consuming a FastAPI REST API for real-time demand predictions"
+    },
+    "technicalDecisions": [
+      {
+        "decision": "Used a two-stage (classification + regression) Poisson hurdle model instead of a single regression model",
+        "whyIChoseIt": "Better captures the zero-inflated nature of hourly zone-level demand (many zone/hours have zero trips) than a plain regression baseline",
+        "alternativeConsidered": "Single-stage Random Forest regression (baseline)"
+      },
+      {
+        "decision": "Built a Spark-based medallion (bronze/silver/gold) pipeline",
+        "whyIChoseIt": "Processes trip and weather data into a clean 2.3M-row hourly demand dataset at scale with reproducible stages",
+        "alternativeConsidered": "Single-pass pandas ETL script"
+      },
+      {
+        "decision": "Targeted free-tier Oracle Cloud for deployment",
+        "whyIChoseIt": "Keeps the project runnable end-to-end without ongoing cloud spend",
+        "alternativeConsidered": "AWS/GCP paid tiers"
+      }
+    ],
+    "tradeoffs": [
+      "Two-stage model adds pipeline complexity over a single regressor but meaningfully improves accuracy on sparse-demand zones",
+      "Free-tier cloud deployment constrains available compute/memory for serving"
+    ],
+    "metrics": [
+      {
+        "exactMetric": "Weighted MAPE improved 18.77% -> 16.52%",
+        "whatItMeasured": "Forecast accuracy vs baseline Random Forest",
+        "source": "master-resume"
+      },
+      {
+        "exactMetric": "RMSE cut by 43%, MAE cut by 53%",
+        "whatItMeasured": "Prediction error vs baseline Random Forest",
+        "source": "master-resume"
+      },
+      {
+        "exactMetric": "263 zones, 2.3M-row hourly demand dataset",
+        "whatItMeasured": "Scale of forecasting system and processed dataset",
+        "source": "master-resume"
+      }
+    ],
+    "techStack": [
+      "Python",
+      "PySpark",
+      "Apache Spark",
+      "Delta Lake",
+      "scikit-learn",
+      "FastAPI",
+      "SQL",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Oracle Cloud",
+      "React",
+      "REST API",
+      "CI/CD"
+    ],
+    "links": {
+      "github": "TBD",
+      "demo": "TBD",
+      "paper": "TBD",
+      "video": "TBD",
+      "other": "TBD"
+    },
+    "screenshotsOrVisuals": [
+      "Map-based demand dashboard",
+      "Zone-level forecast visualization"
+    ],
+    "whatIWouldImproveNext": [
+      "Add real-time streaming ingestion instead of batch pipeline",
+      "Expand to additional cities/regions",
+      "Incorporate event-based demand signals (concerts, holidays)"
+    ]
+  },
+  {
+    "slug": "spotify-personal-analytics-platform",
+    "title": "Spotify Personal Analytics Platform - Full-Stack Data Analytics App",
+    "summary": "I built a personal analytics platform that processes a 71K+ event Spotify streaming-history export through a 4-stage Python ETL pipeline and serves insights via a FastAPI backend and React/MUI dashboard.",
+    "problem": {
+      "whatProblem": "Turn a raw Spotify GDPR streaming-history export into queryable, enriched personal listening analytics",
+      "whoForIsWas": "Personal use - anyone wanting deeper insight into their own Spotify listening history than the built-in Spotify Wrapped/stats provide",
+      "whyDidItMatter": "Raw GDPR exports are unenriched JSON with no genre/lyrics context and no queryable interface"
+    },
+    "context": {
+      "whenDidYouBuildIt": "Jul 2026",
+      "typeOfProject": "personal",
+      "constraints": "Spotify API rate limits; multi-source lyrics API reliability"
+    },
+    "architecture": {
+      "input": "Spotify GDPR streaming-history JSON export",
+      "backend": "4-stage Python ETL pipeline (dedup/extraction -> metadata + genre enrichment -> two-stage lyrics ingestion -> validation) + FastAPI backend",
+      "dataModelStorage": "PostgreSQL (Supabase) analytics schema with materialized views, composite/partial indexes, 16 SQL RPC functions",
+      "externalAPIs": "Spotify Web API (spotipy), Genius API (lyricsgenius), musixmatch-api",
+      "outputUserExperience": "React/MUI dashboard with charts (MUI X Charts) over pre-aggregated analytics queries"
+    },
+    "technicalDecisions": [
+      {
+        "decision": "Built a 4-stage ETL pipeline with custom rate limiting and exponential-backoff retry handling",
+        "whyIChoseIt": "Spotify Web API enrichment for 71K+ events needed resilient handling of rate limits without dropping data",
+        "alternativeConsidered": "Naive sequential API calls without backoff"
+      },
+      {
+        "decision": "Built a genre-enrichment pipeline by joining artist-level metadata",
+        "whyIChoseIt": "Spotify's API doesn't expose track-level genre directly, so joining via artist metadata was needed to enrich 13K+ tracks",
+        "alternativeConsidered": "Skipping genre enrichment entirely"
+      },
+      {
+        "decision": "Two-stage lyrics ingestion (batch + retry) with checkpointing and multi-source API fallback",
+        "whyIChoseIt": "Processing 13.8K tracks against lyrics APIs needed resilience to per-source failures and the ability to resume from checkpoints, with automatic failure-based source disabling",
+        "alternativeConsidered": "Single-source lyrics fetch without fallback"
+      },
+      {
+        "decision": "Designed a PostgreSQL analytics schema with materialized views and 16 SQL RPC functions",
+        "whyIChoseIt": "Enables low-latency pre-aggregated queries over streaming history instead of computing aggregates at request time",
+        "alternativeConsidered": "Computing all aggregates on-demand in the API layer"
+      }
+    ],
+    "tradeoffs": [
+      "Materialized views add refresh/maintenance overhead but keep dashboard queries fast",
+      "Multi-source lyrics fallback increases pipeline complexity but improves coverage across 13.8K tracks"
+    ],
+    "metrics": [
+      {
+        "exactMetric": "71K+ Spotify streaming events processed",
+        "whatItMeasured": "Scale of ETL pipeline input",
+        "source": "master-resume"
+      },
+      {
+        "exactMetric": "13K+ tracks enriched with genre metadata",
+        "whatItMeasured": "Coverage of genre-enrichment pipeline",
+        "source": "master-resume"
+      },
+      {
+        "exactMetric": "13.8K tracks processed via two-stage lyrics ingestion",
+        "whatItMeasured": "Coverage of lyrics ingestion pipeline",
+        "source": "master-resume"
+      },
+      {
+        "exactMetric": "16 SQL RPC functions over a materialized-view analytics schema",
+        "whatItMeasured": "Query layer supporting low-latency pre-aggregated analytics",
+        "source": "master-resume"
+      }
+    ],
+    "techStack": [
+      "React 19.1.1",
+      "TypeScript 5.9.3",
+      "Vite 7.1.7",
+      "Material UI 7.3.4",
+      "MUI X Charts 8.14.0",
+      "Zustand 5.0.8",
+      "React Router 7.9.4",
+      "Axios 1.12.2",
+      "Python",
+      "FastAPI",
+      "Uvicorn",
+      "Pydantic",
+      "pandas",
+      "scikit-learn",
+      "PostgreSQL (Supabase)",
+      "spotipy",
+      "lyricsgenius",
+      "musixmatch-api",
+      "Netlify",
+      "Render"
+    ],
+    "links": {
+      "github": "TBD",
+      "demo": "TBD",
+      "paper": "TBD",
+      "video": "TBD",
+      "other": "TBD"
+    },
+    "screenshotsOrVisuals": [
+      "Dashboard overview",
+      "Listening history charts",
+      "Genre breakdown visualization"
+    ],
+    "whatIWouldImproveNext": [
+      "Add year-over-year comparison views",
+      "Support multi-user accounts",
+      "Add playlist-level analytics"
+    ]
+  }
+]

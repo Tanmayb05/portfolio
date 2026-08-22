@@ -1,17 +1,27 @@
-export type SourceDocument = "content-intake.json" | "readme_portfolio.md" | "resume.json";
+export type SourceDocument =
+  | "content-intake.json"
+  | "readme_portfolio.md"
+  | "resume.json"
+  | "2-projects.json";
 
 export type ResumeContact = {
   linkedin: string;
   github: string;
   email: string;
+  secondaryEmail: string;
+  phone: string;
+  website: string;
+  location: string;
 };
 
 export type EducationItem = {
   degree: string;
   institution: string;
+  gpa: string;
   start_date: string;
   end_date: string;
   coursework: string[];
+  activities: string[];
 };
 
 export type WorkExperienceItem = {
@@ -32,6 +42,7 @@ export type ResumeProjectItem = {
 
 export type ResumeData = {
   name: string;
+  summary: string;
   contact: ResumeContact;
   education: EducationItem[];
   technical_skills: {
@@ -39,6 +50,8 @@ export type ResumeData = {
     frameworks: string[];
     developer_tools: string[];
     libraries: string[];
+    methodologies: string[];
+    specializedSkills: string[];
   };
   work_experience: WorkExperienceItem[];
   projects_and_research: ResumeProjectItem[];
@@ -60,7 +73,13 @@ export type Project = {
   proofPoints: string[];
   metrics: string[];
   techStack: string[];
-  category: "AI Systems" | "Deep Learning" | "Recommendation Systems" | "Android";
+  category:
+    | "AI Systems"
+    | "Deep Learning"
+    | "Recommendation Systems"
+    | "Android"
+    | "Data & ML Systems"
+    | "Full-Stack Systems";
   source: SourceDocument[];
 };
 

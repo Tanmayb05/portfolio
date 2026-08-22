@@ -12,8 +12,8 @@ export default function ProjectsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Projects"
-        title="I build projects as systems, not static demos."
+        eyebrow="Things I Built"
+        title="Proof I can code, minus the 40 open Claude tabs."
         description="I use this page to document the problem, architecture, technical decisions, tradeoffs, and measurable outcomes behind my strongest work."
       />
 
