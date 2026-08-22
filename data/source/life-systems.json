@@ -1,0 +1,41 @@
+{
+  "systemsForLife": {
+    "schedulingSystems": [
+      "Structured daily routine for job search (applications, coding, system design)",
+      "Calendar blocking for deep work vs. shallow tasks",
+      "Weekly review cycles for progress tracking"
+    ],
+    "productivityExperiments": [
+      "Daily application targets and tracking",
+      "Time-blocked system design sessions (2-3 hours focused)",
+      "DSA consistency with Leetcode (focus on backtracking, sliding window, graphs)"
+    ],
+    "habitDesign": [
+      "Morning: System design review or Leetcode problems",
+      "Midday: Application and networking outreach",
+      "Evening: Project building or learning"
+    ],
+    "optimizationFrameworks": [
+      "Eisenhower Decision Matrix for prioritizing job search activities",
+      "Shift from instinct-based decisions to structured decision-making",
+      "Simplification-first thinking when evaluating opportunities"
+    ]
+  },
+  "thingsIAmTrying": {
+    "newRoutines": [
+      "Daily job application system (structured targets)",
+      "Referral outreach cadence (3-5 per week)",
+      "Cold email outreach to founders/recruiters"
+    ],
+    "learningExperiments": [
+      "System Design base problems (ongoing)",
+      "Leetcode backtracking and sliding window optimization",
+      "Behavioral interview preparation"
+    ],
+    "performanceOptimizationAttempts": [
+      "Measuring application-to-interview conversion rate",
+      "Tracking response rates from referral vs. cold outreach",
+      "Monitoring technical interview preparation effectiveness"
+    ]
+  }
+}

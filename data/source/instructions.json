@@ -1,0 +1,13 @@
+{
+  "title": "Portfolio Content Intake",
+  "description": "Use this file as the place to paste new content before we convert it into content/*.ts or page copy. Keep it simple. Write in first person. Use bullets. Do not worry about perfect wording on the first pass.",
+  "guidelines": [
+    "Paste facts here first.",
+    "Use 'TBD' only when you intentionally do not know something yet.",
+    "Do not add claims unless you can back them up.",
+    "Keep project metrics exact.",
+    "Put links in plain text.",
+    "Write as 'I built,' 'I learned,' 'I decided,' 'I improved.'",
+    "Avoid 'Tanmay built,' 'he worked on,' or third-person language."
+  ]
+}

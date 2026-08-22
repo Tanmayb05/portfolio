@@ -1,22 +1,24 @@
-import contentIntakeJson from "@/docs/content-intake.json";
+import experienceJson from "@/data/source/experience.json";
+import projectsJson from "@/data/source/projects.json";
+import contactJson from "@/data/source/contact.json";
 import type { ResumeData } from "@/lib/content-types";
 
-// Extract resume data from content-intake.json
+// Extract resume data from data/source/*.json
 const resumeData: ResumeData = {
   name: "Tanmay Bhuskute",
   contact: {
-    email: contentIntakeJson.contact.preferredEmail,
-    github: contentIntakeJson.contact.preferredGitHub,
-    linkedin: contentIntakeJson.contact.preferredLinkedIn
+    email: contactJson.preferredEmail,
+    github: contactJson.preferredGitHub,
+    linkedin: contactJson.preferredLinkedIn
   },
-  education: [], // Not yet in content-intake.json structure
+  education: [], // Not yet in data/source structure
   technical_skills: {
     programming: [],
     frameworks: [],
     developer_tools: [],
     libraries: []
   },
-  work_experience: contentIntakeJson.experience.map(exp => ({
+  work_experience: experienceJson.map(exp => ({
     title: exp.role,
     company: exp.company,
     start_date: "TBD",
@@ -24,7 +26,7 @@ const resumeData: ResumeData = {
     tech_stack: [],
     achievements: exp.mostImportantImpact
   })),
-  projects_and_research: contentIntakeJson.projects.map(proj => ({
+  projects_and_research: projectsJson.map(proj => ({
     title: proj.title,
     date: proj.context.whenDidYouBuildIt,
     tech_stack: proj.techStack,
@@ -36,9 +38,9 @@ const resumeData: ResumeData = {
 export const resume = resumeData satisfies ResumeData;
 
 export const contactLinks = {
-  email: `mailto:${contentIntakeJson.contact.preferredEmail}`,
-  github: `https://${contentIntakeJson.contact.preferredGitHub}`,
-  linkedin: `https://${contentIntakeJson.contact.preferredLinkedIn}`
+  email: `mailto:${contactJson.preferredEmail}`,
+  github: `https://${contactJson.preferredGitHub}`,
+  linkedin: `https://${contactJson.preferredLinkedIn}`
 } as const;
 
 export const resumeDownload = {

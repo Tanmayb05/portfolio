@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "identity": "I build systems that scale, from cloud infrastructure to AI-powered applications.",
+    "whatIBuild": [
+      "Cloud infrastructure and DevOps automation (AWS, Kubernetes, Terraform)",
+      "AI/ML systems (LLMs, RAG, recommendation engines)",
+      "Full-stack applications (React, Node.js, Python backends)"
+    ],
+    "whatICareAbout": [
+      "Distributed systems and system design",
+      "MLOps and production AI systems",
+      "Deep work over shallow effort"
+    ],
+    "currentFocus": [
+      "System Design mastery",
+      "DSA consistency (Leetcode)",
+      "High-signal project building for Summer/Fall 2026 roles"
+    ]
+  },
+  "proofPoints": [
+    {
+      "metricOrResult": "Delivered 44 production upgrades in 4 months with zero downtime",
+      "context": "Siemens Industry Software (Jul 2022 - Jun 2024)",
+      "source": "resume.json, work experience"
+    },
+    {
+      "metricOrResult": "Reduced deployment downtime by 50% using Blue-Green deployments",
+      "context": "DevOps automation at Siemens",
+      "source": "resume.json achievement"
+    },
+    {
+      "metricOrResult": "Built LSTM model achieving 93.28% accuracy on 400K+ headlines",
+      "context": "News Headline Classification project (Mar 2025)",
+      "source": "resume.json projects_and_research"
+    }
+  ]
+}

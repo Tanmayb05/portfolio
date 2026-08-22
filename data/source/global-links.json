@@ -1,0 +1,40 @@
+{
+  "projectRepositories": [
+    {
+      "project": "Spendora",
+      "url": "TBD"
+    },
+    {
+      "project": "News Headline Classification",
+      "url": "TBD"
+    },
+    {
+      "project": "Media Recommendation System",
+      "url": "TBD"
+    },
+    {
+      "project": "SoundScape",
+      "url": "TBD"
+    }
+  ],
+  "liveDemos": [
+    {
+      "project": "Spendora",
+      "url": "TBD"
+    },
+    {
+      "project": "SoundScape",
+      "url": "TBD"
+    }
+  ],
+  "papers": [
+    {
+      "project": "Media Recommendation System",
+      "url": "https://ijraset.com/ (Paper ID: IJRASET42927)"
+    }
+  ],
+  "resume": {
+    "currentFilename": "resume.json",
+    "notes": "Interactive resume with education, skills, experience, and projects"
+  }
+}

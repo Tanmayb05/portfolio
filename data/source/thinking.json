@@ -1,0 +1,83 @@
+[
+  {
+    "slug": "evaluating-technical-projects",
+    "title": "How I Evaluate Technical Projects",
+    "category": "Technical Evaluation & Judging",
+    "status": "draft",
+    "summary": "I've developed a framework for evaluating student technical projects based on system design, ML rigor, and real-world viability that I apply as a judge at technical expos.",
+    "mainPoint": "The core idea is that strong technical projects balance three dimensions: architectural soundness, methodological rigor, and practical applicability. Most weak projects fail on one or more of these.",
+    "outline": {
+      "intro": "Why I needed a framework when judging at CEAS Expo 2026",
+      "point1": "System Design - Is the architecture scalable? Do they understand tradeoffs?",
+      "point2": "Rigor - Did they validate their approach? Are claims backed by evidence?",
+      "point3": "Real-world Viability - Could this actually work in production? Are edge cases considered?",
+      "conclusion": "Combining these dimensions reveals project quality beyond surface-level impressive demos"
+    },
+    "examplesOrStories": [
+      "Team that built impressive UI but ignored system scalability",
+      "Another team with solid architecture but no validation on their ML model claims"
+    ],
+    "relatedProject": "CEAS Expo Judge (2026)",
+    "tags": [
+      "Technical Evaluation",
+      "Project Assessment",
+      "System Design",
+      "Student Projects"
+    ],
+    "publishDate": "TBD"
+  },
+  {
+    "slug": "systematic-job-search",
+    "title": "How I'm Running My Job Search Like a System",
+    "category": "Career & Job Search",
+    "status": "active",
+    "summary": "Instead of randomly applying to jobs, I've built a structured system around daily applications, referral outreach, and cold emails to founders/recruiters.",
+    "mainPoint": "The core idea is that job search is a numbers game with a process. By systematizing applications, networking, and follow-ups, I can increase signal and reduce noise in my search for Summer/Fall 2026 roles.",
+    "outline": {
+      "intro": "Why random job search doesn't work",
+      "point1": "Daily application targets and tracking",
+      "point2": "Referral outreach and relationship building",
+      "point3": "Cold email strategy to founders and recruiters",
+      "conclusion": "System compounds over time"
+    },
+    "examplesOrStories": [
+      "How structured daily applications led to interview callbacks",
+      "Cold email example that resulted in real opportunity"
+    ],
+    "relatedProject": "Active job search (2026)",
+    "tags": [
+      "Job Search",
+      "Career",
+      "Systems",
+      "Networking"
+    ],
+    "publishDate": "TBD"
+  },
+  {
+    "slug": "judging-student-projects",
+    "title": "What I Look For When Judging Student Projects",
+    "category": "Technical Evaluation & Judging",
+    "status": "draft",
+    "summary": "As a CEAS Expo 2026 judge, I evaluate projects across multiple domains using structured frameworks focused on system design, rigor, and real-world viability.",
+    "mainPoint": "The core idea is that great student projects demonstrate not just implementation ability, but thoughtful decision-making and awareness of constraints and tradeoffs.",
+    "outline": {
+      "intro": "My role at CEAS Expo 2026",
+      "point1": "How I apply structured evaluation frameworks",
+      "point2": "High-signal questions that reveal depth",
+      "point3": "What separates good projects from great ones",
+      "conclusion": "Depth of thinking matters more than feature count"
+    },
+    "examplesOrStories": [
+      "Project that impressed with thoughtful architecture decisions",
+      "Project that failed despite working demo due to missing rigor"
+    ],
+    "relatedProject": "CEAS Expo Judge 2026",
+    "tags": [
+      "Technical Evaluation",
+      "Project Assessment",
+      "Judging",
+      "Student Projects"
+    ],
+    "publishDate": "TBD"
+  }
+]

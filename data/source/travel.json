@@ -1,0 +1,75 @@
+[
+  {
+    "title": "Seattle Trip",
+    "region": "USA",
+    "stateOrProvince": "Washington",
+    "cityOrPlace": "Seattle",
+    "timeVisited": "TBD",
+    "description": "I explored Seattle and experienced TBD",
+    "locationsVisited": [
+      "TBD",
+      "TBD",
+      "TBD"
+    ],
+    "googleMapsLink": "TBD",
+    "photos": [
+      {
+        "filePath": "TBD",
+        "caption": "TBD"
+      }
+    ],
+    "tags": [
+      "Travel",
+      "USA",
+      "Technology Hub"
+    ]
+  },
+  {
+    "title": "LA Experience",
+    "region": "USA",
+    "stateOrProvince": "California",
+    "cityOrPlace": "Los Angeles",
+    "timeVisited": "TBD",
+    "description": "I had a memorable experience in LA with TBD",
+    "locationsVisited": [
+      "TBD",
+      "TBD"
+    ],
+    "googleMapsLink": "TBD",
+    "photos": [
+      {
+        "filePath": "TBD",
+        "caption": "TBD"
+      }
+    ],
+    "tags": [
+      "Travel",
+      "USA",
+      "California"
+    ]
+  },
+  {
+    "title": "San Diego Experience",
+    "region": "USA",
+    "stateOrProvince": "California",
+    "cityOrPlace": "San Diego",
+    "timeVisited": "TBD",
+    "description": "I had an interesting experience in San Diego with TBD",
+    "locationsVisited": [
+      "TBD",
+      "TBD"
+    ],
+    "googleMapsLink": "TBD",
+    "photos": [
+      {
+        "filePath": "TBD",
+        "caption": "TBD"
+      }
+    ],
+    "tags": [
+      "Travel",
+      "USA",
+      "California"
+    ]
+  }
+]
