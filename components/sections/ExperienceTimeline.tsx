@@ -11,7 +11,7 @@ export function ExperienceTimeline({ roles }: ExperienceTimelineProps) {
     <div className="relative">
       <div
         aria-hidden="true"
-        className="absolute bottom-0 left-3 top-0 hidden w-px bg-[var(--border-soft)] md:block"
+        className="absolute bottom-0 left-3 top-0 hidden w-[3px] bg-[var(--ink)] md:block"
       />
       <div className="space-y-5">
         {roles.map((role, index) => (
@@ -22,7 +22,7 @@ export function ExperienceTimeline({ roles }: ExperienceTimelineProps) {
           >
             <span
               aria-hidden="true"
-              className="absolute left-[0.44rem] top-7 hidden h-3 w-3 rounded-full border border-[var(--accent-teal-border)] bg-[var(--accent-teal)] shadow-[0_0_22px_var(--accent-teal-soft)] md:block"
+              className="absolute left-[0.3rem] top-7 hidden h-4 w-4 border-[3px] border-[var(--ink)] bg-[var(--purple)] md:block"
             />
             <ExperienceCard role={role} />
           </Reveal>

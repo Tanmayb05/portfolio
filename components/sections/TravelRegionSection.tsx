@@ -22,7 +22,7 @@ export function TravelRegionSection({
   const regionEntries = entries.filter(e => e.region === region);
 
   return (
-    <section className="border-b border-[var(--border-soft)] py-20 sm:py-24">
+    <section className="border-b-[3px] border-[var(--ink)] py-20 sm:py-24">
       <Reveal>
         <SectionHeading
           eyebrow={region}

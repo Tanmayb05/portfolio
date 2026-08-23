@@ -1,37 +1,48 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
-import { FeaturedProjectCard } from "@/components/cards/FeaturedProjectCard";
 import { ProjectCard } from "@/components/cards/ProjectCard";
+import { VisualProjectTile } from "@/components/cards/VisualProjectTile";
 import { Reveal, StaggerGroup } from "@/components/motion";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { SiteContainer } from "@/components/shared/SiteContainer";
 import { featuredProjects, projectCategories, projects } from "@/content/projects";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Projects",
+  description:
+    "Case studies for AI systems, data platforms, cloud automation, and product-facing software.",
+  path: "/projects"
+});
 
 export default function ProjectsPage() {
   return (
     <>
       <PageHeader
+        accent="blue"
         eyebrow="Things I Built"
-        title="Proof I can code, minus the 40 open Claude tabs."
-        description="I use this page to document the problem, architecture, technical decisions, tradeoffs, and measurable outcomes behind my strongest work."
+        intensity={2}
+        title="Systems, proof, trade-offs."
+        description="Scan the cards. Open a case study when you want the engineering story."
       />
 
-      <section className="section-gradient-projects border-b border-[var(--border-soft)] py-20 sm:py-24">
+      <section className="section-gradient-projects border-b-[3px] border-[var(--ink)] py-20 sm:py-24">
         <SiteContainer>
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <Reveal>
               <SectionHeading
                 eyebrow="Featured"
                 title="Featured Systems"
-                description="These projects best represent my current technical direction across AI systems, deep learning, and recommendation systems."
+                description="The strongest current proof across AI systems, data platforms, and product-facing software."
               />
             </Reveal>
             <Reveal delay={120}>
               <div className="flex flex-wrap gap-2">
                 {projectCategories.map((category) => (
                   <span
-                    className="rounded-full border border-[var(--border-soft)] bg-[var(--surface-card)] px-3 py-1 font-mono text-xs uppercase tracking-[0.12em] text-[var(--text-muted)]"
+                    className="border-2 border-[var(--ink)] bg-[var(--white)] px-2 py-1 font-mono text-[0.68rem] font-black uppercase text-[var(--ink)]"
                     key={category}
                   >
                     {category}
@@ -46,19 +57,19 @@ export default function ProjectsPage() {
             staggerDelay={90}
           >
             {featuredProjects.map((project) => (
-              <FeaturedProjectCard key={project.slug} project={project} />
+              <VisualProjectTile key={project.slug} project={project} />
             ))}
           </StaggerGroup>
         </SiteContainer>
       </section>
 
-      <section className="section-gradient-thinking border-b border-[var(--border-soft)] py-20 sm:py-24">
+      <section className="section-gradient-thinking border-b-[3px] border-[var(--ink)] py-20 sm:py-24">
         <SiteContainer>
           <Reveal>
             <SectionHeading
               eyebrow="All Projects"
               title="Case study library"
-              description="Each page starts with verified source facts and leaves deeper notes marked as planned where I have not published details yet."
+              description="Each page keeps source-backed claims up front and deeper detail behind the click."
             />
           </Reveal>
 
@@ -76,20 +87,19 @@ export default function ProjectsPage() {
       <section className="section-gradient-contact py-20 sm:py-24">
         <SiteContainer>
           <Reveal>
-            <div className="rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)] p-6 sm:p-8">
-              <p className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--accent-teal)]">
+            <div className="border-[3px] border-[var(--ink)] bg-[var(--white)] p-6 shadow-[var(--shadow-md)] sm:p-8">
+              <p className="font-mono text-xs font-black uppercase text-[var(--blue)]">
                 Next
               </p>
-              <h2 className="mt-4 text-3xl font-semibold leading-tight text-[var(--text-primary)] sm:text-4xl">
-                I connect project proof with how I think.
+              <h2 className="mt-4 text-3xl font-black uppercase leading-none text-[var(--ink)] sm:text-4xl">
+                Want the reasoning layer?
               </h2>
-              <p className="mt-5 max-w-[70ch] text-base leading-7 text-[var(--text-secondary)]">
-                The Thinking page expands the reasoning patterns behind these
-                systems: evaluation, system design, ML rigor, and structured
-                learning.
+              <p className="mt-5 max-w-[70ch] text-base font-semibold leading-7 text-[var(--text-secondary)]">
+                Thinking notes show how I evaluate systems, learning loops, and
+                technical decisions.
               </p>
               <Link
-                className="motion-focus mt-7 inline-flex rounded-full border border-[var(--border-soft)] px-5 py-3 text-sm font-semibold text-[var(--text-primary)] transition duration-200 hover:border-[var(--accent-teal-border)] hover:bg-[var(--accent-teal-soft)]"
+                className="motion-focus mt-7 inline-flex border-[3px] border-[var(--ink)] bg-[var(--blue)] px-4 py-3 font-mono text-sm font-black uppercase text-white shadow-[var(--shadow-sm)] transition hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0_var(--ink)]"
                 href="/thinking"
               >
                 Explore thinking <span aria-hidden="true" className="ml-2">-&gt;</span>

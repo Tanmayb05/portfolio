@@ -5,7 +5,9 @@ import { resumeDownload } from "@/lib/resume";
 export function ResumeDownload() {
   return (
     <Link
-      className="motion-focus inline-flex rounded-full bg-[var(--accent-teal)] px-5 py-3 text-sm font-semibold text-[#071018] transition duration-200 hover:brightness-110"
+      className="motion-focus inline-flex border-[3px] border-[var(--ink)] bg-[var(--yellow)] px-4 py-3 font-mono text-sm font-black uppercase text-[var(--ink)] shadow-[var(--shadow-sm)] transition hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0_var(--ink)]"
+      data-analytics-event="resume_download"
+      data-analytics-payload={JSON.stringify({ surface: "resume_download" })}
       href={resumeDownload.href}
     >
       {resumeDownload.label}

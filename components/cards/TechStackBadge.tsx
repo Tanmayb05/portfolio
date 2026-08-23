@@ -4,7 +4,7 @@ type TechStackBadgeProps = {
 
 export function TechStackBadge({ children }: TechStackBadgeProps) {
   return (
-    <span className="inline-flex rounded-full border border-[var(--border-soft)] bg-[var(--surface-elevated)] px-2.5 py-1 text-xs text-[var(--text-secondary)]">
+    <span className="inline-block max-w-full whitespace-normal break-words border-2 border-[var(--ink)] bg-[var(--white)] px-2 py-1 font-mono text-[0.68rem] font-black uppercase text-[var(--ink)]">
       {children}
     </span>
   );

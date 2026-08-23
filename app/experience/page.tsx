@@ -1,4 +1,4 @@
-import Link from "next/link";
+import type { Metadata } from "next";
 
 import { TechStackBadge } from "@/components/cards/TechStackBadge";
 import { Reveal, StaggerGroup } from "@/components/motion";
@@ -8,7 +8,16 @@ import { SkillGroup } from "@/components/sections/SkillGroup";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { SiteContainer } from "@/components/shared/SiteContainer";
+import { BrutalButton } from "@/components/ui/BrutalButton";
 import { resume } from "@/lib/content";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Experience",
+  description:
+    "Production ownership, research proof, technical skills, and resume-ready experience snapshots.",
+  path: "/experience"
+});
 
 const skillGroups = [
   {
@@ -42,12 +51,14 @@ export default function ExperiencePage() {
   return (
     <>
       <PageHeader
+        accent="purple"
         eyebrow="War Stories"
-        title="I automate the boring parts so I only have to be annoyed once."
-        description="I keep this page scannable by showing the timeline, impact, and skills that support the full resume instead of duplicating every resume bullet."
+        intensity={2}
+        title="Production ownership, research proof."
+        description="Timeline first. Resume depth stays one click away."
       />
 
-      <section className="section-gradient-experience border-b border-[var(--border-soft)] py-20 sm:py-24">
+      <section className="section-gradient-experience border-b-[3px] border-[var(--ink)] py-20 sm:py-24">
         <SiteContainer>
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <Reveal>
@@ -55,23 +66,20 @@ export default function ExperiencePage() {
                 <SectionHeading
                   eyebrow="Resume"
                   title="I keep the full version one click away."
-                  description="The page gives a focused view of my work. The resume has the complete recruiter-facing detail."
+                  description="This page shows role snapshots, outcomes, and tools. The PDF carries the complete recruiter version."
                 />
                 <div className="mt-7 flex flex-wrap gap-3">
                   <ResumeDownload />
-                  <Link
-                    className="motion-focus rounded-full border border-[var(--border-soft)] px-5 py-3 text-sm font-semibold text-[var(--text-primary)] transition duration-200 hover:border-[var(--accent-teal-border)] hover:bg-[var(--accent-teal-soft)]"
-                    href="/contact"
-                  >
+                  <BrutalButton href="/contact" variant="outline">
                     Contact
-                  </Link>
+                  </BrutalButton>
                 </div>
               </div>
             </Reveal>
 
             <Reveal delay={120}>
-              <div className="rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)] p-5 sm:p-6">
-                <p className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--accent-teal)]">
+              <div className="border-[3px] border-[var(--ink)] bg-[var(--white)] p-5 shadow-[var(--shadow-md)] sm:p-6">
+                <p className="font-mono text-xs font-black uppercase text-[var(--purple)]">
                   Impact snapshot
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
@@ -85,13 +93,13 @@ export default function ExperiencePage() {
         </SiteContainer>
       </section>
 
-      <section className="section-gradient-thinking border-b border-[var(--border-soft)] py-20 sm:py-24">
+      <section className="section-gradient-thinking border-b-[3px] border-[var(--ink)] py-20 sm:py-24">
         <SiteContainer>
           <Reveal>
             <SectionHeading
               eyebrow="Timeline"
               title="Work experience"
-              description="I focus the timeline on what I shipped, automated, improved, and validated."
+              description="What shipped, what changed, and what was measured."
             />
           </Reveal>
 
@@ -101,13 +109,13 @@ export default function ExperiencePage() {
         </SiteContainer>
       </section>
 
-      <section className="section-gradient-projects border-b border-[var(--border-soft)] py-20 sm:py-24">
+      <section className="section-gradient-projects border-b-[3px] border-[var(--ink)] py-20 sm:py-24">
         <SiteContainer>
           <Reveal>
             <SectionHeading
               eyebrow="Skills"
               title="Compact technical map"
-              description="I keep skills supportive: grouped, scan-friendly, and tied to the work instead of shown as fake proficiency meters."
+              description="Grouped tools, no fake proficiency meters."
             />
           </Reveal>
 
@@ -126,13 +134,13 @@ export default function ExperiencePage() {
         </SiteContainer>
       </section>
 
-      <section className="section-gradient-experience border-b border-[var(--border-soft)] py-20 sm:py-24">
+      <section className="section-gradient-experience border-b-[3px] border-[var(--ink)] py-20 sm:py-24">
         <SiteContainer>
           <Reveal>
             <SectionHeading
               eyebrow="Education"
               title="Academic foundation"
-              description="I keep education concise and course-focused."
+              description="Concise, course-focused, and connected to current AI systems work."
             />
           </Reveal>
 
@@ -142,20 +150,20 @@ export default function ExperiencePage() {
           >
             {resume.education.map((education) => (
               <article
-                className="motion-card motion-border-glow flex h-full flex-col rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)] p-5 hover:bg-[var(--surface-elevated)] sm:p-6"
+                className="motion-card flex h-full flex-col border-[3px] border-[var(--ink)] bg-[var(--white)] p-5 shadow-[var(--shadow-md)] sm:p-6"
                 key={`${education.institution}-${education.degree}`}
               >
-                <p className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--accent-teal)]">
+                <p className="font-mono text-xs font-black uppercase text-[var(--purple)]">
                   {education.start_date} - {education.end_date}
                 </p>
-                <h3 className="mt-3 text-xl font-semibold leading-tight text-[var(--text-primary)]">
+                <h3 className="mt-3 text-2xl font-black uppercase leading-none text-[var(--ink)]">
                   {education.degree}
                 </h3>
-                <p className="mt-2 text-sm text-[var(--text-secondary)]">
+                <p className="mt-3 text-sm font-semibold leading-6 text-[var(--text-secondary)]">
                   {education.institution}
                 </p>
                 {education.gpa ? (
-                  <p className="mt-1 font-mono text-xs font-semibold uppercase tracking-[0.1em] text-[var(--accent-teal)]">
+                  <p className="mt-2 font-mono text-xs font-black uppercase text-[var(--purple)]">
                     GPA {education.gpa}
                   </p>
                 ) : null}
@@ -165,7 +173,7 @@ export default function ExperiencePage() {
                   ))}
                 </div>
                 {education.activities.length > 0 ? (
-                  <p className="mt-4 text-sm text-[var(--text-secondary)]">
+                  <p className="mt-4 text-sm font-semibold leading-6 text-[var(--text-secondary)]">
                     {education.activities.join(", ")}
                   </p>
                 ) : null}
@@ -178,27 +186,24 @@ export default function ExperiencePage() {
       <section className="section-gradient-contact py-20 sm:py-24">
         <SiteContainer>
           <Reveal>
-            <div className="rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)] p-6 sm:p-8">
+            <div className="border-[3px] border-[var(--ink)] bg-[var(--white)] p-6 shadow-[var(--shadow-md)] sm:p-8">
               <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">
                 <div>
-                  <p className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--accent-teal)]">
+                  <p className="font-mono text-xs font-black uppercase text-[var(--purple)]">
                     Next
                   </p>
-                  <h2 className="mt-4 text-3xl font-semibold leading-tight text-[var(--text-primary)] sm:text-4xl">
-                    I connect experience back to project proof.
+                  <h2 className="mt-4 text-3xl font-black uppercase leading-none text-[var(--ink)] sm:text-4xl">
+                    Experience connects to case studies.
                   </h2>
-                  <p className="mt-5 max-w-[70ch] text-base leading-7 text-[var(--text-secondary)]">
-                    The project pages show how I apply this experience to
-                    systems, AI work, automation, and product-facing builds.
+                  <p className="mt-5 max-w-[70ch] text-base font-semibold leading-7 text-[var(--text-secondary)]">
+                    Project pages show the architecture, implementation, and
+                    trade-offs behind the same systems work.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-3">
-                  <Link
-                    className="motion-focus rounded-full bg-[var(--accent-teal)] px-5 py-3 text-sm font-semibold text-[#071018] transition duration-200 hover:brightness-110"
-                    href="/projects"
-                  >
+                  <BrutalButton href="/projects">
                     View projects
-                  </Link>
+                  </BrutalButton>
                   <ResumeDownload />
                 </div>
               </div>

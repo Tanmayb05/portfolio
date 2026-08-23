@@ -12,21 +12,21 @@ export function PlaceCard({ place }: PlaceCardProps) {
       href={place.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="block p-4 border border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-md transition-all group"
+      className="motion-focus block border-[3px] border-[var(--ink)] bg-[var(--white)] p-4 shadow-[var(--shadow-sm)] transition group hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0_var(--ink)]"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
-          <h3 className="text-sm font-semibold text-gray-900 group-hover:text-blue-600 truncate">
+          <h3 className="truncate text-sm font-black uppercase text-[var(--ink)]">
             {place.title}
           </h3>
           {place.note && (
-            <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+            <p className="mt-1 line-clamp-2 text-xs font-semibold text-[var(--text-muted)]">
               {place.note}
             </p>
           )}
         </div>
         <svg
-          className="w-4 h-4 text-gray-400 group-hover:text-blue-600 flex-shrink-0 mt-0.5"
+          className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--green)]"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

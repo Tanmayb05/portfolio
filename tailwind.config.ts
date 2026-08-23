@@ -4,6 +4,7 @@ const config: Config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./content/**/*.{js,ts,jsx,tsx,mdx}",
     "./lib/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
@@ -14,8 +15,15 @@ const config: Config = {
         surface: "var(--surface-card)",
         elevated: "var(--surface-elevated)",
         border: "var(--border)",
-        accent: "var(--accent-teal)",
-        muted: "var(--text-muted)"
+        accent: "var(--purple)",
+        muted: "var(--text-muted)",
+        ink: "var(--ink)",
+        paper: "var(--paper)",
+        yellow: "var(--yellow)",
+        red: "var(--red)",
+        blue: "var(--blue)",
+        green: "var(--green)",
+        purple: "var(--purple)"
       },
       fontFamily: {
         sans: [
@@ -28,7 +36,16 @@ const config: Config = {
         mono: ["JetBrains Mono", "SF Mono", "Consolas", "monospace"]
       },
       maxWidth: {
-        reading: "48rem"
+        page: "var(--page-max)",
+        content: "var(--content-max)",
+        reading: "var(--reading-max)"
+      },
+      boxShadow: {
+        brutalSm: "var(--shadow-sm)",
+        brutalMd: "var(--shadow-md)"
+      },
+      borderWidth: {
+        brutal: "3px"
       }
     }
   },

@@ -7,8 +7,8 @@ type SkillGroupProps = {
 
 export function SkillGroup({ title, skills }: SkillGroupProps) {
   return (
-    <article className="motion-card motion-border-glow rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)] p-5 hover:bg-[var(--surface-elevated)]">
-      <h3 className="text-base font-semibold text-[var(--text-primary)]">
+    <article className="motion-card border-[3px] border-[var(--ink)] bg-[var(--white)] p-5 shadow-[var(--shadow-md)]">
+      <h3 className="text-xl font-black uppercase leading-none text-[var(--ink)]">
         {title}
       </h3>
       <div className="mt-4 flex flex-wrap gap-2">

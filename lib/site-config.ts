@@ -1,19 +1,44 @@
 export const siteConfig = {
   name: "Tanmay Bhuskute",
-  title: "Tanmay Bhuskute | Portfolio",
+  title: "Tanmay Bhuskute | Software Engineer",
   description:
-    "A calm technical portfolio for systems, engineering notes, experience, travel, and contact.",
-  url: "",
+    "Software engineer building cloud infrastructure, AI systems, and reliable software.",
+  url: "https://tanmayb05.github.io/portfolio",
   navItems: [
-    { label: "War Stories", href: "/experience", realName: "Experience" },
-    { label: "Things I Built", href: "/projects", realName: "Projects" },
-    { label: "Brain Dump", href: "/thinking", realName: "Thinking" },
-    { label: "Life, Offline", href: "/travel-life", realName: "Travel & Life" },
-    { label: "Say Hi", href: "/contact", realName: "Contact" }
+    {
+      label: "War Stories",
+      href: "/experience",
+      realName: "Experience",
+      accent: "purple"
+    },
+    {
+      label: "Things I Built",
+      href: "/projects",
+      realName: "Projects",
+      accent: "blue"
+    },
+    {
+      label: "Brain Dump",
+      href: "/thinking",
+      realName: "Thinking",
+      accent: "yellow"
+    },
+    {
+      label: "Life, Offline",
+      href: "/travel-life",
+      realName: "Travel & Life",
+      accent: "green"
+    },
+    {
+      label: "Say Hi",
+      href: "/contact",
+      realName: "Contact",
+      accent: "red"
+    }
   ],
   social: {
     github: "https://github.com/Tanmayb05",
-    linkedin: "https://linkedin.com/in/tanmay-bhuskute",
+    linkedin: "https://linkedin.com/in/tanmaybhuskute",
     email: "mailto:tanmay.v.bhuskute@gmail.com"
   },
   resume: "/resume.pdf"

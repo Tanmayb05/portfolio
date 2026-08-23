@@ -10,7 +10,12 @@ const USAGeographicMap = dynamic(
     import("@/components/travel/usa-geographic-map").then(
       (mod) => mod.USAGeographicMap
     ),
-  { ssr: false, loading: () => <div className="h-96 bg-[var(--surface-elevated)] rounded-lg animate-pulse" /> }
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-96 border-[3px] border-[var(--ink)] bg-[var(--white)] shadow-[var(--shadow-md)]" />
+    )
+  }
 );
 
 interface USATravelMapProps {

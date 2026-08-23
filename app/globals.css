@@ -2,45 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-:root,
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --background-1: #070b10;
-  --background-2: #0b1118;
-  --background-3: #0c1416;
-  --surface-card: #111820;
-  --surface-elevated: #151e27;
-  --border: #24303a;
-  --border-soft: rgba(255, 255, 255, 0.08);
-  --text-primary: #f5f7fa;
-  --text-secondary: #c3cdd7;
-  --text-muted: #9aa7b2;
-  --accent-teal: #2dd4bf;
-  --accent-teal-soft: rgba(45, 212, 191, 0.12);
-  --accent-teal-border: rgba(45, 212, 191, 0.28);
-  --nav-background: rgba(7, 11, 16, 0.78);
-  --footer-background: #070b10;
-  --elevated-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
-}
-
-:root[data-theme="light"] {
+:root {
   color-scheme: light;
-  --background-1: #f7fafc;
-  --background-2: #eef5f7;
-  --background-3: #eaf3f3;
-  --surface-card: #ffffff;
-  --surface-elevated: #f8fbfc;
-  --border: #d8e3e7;
-  --border-soft: rgba(15, 23, 42, 0.08);
-  --text-primary: #071018;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
-  --accent-teal: #0f766e;
-  --accent-teal-soft: rgba(15, 118, 110, 0.1);
-  --accent-teal-border: rgba(15, 118, 110, 0.24);
-  --nav-background: rgba(247, 250, 252, 0.78);
-  --footer-background: #f7fafc;
-  --elevated-shadow: 0 18px 48px rgba(15, 23, 42, 0.1);
+
+  --ink: #050505;
+  --paper: #fff8e8;
+  --white: #ffffff;
+  --yellow: #f7ff00;
+  --red: #ff4d4d;
+  --blue: #2458ff;
+  --green: #38ff7a;
+  --purple: #a855f7;
+
+  --accent-projects: var(--blue);
+  --accent-ai: var(--purple);
+  --accent-thinking: var(--yellow);
+  --accent-now: var(--green);
+  --accent-contact: var(--red);
+
+  --background-1: var(--paper);
+  --background-2: #fffdf5;
+  --background-3: #f1ead9;
+  --surface-card: var(--white);
+  --surface-elevated: #fff3c4;
+  --border: var(--ink);
+  --border-soft: rgba(5, 5, 5, 0.18);
+  --text-primary: var(--ink);
+  --text-secondary: #272727;
+  --text-muted: #5f5a4f;
+  --nav-background: rgba(255, 248, 232, 0.92);
+  --footer-background: var(--paper);
+  --elevated-shadow: 7px 7px 0 var(--ink);
+
+  --border-brutal: 3px solid var(--ink);
+  --border-brutal-thick: 4px solid var(--ink);
+  --shadow-sm: 4px 4px 0 var(--ink);
+  --shadow-md: 7px 7px 0 var(--ink);
+  --shadow-mobile: 4px 4px 0 var(--ink);
+  --focus-ring: 0 0 0 3px var(--paper), 0 0 0 6px var(--blue);
+  --radius-brutal: 6px;
+
+  --page-max: 1440px;
+  --content-max: 1180px;
+  --reading-max: 760px;
+  --space-section-desktop: 120px;
+  --space-section-mobile: 72px;
+  --gutter-desktop: 48px;
+  --gutter-tablet: 32px;
+  --gutter-mobile: 10px;
+  --gap-grid: 24px;
+
+  --text-display-xl: clamp(4rem, 10vw, 9rem);
+  --text-display: clamp(3rem, 7vw, 6rem);
+  --text-h1: clamp(2.1rem, 5vw, 4.5rem);
+  --text-h2: clamp(2rem, 4vw, 3.5rem);
+  --text-h3: clamp(1.4rem, 2.4vw, 2rem);
+  --text-body-lg: clamp(1.05rem, 1.4vw, 1.25rem);
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-mono-label: 0.75rem;
+  --text-metric-xl: clamp(3.5rem, 8vw, 7rem);
 }
 
 * {
@@ -61,10 +82,13 @@ body {
   min-height: 100%;
   margin: 0;
   background:
-    radial-gradient(circle at 80% 0%, var(--accent-teal-soft), transparent 30rem),
-    linear-gradient(180deg, var(--background-1), var(--background-2) 45%, var(--background-1));
+    linear-gradient(rgba(5, 5, 5, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(5, 5, 5, 0.035) 1px, transparent 1px),
+    var(--paper);
+  background-size: 32px 32px;
   color: var(--text-primary);
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+  font-size: var(--text-body);
   text-rendering: optimizeLegibility;
 }
 
@@ -79,51 +103,45 @@ h2,
 h3,
 h4 {
   overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 ::selection {
-  background: var(--accent-teal-soft);
-  color: var(--text-primary);
+  background: var(--yellow);
+  color: var(--ink);
 }
 
 .text-balance {
   text-wrap: balance;
 }
 
-.section-gradient-hero {
-  background:
-    radial-gradient(circle at 86% 8%, var(--accent-teal-soft), transparent 26rem),
-    linear-gradient(135deg, var(--background-1), var(--background-2) 72%, var(--background-1));
+.section-gradient-hero,
+.section-gradient-projects,
+.section-gradient-thinking,
+.section-gradient-experience,
+.section-gradient-travel,
+.section-gradient-contact {
+  background: var(--paper);
 }
 
 .section-gradient-projects {
-  background:
-    radial-gradient(circle at 18% 12%, var(--accent-teal-soft), transparent 24rem),
-    linear-gradient(180deg, var(--background-2), var(--background-3));
+  background: #edf2ff;
 }
 
 .section-gradient-thinking {
-  background:
-    radial-gradient(circle at 88% 18%, rgba(59, 130, 246, 0.06), transparent 24rem),
-    linear-gradient(180deg, var(--background-1), var(--background-2));
+  background: #fff8d5;
 }
 
 .section-gradient-experience {
-  background:
-    radial-gradient(circle at 8% 20%, rgba(148, 163, 184, 0.06), transparent 22rem),
-    linear-gradient(180deg, var(--background-2), var(--background-3));
+  background: #f5ecff;
 }
 
 .section-gradient-travel {
-  background:
-    radial-gradient(circle at 72% 24%, var(--accent-teal-soft), transparent 24rem),
-    linear-gradient(180deg, var(--background-3), var(--background-2));
+  background: #eaffef;
 }
 
 .section-gradient-contact {
-  background:
-    radial-gradient(circle at 50% 0%, var(--accent-teal-soft), transparent 28rem),
-    linear-gradient(180deg, var(--background-2), var(--background-1));
+  background: #ffe8e8;
 }
 
 .soft-grid {
@@ -131,7 +149,45 @@ h4 {
     linear-gradient(var(--border-soft) 1px, transparent 1px),
     linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
   background-size: 48px 48px;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 72%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.42), transparent 72%);
+}
+
+.brutal-border {
+  border: var(--border-brutal);
+}
+
+.brutal-shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.brutal-shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+.brutal-focus:focus-visible,
+.motion-focus:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.sticker-label {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border: 2px solid var(--ink);
+  background: var(--white);
+  padding: 0.2rem 0.45rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, monospace;
+  font-size: var(--text-mono-label);
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
 }
 
 .motion-reveal {
@@ -150,25 +206,23 @@ h4 {
 }
 
 .motion-card {
+  border: var(--border-brutal);
+  box-shadow: var(--shadow-md);
   transition:
-    background-color 200ms ease,
-    border-color 200ms ease,
-    box-shadow 220ms ease,
-    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    background-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
 .motion-card:hover {
-  transform: translate3d(0, -3px, 0);
+  border-color: var(--ink);
+  box-shadow: var(--shadow-sm);
+  transform: translate3d(3px, 3px, 0);
 }
 
-.motion-border-glow {
-  box-shadow: 0 0 0 1px transparent;
-}
-
-.motion-border-glow:hover,
-.motion-border-glow:focus-visible {
-  border-color: var(--accent-teal-border);
-  box-shadow: 0 0 0 1px var(--accent-teal-border), var(--elevated-shadow);
+.motion-card:active {
+  box-shadow: 1px 1px 0 var(--ink);
+  transform: translate3d(6px, 6px, 0);
 }
 
 .motion-link {
@@ -181,7 +235,7 @@ h4 {
   right: 0;
   bottom: -0.2rem;
   left: 0;
-  height: 1px;
+  height: 2px;
   content: "";
   background: currentColor;
   opacity: 0;
@@ -195,19 +249,30 @@ h4 {
 .motion-link:hover::after,
 .motion-link:focus-visible::after,
 .motion-link[data-active="true"]::after {
-  opacity: 0.72;
+  opacity: 1;
   transform: scaleX(1);
 }
 
 .motion-active {
-  color: var(--text-primary);
-  background: var(--accent-teal-soft);
-  border-color: var(--accent-teal-border);
+  color: var(--ink);
+  background: var(--yellow);
+  border-color: var(--ink);
 }
 
-.motion-focus:focus-visible {
-  outline: 2px solid var(--accent-teal);
-  outline-offset: 3px;
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --shadow-md: var(--shadow-mobile);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -221,7 +286,8 @@ h4 {
   }
 
   .motion-reveal,
-  .motion-card:hover {
+  .motion-card:hover,
+  .marquee-track {
     opacity: 1 !important;
     transform: none !important;
   }

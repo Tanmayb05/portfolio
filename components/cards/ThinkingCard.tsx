@@ -9,21 +9,21 @@ type ThinkingCardProps = {
 export function ThinkingCard({ entry }: ThinkingCardProps) {
   return (
     <Link
-      className="motion-card motion-border-glow motion-focus block rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)] p-5 hover:bg-[var(--surface-elevated)]"
+      className="motion-card motion-focus block h-full border-[3px] border-[var(--ink)] bg-[var(--white)] p-5 shadow-[var(--shadow-md)]"
       href={`/thinking/${entry.slug}`}
     >
       <div className="flex flex-wrap items-center gap-2">
-        <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--accent-teal)]">
+        <span className="border-2 border-[var(--ink)] bg-[var(--yellow)] px-2 py-1 font-mono text-[0.68rem] font-black uppercase text-[var(--ink)]">
           {entry.category}
         </span>
-        <span className="rounded-full border border-[var(--border-soft)] px-2 py-0.5 text-[0.68rem] uppercase tracking-[0.1em] text-[var(--text-muted)]">
+        <span className="border-2 border-[var(--ink)] bg-[var(--paper)] px-2 py-1 font-mono text-[0.68rem] font-black uppercase text-[var(--ink)]">
           {entry.status}
         </span>
       </div>
-      <h3 className="mt-4 text-lg font-semibold leading-tight text-[var(--text-primary)]">
+      <h3 className="mt-5 text-xl font-black uppercase leading-none text-[var(--ink)]">
         {entry.title}
       </h3>
-      <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
+      <p className="mt-4 border-t-[3px] border-dashed border-[var(--ink)] pt-4 text-sm font-semibold leading-6 text-[var(--text-secondary)]">
         {entry.summary}
       </p>
     </Link>

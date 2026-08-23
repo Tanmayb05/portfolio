@@ -1,4 +1,4 @@
-import type { TravelEntry } from "@/lib/content-types";
+import type { TravelEntry, TravelRegion } from "@/lib/content-types";
 
 export const travelEntries: TravelEntry[] = [
   {
@@ -4151,4 +4151,4 @@ export const travelEntries: TravelEntry[] = [
   }
 ];
 
-export const travelRegions = ["USA"];
+export const travelRegions = ["USA"] satisfies TravelRegion[];

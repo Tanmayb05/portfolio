@@ -2,7 +2,66 @@ export type SourceDocument =
   | "content-intake.json"
   | "readme_portfolio.md"
   | "resume.json"
+  | "master-resume"
+  | "homepage.json"
+  | "1-experience.json"
   | "2-projects.json";
+
+export type Accent = "blue" | "purple" | "yellow" | "green" | "red";
+
+export type Metric = {
+  value: string;
+  label: string;
+  context?: string;
+  source?: string;
+};
+
+export type ArchitectureNode = {
+  id: string;
+  label: string;
+  detail?: string;
+  kind?: "input" | "process" | "storage" | "external" | "output";
+};
+
+export type ArchitectureEdge = {
+  from: string;
+  to: string;
+  label?: string;
+};
+
+export type Architecture = {
+  nodes: ArchitectureNode[];
+  edges: ArchitectureEdge[];
+};
+
+export type Asset = {
+  kind:
+    | "product-screenshot"
+    | "architecture-diagram"
+    | "terminal-snapshot"
+    | "code-snapshot"
+    | "dataset-visualization"
+    | "before-after"
+    | "demo-video"
+    | "demo-gif"
+    | "mobile-screenshot"
+    | "result-chart"
+    | "system-graphic";
+  src?: string;
+  label: string;
+  alt: string;
+  status: "available" | "planned" | "missing";
+  source?: string;
+  notes?: string;
+};
+
+export type ProjectCategory =
+  | "AI Systems"
+  | "Deep Learning"
+  | "Recommendation Systems"
+  | "Android"
+  | "Data & ML Systems"
+  | "Full-Stack Systems";
 
 export type ResumeContact = {
   linkedin: string;
@@ -60,26 +119,43 @@ export type ResumeData = {
 
 export type Project = {
   slug: string;
+  name: string;
   title: string;
   shortTitle: string;
+  shortDescription: string;
   date: string;
   summary: string;
+  accent: Accent;
   problem: string;
+  built: string;
+  outcome?: string;
   context: string;
-  architecture: string[];
+  architecture: Architecture;
+  architectureSummary: string[];
+  ownership: {
+    model: string;
+    exactOwnership: string[];
+    whatExistedBefore: string;
+    personallyDesigned: string[];
+    collaboratorsOwned: string;
+  };
   decisions: string[];
   tradeoffs: string[];
+  implementation: string[];
+  failureNotes: string[];
   nextImprovements: string[];
   proofPoints: string[];
-  metrics: string[];
+  askMeAbout: string[];
+  metrics: Metric[];
   techStack: string[];
-  category:
-    | "AI Systems"
-    | "Deep Learning"
-    | "Recommendation Systems"
-    | "Android"
-    | "Data & ML Systems"
-    | "Full-Stack Systems";
+  stack: string[];
+  category: ProjectCategory;
+  featured: boolean;
+  featuredOrder?: number;
+  github?: string;
+  demo?: string;
+  visuals: Asset[];
+  primaryVisual?: Asset;
   source: SourceDocument[];
 };
 
@@ -162,5 +238,5 @@ export type TravelEntry = {
   googleMapsUrl?: string;
   // Associated data
   trips?: TravelTrip[];
-  source: SourceDocument[];
+  source?: SourceDocument[];
 };

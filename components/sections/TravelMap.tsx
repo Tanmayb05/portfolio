@@ -25,33 +25,33 @@ export function TravelMap({ entries, region }: TravelMapProps) {
 
   return (
     <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
-      <div className="relative min-h-[22rem] overflow-hidden rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)] p-5">
+      <div className="relative min-h-[22rem] overflow-hidden border-[3px] border-[var(--ink)] bg-[var(--white)] p-5 shadow-[var(--shadow-md)]">
         <div aria-hidden="true" className="soft-grid absolute inset-0 opacity-70" />
         <div
           aria-hidden="true"
-          className="absolute inset-6 rounded-[2rem] border border-[var(--border-soft)] bg-[linear-gradient(135deg,rgba(255,255,255,0.05),rgba(255,255,255,0.015))]"
+          className="absolute inset-6 border-[3px] border-dashed border-[var(--ink)] bg-[var(--paper)]"
         />
         <div
           aria-hidden="true"
-          className="absolute left-[18%] top-[20%] h-36 w-44 rounded-[48%_52%_48%_52%] border border-[var(--border-soft)] bg-[rgba(255,255,255,0.035)]"
+          className="absolute left-[18%] top-[20%] h-24 w-32 border-[3px] border-[var(--ink)] bg-[var(--green)]"
         />
         <div
           aria-hidden="true"
-          className="absolute right-[18%] top-[28%] h-40 w-48 rounded-[54%_46%_56%_44%] border border-[var(--border-soft)] bg-[rgba(255,255,255,0.03)]"
+          className="absolute right-[18%] top-[28%] h-28 w-36 border-[3px] border-[var(--ink)] bg-[var(--yellow)]"
         />
         <div
           aria-hidden="true"
-          className="absolute bottom-[15%] left-[34%] h-32 w-56 rounded-[50%_42%_58%_50%] border border-[var(--border-soft)] bg-[rgba(255,255,255,0.026)]"
+          className="absolute bottom-[15%] left-[34%] h-20 w-44 border-[3px] border-[var(--ink)] bg-[var(--blue)]"
         />
 
         <div className="relative z-10">
-          <p className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--accent-teal)]">
+          <p className="font-mono text-xs font-black uppercase text-[var(--green)]">
             Map layer
           </p>
-          <h3 className="mt-3 text-2xl font-semibold text-[var(--text-primary)]">
+          <h3 className="mt-3 text-2xl font-black uppercase leading-none text-[var(--ink)]">
             {regionLabels[region]}
           </h3>
-          <p className="mt-2 max-w-[58ch] text-sm leading-6 text-[var(--text-secondary)]">
+          <p className="mt-2 max-w-[58ch] text-sm font-semibold leading-6 text-[var(--text-secondary)]">
             I am using this as a native map placeholder until I add real
             state/province data and map links.
           </p>
@@ -66,10 +66,10 @@ export function TravelMap({ entries, region }: TravelMapProps) {
               return (
                 <button
                   aria-label={`Show ${entry.title}`}
-                  className={`motion-focus absolute h-5 w-5 rounded-full border transition duration-200 hover:scale-110 ${
+                  className={`motion-focus absolute h-5 w-5 border-[3px] border-[var(--ink)] transition duration-200 hover:scale-110 ${
                     isSelected
-                      ? "border-[var(--accent-teal)] bg-[var(--accent-teal)] shadow-[0_0_28px_var(--accent-teal-soft)]"
-                      : "border-[var(--accent-teal-border)] bg-[var(--accent-teal-soft)]"
+                      ? "bg-[var(--green)] shadow-[var(--shadow-sm)]"
+                      : "bg-[var(--white)]"
                   }`}
                   key={entry.slug}
                   style={{
@@ -79,7 +79,7 @@ export function TravelMap({ entries, region }: TravelMapProps) {
                   type="button"
                   onClick={() => setSelectedSlug(entry.slug)}
                 >
-                  <span className="absolute left-1/2 top-7 w-max -translate-x-1/2 rounded-full border border-[var(--border-soft)] bg-[var(--surface-elevated)] px-2 py-1 text-xs text-[var(--text-secondary)] opacity-0 transition duration-200 hover:opacity-100">
+                  <span className="absolute left-1/2 top-7 w-max -translate-x-1/2 border-2 border-[var(--ink)] bg-[var(--white)] px-2 py-1 text-xs font-semibold text-[var(--text-secondary)] opacity-0 transition duration-200 hover:opacity-100">
                     {entry.placeLabel}
                   </span>
                 </button>
@@ -87,8 +87,8 @@ export function TravelMap({ entries, region }: TravelMapProps) {
             })}
           </div>
         ) : (
-          <div className="absolute inset-x-6 bottom-6 z-20 rounded-lg border border-[var(--border-soft)] bg-[var(--surface-elevated)] p-4">
-            <p className="text-sm text-[var(--text-muted)]">
+          <div className="absolute inset-x-6 bottom-6 z-20 border-[3px] border-[var(--ink)] bg-[var(--paper)] p-4">
+            <p className="text-sm font-semibold text-[var(--text-muted)]">
               I have not added highlighted places for this region yet.
             </p>
           </div>

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { TechStackBadge } from "@/components/cards/TechStackBadge";
@@ -7,6 +8,14 @@ import { PageHeader } from "@/components/shared/PageHeader";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { SiteContainer } from "@/components/shared/SiteContainer";
 import { travelEntries, travelRegions } from "@/content/travel";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Travel & Life",
+  description:
+    "Map-first travel notes and life systems that add visual context outside the engineering work.",
+  path: "/travel-life"
+});
 
 const lifeSystems = [
   "Scheduling systems",
@@ -25,9 +34,11 @@ export default function TravelLifePage() {
   return (
     <>
       <PageHeader
+        accent="green"
         eyebrow="Life, Offline"
-        title="The parts of me that aren't a terminal window."
-        description="I am keeping this page map-first, calm, and source-faithful. The current travel notes are placeholders, so the UI shows interaction patterns without inventing trip details."
+        intensity={2}
+        title="Map-first, source-faithful."
+        description="Travel notes, life systems, and visual context without inventing details."
       />
 
       <section className="section-gradient-travel">
@@ -42,22 +53,22 @@ export default function TravelLifePage() {
         </SiteContainer>
       </section>
 
-      <section className="section-gradient-thinking border-b border-[var(--border-soft)] py-20 sm:py-24">
+      <section className="section-gradient-thinking border-b-[3px] border-[var(--ink)] py-20 sm:py-24">
         <SiteContainer>
           <Reveal>
-            <SectionHeading
-              eyebrow="Life systems"
-              title="I also track the systems behind everyday life."
-              description="The source notes call out scheduling, productivity, habits, experiments, journals, and daily observations as future polished snapshots."
-            />
+              <SectionHeading
+                eyebrow="Life systems"
+                title="I also track the systems behind everyday life."
+                description="Habits, routines, experiments, and daily operating systems."
+              />
           </Reveal>
 
           <StaggerGroup
             className="mt-10 grid gap-5 md:grid-cols-2"
             staggerDelay={80}
           >
-            <article className="motion-card motion-border-glow rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)] p-5 hover:bg-[var(--surface-elevated)]">
-              <h3 className="text-xl font-semibold text-[var(--text-primary)]">
+            <article className="motion-card border-[3px] border-[var(--ink)] bg-[var(--white)] p-5 shadow-[var(--shadow-md)]">
+              <h3 className="text-2xl font-black uppercase leading-none text-[var(--ink)]">
                 Systems for life
               </h3>
               <div className="mt-5 flex flex-wrap gap-2">
@@ -67,8 +78,8 @@ export default function TravelLifePage() {
               </div>
             </article>
 
-            <article className="motion-card motion-border-glow rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)] p-5 hover:bg-[var(--surface-elevated)]">
-              <h3 className="text-xl font-semibold text-[var(--text-primary)]">
+            <article className="motion-card border-[3px] border-[var(--ink)] bg-[var(--white)] p-5 shadow-[var(--shadow-md)]">
+              <h3 className="text-2xl font-black uppercase leading-none text-[var(--ink)]">
                 Things I am trying
               </h3>
               <div className="mt-5 flex flex-wrap gap-2">
@@ -84,20 +95,20 @@ export default function TravelLifePage() {
       <section className="section-gradient-contact py-20 sm:py-24">
         <SiteContainer>
           <Reveal>
-            <div className="rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)] p-6 sm:p-8">
-              <p className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--accent-teal)]">
+            <div className="border-[3px] border-[var(--ink)] bg-[var(--white)] p-6 shadow-[var(--shadow-md)] sm:p-8">
+              <p className="font-mono text-xs font-black uppercase text-[var(--green)]">
                 Next
               </p>
-              <h2 className="mt-4 text-3xl font-semibold leading-tight text-[var(--text-primary)] sm:text-4xl">
-                I will add richer travel data only when the notes are real.
+              <h2 className="mt-4 text-3xl font-black uppercase leading-none text-[var(--ink)] sm:text-4xl">
+                Richer travel data comes from real notes.
               </h2>
-              <p className="mt-5 max-w-[70ch] text-base leading-7 text-[var(--text-secondary)]">
+              <p className="mt-5 max-w-[70ch] text-base font-semibold leading-7 text-[var(--text-secondary)]">
                 The map is ready for states, provinces, places, Google Maps
                 links, galleries, tags, and short reflections once I add those
                 details to the source content.
               </p>
               <Link
-                className="motion-focus mt-7 inline-flex rounded-full border border-[var(--border-soft)] px-5 py-3 text-sm font-semibold text-[var(--text-primary)] transition duration-200 hover:border-[var(--accent-teal-border)] hover:bg-[var(--accent-teal-soft)]"
+                className="motion-focus mt-7 inline-flex border-[3px] border-[var(--ink)] bg-[var(--green)] px-4 py-3 font-mono text-sm font-black uppercase text-[var(--ink)] shadow-[var(--shadow-sm)] transition hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0_var(--ink)]"
                 href="/thinking"
               >
                 Explore thinking <span aria-hidden="true" className="ml-2">-&gt;</span>

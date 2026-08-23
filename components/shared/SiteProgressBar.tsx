@@ -45,7 +45,7 @@ export function SiteProgressBar() {
   return (
     <div
       aria-hidden="true"
-      className="fixed inset-x-0 top-0 z-[60] flex h-1 gap-px bg-[var(--border-soft)]"
+      className="fixed inset-x-0 top-0 z-[60] flex h-2 gap-[3px] border-b-[3px] border-[var(--ink)] bg-[var(--ink)]"
     >
       {SEGMENTS.map((segment, index) => {
         const fill =
@@ -53,11 +53,11 @@ export function SiteProgressBar() {
 
         return (
           <div
-            className="relative flex-1 overflow-hidden bg-[var(--surface-elevated)]"
+            className="relative flex-1 overflow-hidden bg-[var(--paper)]"
             key={segment.href}
           >
             <div
-              className="h-full bg-[var(--accent-teal)] transition-[width] duration-150 ease-out"
+              className="h-full bg-[var(--purple)] transition-[width] duration-150 ease-out"
               style={{ width: `${fill}%` }}
             />
           </div>

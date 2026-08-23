@@ -22,7 +22,7 @@ export const nowItems: NowItem[] = [
   {
     label: "Current focus",
     items: [
-      "Actively applying for Summer / Fall 2026 roles",
+      "Actively applying for New Grad roles or Internships",
       "Targeting Backend, Distributed Systems, and AI Systems roles",
       "System Design mastery",
       "DSA consistency",
