@@ -35,6 +35,7 @@ build/
 *.log
 .next/
 new/next-portfolio/.next/
+tsconfig.tsbuildinfo
 
 # Environment variables
 .env
