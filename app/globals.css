@@ -269,6 +269,46 @@ h4 {
   }
 }
 
+.marauders-ink-reveal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  background: var(--ink);
+  clip-path: circle(0% at 50% 50%);
+  animation: marauders-ink 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.marauders-ink-reveal::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: repeating-linear-gradient(
+    115deg,
+    var(--yellow) 0px,
+    var(--yellow) 2px,
+    transparent 2px,
+    transparent 26px
+  );
+  opacity: 0.35;
+  mix-blend-mode: screen;
+}
+
+@keyframes marauders-ink {
+  0% {
+    clip-path: circle(0% at 50% 50%);
+  }
+
+  70% {
+    clip-path: circle(85% at 50% 50%);
+  }
+
+  100% {
+    clip-path: circle(140% at 50% 50%);
+    opacity: 0;
+  }
+}
+
 @media (max-width: 640px) {
   :root {
     --shadow-md: var(--shadow-mobile);
@@ -290,5 +330,9 @@ h4 {
   .marquee-track {
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .marauders-ink-reveal {
+    display: none !important;
   }
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { cookies } from "next/headers";
 
 import { TechStackBadge } from "@/components/cards/TechStackBadge";
 import { ThinkingCard } from "@/components/cards/ThinkingCard";
@@ -7,6 +8,7 @@ import { Reveal, StaggerGroup } from "@/components/motion";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { SiteContainer } from "@/components/shared/SiteContainer";
+import { MaraudersGate } from "@/components/thinking/MaraudersGate";
 import {
   getThinkingEntriesByCategory,
   thinkingEntries
@@ -29,6 +31,8 @@ const plannedEntries = thinkingEntries.filter(
 const groupedEntries = getThinkingEntriesByCategory();
 
 export default function ThinkingPage() {
+  const isUnlocked = cookies().get("marauders-unlocked")?.value === "true";
+
   return (
     <>
       <PageHeader
@@ -39,6 +43,10 @@ export default function ThinkingPage() {
         description="Compact notes on systems, evaluation, learning loops, and research."
       />
 
+      {!isUnlocked ? (
+        <MaraudersGate />
+      ) : (
+        <>
       <section className="section-gradient-thinking border-b-[3px] border-[var(--ink)] py-20 sm:py-24">
         <SiteContainer>
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
@@ -142,6 +150,8 @@ export default function ThinkingPage() {
           </Reveal>
         </SiteContainer>
       </section>
+        </>
+      )}
     </>
   );
 }
