@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { ContactLinkCard } from "@/components/cards/ContactLinkCard";
 import { TechStackBadge } from "@/components/cards/TechStackBadge";
 import { SiteContainer } from "@/components/shared/SiteContainer";
@@ -35,7 +37,7 @@ export function PinnedContactSection() {
   return (
     <section className="section-gradient-contact border-b-[3px] border-[var(--ink)] py-[var(--space-section-mobile)] sm:py-[var(--space-section-desktop)]">
       <SiteContainer size="wide">
-        <div className="grid gap-8 border-[3px] border-[var(--ink)] bg-[var(--paper)] p-5 shadow-[var(--shadow-md)] sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <div className="grid gap-8 border-[3px] border-[var(--ink)] bg-[var(--paper)] p-5 shadow-[var(--shadow-md)] sm:p-8 lg:grid-cols-[0.85fr_0.38fr_1fr] lg:items-end">
           <div>
             <StickerBadge tone="red">Available for</StickerBadge>
             <h1 className="mt-5 text-[length:var(--text-h1)] font-black uppercase leading-[0.92] text-[var(--ink)]">
@@ -44,14 +46,26 @@ export function PinnedContactSection() {
               Cloud / backend / AI systems.
             </h1>
             <p className="mt-6 max-w-[42rem] border-t-[3px] border-[var(--ink)] pt-4 text-[length:var(--text-body-lg)] font-semibold leading-8 text-[var(--text-secondary)]">
-              Cincinnati, OH. Actively searching for New Grad roles or
-              Internships.
+              Cincinnati, OH. Open to New Grad and Internship roles.
               Expected M.S. Computer Science graduation: December 2026.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {targetRoles.slice(0, 4).map((role) => (
                 <TechStackBadge key={role}>{role}</TechStackBadge>
               ))}
+            </div>
+          </div>
+
+          <div className="order-first mx-auto w-full max-w-[13rem] border-[3px] border-[var(--ink)] bg-[var(--white)] p-2 shadow-[var(--shadow-sm)] sm:max-w-[16rem] lg:order-none">
+            <div className="border-[3px] border-[var(--ink)] bg-[var(--yellow)]">
+              <Image
+                alt="Low-poly portrait of Tanmay Bhuskute"
+                className="h-auto w-full"
+                height={320}
+                priority
+                src="/low-poly-image-removebg.png"
+                width={320}
+              />
             </div>
           </div>
 

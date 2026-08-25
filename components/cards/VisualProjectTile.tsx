@@ -48,7 +48,7 @@ export function VisualProjectTile({ project }: VisualProjectTileProps) {
 
   return (
     <Link
-      aria-label={`Open ${project.name} case study`}
+      aria-label={`Open ${project.name} project`}
       className="motion-focus motion-card group flex h-full min-h-[28rem] flex-col border-[3px] border-[var(--ink)] bg-[var(--white)] p-4 shadow-[var(--shadow-md)] focus-visible:outline-none"
       data-analytics-event="project_open"
       data-analytics-payload={JSON.stringify({
@@ -149,7 +149,7 @@ export function VisualProjectTile({ project }: VisualProjectTileProps) {
         </div>
 
         <span className="mt-auto inline-flex w-fit items-center border-[3px] border-[var(--ink)] bg-[var(--tile-accent)] px-3 py-2 font-mono text-sm font-black uppercase text-[var(--ink)] shadow-[var(--shadow-sm)] transition group-hover:translate-x-1 group-hover:translate-y-1 group-hover:shadow-[2px_2px_0_var(--ink)]">
-          Open case study <span aria-hidden="true" className="ml-2">-&gt;</span>
+          Open project <span aria-hidden="true" className="ml-2">-&gt;</span>
         </span>
       </article>
       </Link>

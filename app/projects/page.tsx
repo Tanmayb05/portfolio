@@ -13,7 +13,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "Projects",
   description:
-    "Case studies for AI systems, data platforms, cloud automation, and product-facing software.",
+    "Projects for AI systems, data platforms, cloud automation, and product-facing software.",
   path: "/projects"
 });
 
@@ -25,7 +25,7 @@ export default function ProjectsPage() {
         eyebrow="Things I Built"
         intensity={2}
         title="Systems, proof, trade-offs."
-        description="Scan the cards. Open a case study when you want the engineering story."
+        description="Scan the cards. Open a project when you want the engineering story."
       />
 
       <section className="section-gradient-projects border-b-[3px] border-[var(--ink)] py-20 sm:py-24">
@@ -68,7 +68,7 @@ export default function ProjectsPage() {
           <Reveal>
             <SectionHeading
               eyebrow="All Projects"
-              title="Case study library"
+              title="Project library"
               description="Each page keeps source-backed claims up front and deeper detail behind the click."
             />
           </Reveal>

@@ -299,7 +299,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                   Contact me
                 </BrutalButton>
                 <BrutalButton href="/projects" variant="outline">
-                  More case studies
+                  More projects
                 </BrutalButton>
                 {project.github ? (
                   <BrutalButton

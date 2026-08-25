@@ -1,3 +1,7 @@
+"use client";
+
+import { useState, type MouseEvent } from "react";
+
 type ContactLinkCardProps = {
   description: string;
   href: string;
@@ -28,18 +32,34 @@ export function ContactLinkCard({
   priority = "secondary"
 }: ContactLinkCardProps) {
   const isPrimary = priority === "primary";
+  const isEmail = label === "Email";
+  const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "failed">(
+    "idle"
+  );
+  const cardClassName = `motion-focus motion-card group flex h-full min-h-[13rem] flex-col border-[3px] border-[var(--ink)] p-5 text-left shadow-[var(--shadow-md)] ${
+    isPrimary
+      ? "bg-[var(--red)] text-[var(--ink)]"
+      : "bg-[var(--white)] text-[var(--ink)]"
+  }`;
+  const analyticsProps = {
+    "data-analytics-event": eventByLabel[label],
+    "data-analytics-payload": JSON.stringify({ surface: "contact_card" })
+  };
 
-  return (
-    <a
-      className={`motion-focus motion-card group flex h-full min-h-[13rem] flex-col border-[3px] border-[var(--ink)] p-5 shadow-[var(--shadow-md)] ${
-        isPrimary
-          ? "bg-[var(--red)] text-[var(--ink)]"
-          : "bg-[var(--white)] text-[var(--ink)]"
-      }`}
-      data-analytics-event={eventByLabel[label]}
-      data-analytics-payload={JSON.stringify({ surface: "contact_card" })}
-      href={href}
-    >
+  async function handleEmailClick(event: MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
+
+    try {
+      await navigator.clipboard.writeText(description);
+      setCopyStatus("copied");
+    } catch {
+      setCopyStatus("failed");
+      window.location.href = href;
+    }
+  }
+
+  const content = (
+    <>
       <div className="flex items-start justify-between gap-4">
         <span
           className={`grid h-12 w-12 place-items-center border-[3px] border-[var(--ink)] font-mono text-lg font-black ${
@@ -60,8 +80,41 @@ export function ContactLinkCard({
         {title}
       </h2>
       <p className="mt-auto pt-4 text-[0.78rem] font-semibold leading-5 opacity-85">
-        {description}
+        {isEmail && copyStatus === "copied"
+          ? "Copied email address."
+          : isEmail && copyStatus === "failed"
+            ? "Opening email client."
+            : description}
       </p>
+      {isEmail ? (
+        <span className="sr-only" aria-live="polite">
+          {copyStatus === "copied"
+            ? "Email address copied."
+            : copyStatus === "failed"
+              ? "Could not copy email. Opening email client."
+              : ""}
+        </span>
+      ) : null}
+    </>
+  );
+
+  if (isEmail) {
+    return (
+      <button
+        aria-label={`Copy ${description}`}
+        className={cardClassName}
+        onClick={handleEmailClick}
+        type="button"
+        {...analyticsProps}
+      >
+        {content}
+      </button>
+    );
+  }
+
+  return (
+    <a className={cardClassName} href={href} {...analyticsProps}>
+      {content}
     </a>
   );
 }

@@ -193,7 +193,7 @@ export default function ExperiencePage() {
                     Next
                   </p>
                   <h2 className="mt-4 text-3xl font-black uppercase leading-none text-[var(--ink)] sm:text-4xl">
-                    Experience connects to case studies.
+                    Experience connects to projects.
                   </h2>
                   <p className="mt-5 max-w-[70ch] text-base font-semibold leading-7 text-[var(--text-secondary)]">
                     Project pages show the architecture, implementation, and

@@ -161,7 +161,7 @@ function ownershipFromSource(entry: (typeof projectsJson)[number]) {
       (decision) => `${decision.decision} because ${decision.whyIChoseIt}`
     ),
     collaboratorsOwned: isTeamContext
-      ? "External datasets, APIs, academic baselines, or hackathon constraints shaped the work; the case study calls out what the source data verifies."
+      ? "External datasets, APIs, academic baselines, or hackathon constraints shaped the work; the project page calls out what the source data verifies."
       : "No separate collaborator-owned subsystem is published in the source data."
   };
 }

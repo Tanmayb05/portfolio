@@ -50,7 +50,7 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
           className="motion-focus mt-6 inline-flex w-fit border-[3px] border-[var(--ink)] bg-[var(--blue)] px-3 py-2 font-mono text-xs font-black uppercase text-white shadow-[var(--shadow-sm)] transition hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0_var(--ink)]"
           href={`/projects/${project.slug}`}
         >
-          View case study <span aria-hidden="true" className="ml-2">-&gt;</span>
+          View project <span aria-hidden="true" className="ml-2">-&gt;</span>
         </Link>
       </div>
     </article>

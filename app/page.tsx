@@ -63,13 +63,17 @@ export default function HomePage() {
                   <div className="flex flex-wrap items-center gap-3">
                     <StickerBadge tone="white">Hello, I&apos;m</StickerBadge>
                     <span className="font-mono text-xs font-black uppercase text-[var(--purple)]">
-                      Portfolio OS / v4
+                      Postfolio OS
                     </span>
                   </div>
                 </Reveal>
                 <Reveal delay={80}>
                   <h1 className="mt-5 text-[2.1rem] font-black uppercase leading-[0.82] tracking-normal text-[var(--ink)] min-[360px]:text-[2.35rem] min-[420px]:text-[3.1rem] sm:text-[5.75rem] lg:text-[7.25rem] xl:text-[8rem]">
-                    <span className="block whitespace-nowrap">Tanmay</span>
+                    <span className="block whitespace-nowrap">
+                      <span className="bg-[var(--yellow)] px-2">
+                        Tanmay
+                      </span>
+                    </span>
                     <span className="block whitespace-nowrap">Bhuskute</span>
                   </h1>
                 </Reveal>
@@ -109,7 +113,7 @@ export default function HomePage() {
                 <div className="grid min-w-0 gap-5">
                   <RecruiterMode
                     emailHref={contactLinks.email}
-                    focus="Backend, distributed systems, AI systems, DevOps, and data roles."
+                    focus="Open to New Grad and Internship roles. Actively applying for software engineering, backend, distributed systems, and AI systems roles while practicing system design and DSA consistently."
                     linkedinHref={contactLinks.linkedin}
                     metrics={recruiterMetrics}
                     name={resume.name}
@@ -118,7 +122,7 @@ export default function HomePage() {
                   />
                   <CurrentlyPanel
                     items={currentFocus.slice(0, 4)}
-                    status="Open to New Grad / Internship roles"
+                    status="Open to New Grad and Internship roles"
                     title="Currently"
                   />
                 </div>
@@ -145,7 +149,8 @@ export default function HomePage() {
                     </p>
                   </div>
                   <h2 className="mt-5 text-[length:var(--text-h2)] font-black uppercase leading-none text-[var(--ink)]">
-                    Proof before biography.
+                    <span className="bg-[var(--yellow)] px-2">Proof</span>{" "}
+                    before biography.
                   </h2>
                 </div>
                 <p className="mt-6 max-w-[38rem] border-t-[3px] border-[var(--ink)] pt-4 text-sm font-semibold leading-6 text-[var(--text-secondary)]">
@@ -185,7 +190,10 @@ export default function HomePage() {
                       Featured Systems
                     </p>
                     <h2 className="mt-2 text-[length:var(--text-h2)] font-black uppercase leading-none text-[var(--ink)]">
-                      Things worth clicking.
+                      <span className="bg-[var(--blue)] px-2 text-white">
+                        Systems
+                      </span>{" "}
+                      worth clicking.
                     </h2>
                   </div>
                 </div>
@@ -401,13 +409,14 @@ export default function HomePage() {
                     Available for
                   </p>
                   <h2 className="mt-4 text-3xl font-black uppercase leading-none text-[var(--ink)] sm:text-5xl">
-                    Software Engineering
+                    <span className="bg-[var(--red)] px-2">
+                      Software Engineering
+                    </span>
                     <br />
                     Cloud / Backend / AI Systems
                   </h2>
                   <p className="mt-5 max-w-[70ch] border-t-[3px] border-[var(--ink)] pt-4 text-base font-semibold leading-7 text-[var(--text-secondary)]">
-                    Cincinnati, OH. Actively applying for New Grad roles or
-                    Internships.
+                    Cincinnati, OH. Open to New Grad and Internship roles.
                   </p>
                 </div>
 

@@ -22,9 +22,9 @@ export const nowItems: NowItem[] = [
   {
     label: "Current focus",
     items: [
-      "Actively applying for New Grad roles or Internships",
-      "Targeting Backend, Distributed Systems, and AI Systems roles",
-      "System Design mastery",
+      "Open to New Grad and Internship roles",
+      "Targeting software engineering, backend, distributed systems, and AI systems roles",
+      "System design practice",
       "DSA consistency",
       "High-signal project building"
     ],

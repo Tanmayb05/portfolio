@@ -8,6 +8,7 @@ import { Reveal, StaggerGroup } from "@/components/motion";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { SiteContainer } from "@/components/shared/SiteContainer";
+import { MaraudersConsumeUnlock } from "@/components/thinking/MaraudersConsumeUnlock";
 import { MaraudersGate } from "@/components/thinking/MaraudersGate";
 import {
   getThinkingEntriesByCategory,
@@ -47,6 +48,7 @@ export default function ThinkingPage() {
         <MaraudersGate />
       ) : (
         <>
+      <MaraudersConsumeUnlock />
       <section className="section-gradient-thinking border-b-[3px] border-[var(--ink)] py-20 sm:py-24">
         <SiteContainer>
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
@@ -137,7 +139,7 @@ export default function ThinkingPage() {
                 Writing connects back to systems.
               </h2>
               <p className="mt-5 max-w-[70ch] text-base font-semibold leading-7 text-[var(--text-secondary)]">
-                The project case studies show implementation proof. These notes
+                The project pages show implementation proof. These notes
                 show the reasoning patterns behind my technical choices.
               </p>
               <Link

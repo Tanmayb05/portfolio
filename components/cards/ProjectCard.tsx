@@ -54,7 +54,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         })}
         href={`/projects/${project.slug}`}
       >
-        Open case study <span aria-hidden="true" className="ml-2">-&gt;</span>
+        Open project <span aria-hidden="true" className="ml-2">-&gt;</span>
       </Link>
     </article>
   );
