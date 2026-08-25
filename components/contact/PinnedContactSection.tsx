@@ -57,12 +57,12 @@ export function PinnedContactSection() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-6">
-              <div className="hidden items-center justify-center lg:flex">
+            <div className="relative flex flex-col justify-end self-stretch">
+              <div className="pointer-events-none absolute inset-0 hidden items-center justify-center py-6 lg:flex">
                 <Image
                   alt=""
                   aria-hidden="true"
-                  className="pointer-events-none h-auto w-[min(24vw,21rem)] select-none opacity-90 drop-shadow-[6px_6px_0_rgba(5,5,5,0.35)]"
+                  className="h-full w-auto select-none object-contain opacity-90 drop-shadow-[6px_6px_0_rgba(5,5,5,0.35)]"
                   height={640}
                   priority
                   src="/low-poly-image-removebg.png"
@@ -70,7 +70,7 @@ export function PinnedContactSection() {
                 />
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-3">
+              <div className="relative grid gap-4 sm:grid-cols-3">
                 {contactMethods.map((method) => (
                   <ContactLinkCard
                     description={method.description}
