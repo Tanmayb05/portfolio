@@ -6,6 +6,31 @@ import { BrutalButton } from "@/components/ui/BrutalButton";
 import { StickerBadge } from "@/components/ui/StickerBadge";
 import type { Metric } from "@/lib/content-types";
 
+function useEmailCopy(emailHref: string) {
+  const email = emailHref.replace(/^mailto:/, "");
+  const [copied, setCopied] = useState(false);
+  const resetTimeout = useRef<ReturnType<typeof setTimeout>>();
+
+  useEffect(() => {
+    return () => clearTimeout(resetTimeout.current);
+  }, []);
+
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+    } catch {
+      window.location.href = emailHref;
+      return;
+    }
+
+    clearTimeout(resetTimeout.current);
+    resetTimeout.current = setTimeout(() => setCopied(false), 1400);
+  }
+
+  return { copied, copyEmail, email };
+}
+
 type RecruiterModeProps = {
   name: string;
   role: string;
@@ -32,6 +57,7 @@ export function RecruiterMode({
   const dialogRef = useRef<HTMLDialogElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const { copied, copyEmail } = useEmailCopy(emailHref);
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -91,16 +117,23 @@ export function RecruiterMode({
             <span className="text-[0.65rem]">/in/tanmay</span>
           </BrutalButton>
           <BrutalButton
-            className="min-h-20 flex-col gap-1"
-            href={emailHref}
+            aria-label="Copy email address"
+            className="copy-stamp min-h-20 flex-col gap-1"
+            data-copied={copied}
+            onClick={copyEmail}
             variant="outline"
             analyticsEvent="email_click"
             analyticsPayload={{ surface: "recruiter_shortcut" }}
           >
-            <span>Email</span>
-            <span className="text-[0.65rem]">/email</span>
+            <span>{copied ? "Copied!" : "Email"}</span>
+            <span className="text-[0.65rem]">
+              {copied ? "in clipboard" : "/email"}
+            </span>
           </BrutalButton>
         </div>
+        <span aria-live="polite" className="sr-only">
+          {copied ? "Email address copied." : ""}
+        </span>
         <button
           className="motion-focus mt-4 w-full border-[3px] border-[var(--ink)] bg-[var(--purple)] px-4 py-3 font-mono text-sm font-black uppercase text-white shadow-[var(--shadow-sm)] transition hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0_var(--ink)] active:translate-x-1.5 active:translate-y-1.5 active:shadow-none"
           type="button"
@@ -167,12 +200,15 @@ export function RecruiterMode({
             LinkedIn
           </BrutalButton>
           <BrutalButton
-            href={emailHref}
+            aria-label="Copy email address"
+            className="copy-stamp"
+            data-copied={copied}
+            onClick={copyEmail}
             variant="outline"
             analyticsEvent="email_click"
             analyticsPayload={{ surface: "recruiter_dialog" }}
           >
-            Email
+            {copied ? "Copied!" : "Email"}
           </BrutalButton>
           <BrutalButton
             href={projectHref}
