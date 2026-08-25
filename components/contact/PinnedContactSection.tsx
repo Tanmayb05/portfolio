@@ -37,19 +37,9 @@ export function PinnedContactSection() {
   return (
     <section className="section-gradient-contact border-b-[3px] border-[var(--ink)] py-[var(--space-section-mobile)] sm:py-[var(--space-section-desktop)]">
       <SiteContainer size="wide">
-        <div className="relative overflow-hidden border-[3px] border-[var(--ink)] bg-[var(--paper)] p-5 shadow-[var(--shadow-md)] sm:p-8">
-          <Image
-            alt=""
-            aria-hidden="true"
-            className="pointer-events-none absolute right-4 top-0 hidden h-auto w-[min(22vw,18rem)] select-none opacity-90 lg:block"
-            height={640}
-            priority
-            src="/low-poly-image-removebg.png"
-            width={640}
-          />
-
+        <div className="border-[3px] border-[var(--ink)] bg-[var(--paper)] p-5 shadow-[var(--shadow-md)] sm:p-8">
           <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end">
-            <div className="relative lg:max-w-[34rem]">
+            <div className="lg:max-w-[34rem]">
               <StickerBadge tone="red">Available for</StickerBadge>
               <h1 className="mt-5 text-[length:var(--text-h1)] font-black uppercase leading-[0.92] text-[var(--ink)]">
                 Software engineering.
@@ -67,17 +57,31 @@ export function PinnedContactSection() {
               </div>
             </div>
 
-            <div className="relative grid gap-4 sm:grid-cols-3">
-              {contactMethods.map((method) => (
-                <ContactLinkCard
-                  description={method.description}
-                  href={method.href}
-                  key={method.label}
-                  label={method.label}
-                  priority={method.priority}
-                  title={method.title}
+            <div className="flex flex-col gap-6">
+              <div className="hidden items-center justify-center lg:flex">
+                <Image
+                  alt=""
+                  aria-hidden="true"
+                  className="pointer-events-none h-auto w-[min(20vw,17rem)] select-none opacity-90"
+                  height={640}
+                  priority
+                  src="/low-poly-image-removebg.png"
+                  width={640}
                 />
-              ))}
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-3">
+                {contactMethods.map((method) => (
+                  <ContactLinkCard
+                    description={method.description}
+                    href={method.href}
+                    key={method.label}
+                    label={method.label}
+                    priority={method.priority}
+                    title={method.title}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
