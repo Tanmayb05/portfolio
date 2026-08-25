@@ -62,7 +62,7 @@ export function PinnedContactSection() {
                 <Image
                   alt=""
                   aria-hidden="true"
-                  className="pointer-events-none h-auto w-[min(20vw,17rem)] select-none opacity-90"
+                  className="pointer-events-none h-auto w-[min(24vw,21rem)] select-none opacity-90"
                   height={640}
                   priority
                   src="/low-poly-image-removebg.png"
